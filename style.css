@@ -51,18 +51,34 @@ h1 {
 }
 
 .post_container {
+    position: relative;
     border-radius: 25px;
+    border: 2px solid black;
     background: antiquewhite;
-    padding: 20px;
-    width: 500px;
-    height: 400px;
+    padding: 2rem;
+    width: 450px;
+    height: 300px;
+    margin: 1.5rem;
+}
+
+.post_container:first-of-type {
+    border: 4px solid gold;
+}
+
+.post_container p {
+    text-align: justify;
+    padding: 1rem;
+    overflow: hidden;
+    max-height: 50%;
 }
 
 /* przycisk czytaj dalej przy aktualnościach */
 .astext {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     background:none;
     border:none;
-    margin:0;
-    padding:0;
     cursor: pointer;
+    padding: 2rem;
 }
