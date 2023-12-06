@@ -72,6 +72,22 @@ h1 {
     max-height: 50%;
 }
 
+.single_post_container {
+    position: relative;
+    border-radius: 25px;
+    border: 2px solid black;
+    background: antiquewhite;
+    padding: 2rem;
+    width: 80%;
+    height: auto;
+    margin: 1.5rem;
+}
+
+.single_post_container p {
+    text-align: justify;
+    padding: 2rem;
+}
+
 /* przycisk czytaj dalej przy aktualnościach */
 .astext {
     position: absolute;
