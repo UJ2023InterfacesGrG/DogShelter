@@ -12,6 +12,7 @@ body {
     color: black;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 /* to podkreślone duże napisy na górze stron */ 
@@ -208,4 +209,89 @@ h1 {
     background-color: #D4D823;
     width: 90%;
     cursor: pointer;
+}
+
+/* Panel użytkownika */
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.sidebar {
+    background-color: #D88223;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 10%;
+    border-right: 1px solid black;
+}
+
+.sidebar-option {
+    font-size: large;
+    border: solid black 1px;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar-option:first-of-type {
+    background-color: grey;
+    cursor: default;
+}
+
+.sidebar-option:last-of-type {
+    border-bottom-width: 2px;
+}
+
+.sidebar-option-current{
+    background-color: #D4D823;
+    font-weight: bold;
+}
+
+.sidebar-option img{
+    margin-right: 10px;
+}
+
+.flex-container .main{
+   min-width: 100%;
+}
+
+.flex-container table{
+    margin: 0 5% 5% 5%;
+    min-width: 80%;
+ }
+
+.flex-container th {
+    background-color: #589B3B;
+}
+
+.flex-container tr:nth-child(odd) {
+    background-color: grey;
+}
+
+.flex-container td,th {
+    padding: 30px;
+}
+
+table img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+
+table, td, th {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+table button {
+    background-color: red;
+    padding: 4% 6%;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
 }
