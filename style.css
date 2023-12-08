@@ -1,0 +1,100 @@
+html{
+    font-size: 100%;
+    overflow-x: hidden;
+    scroll-padding-top: 8rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    font-family: Helvetica;
+    text-align: center;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* to podkreślone duże napisy na górze stron */ 
+h1 {
+    text-decoration-line: underline;
+    font-size: 2.5rem;
+    padding: 4rem 1rem 2rem 1rem;
+    text-align: left;
+    margin-left: 10%;
+}
+
+/* header i footer roboczo tak tylko bo chciałam widzieć kolorki i ułożenie elementów na stronie xd */
+.header { 
+    height: 100px;
+    background-color: seagreen;
+}
+
+.footer { 
+    height: 50px;
+    padding: 2rem;
+    background-color: seagreen;
+}
+
+
+/* main section */
+.main {
+    padding-bottom: 4rem;
+}
+
+.box_container {
+    display: flex;
+    margin: auto;
+    width: 80%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.post_container {
+    position: relative;
+    border-radius: 25px;
+    border: 2px solid black;
+    background: antiquewhite;
+    padding: 2rem;
+    width: 450px;
+    height: 300px;
+    margin: 1.5rem;
+}
+
+.post_container:first-of-type {
+    border: 4px solid gold;
+}
+
+.post_container p {
+    text-align: justify;
+    padding: 1rem;
+    overflow: hidden;
+    max-height: 50%;
+}
+
+.single_post_container {
+    position: relative;
+    border-radius: 25px;
+    border: 2px solid black;
+    background: antiquewhite;
+    padding: 2rem;
+    width: 80%;
+    height: auto;
+    margin: 1.5rem;
+}
+
+.single_post_container p {
+    text-align: justify;
+    padding: 2rem;
+}
+
+/* przycisk czytaj dalej przy aktualnościach */
+.astext {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background:none;
+    border:none;
+    cursor: pointer;
+    padding: 2rem;
+}
