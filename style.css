@@ -288,10 +288,82 @@ table, td, th {
     border-collapse: collapse;
 }
 
-table button {
+.cancelWalk {
     background-color: red;
     padding: 4% 6%;
     border-radius: 7px;
     cursor: pointer;
     font-weight: bold;
+}
+
+/* Nasze pieski */
+.contact-bubble {
+    background-color: #B7C9F9;
+    border-radius: 30px;
+    padding: 1%;
+    margin: 3% 5%;
+    max-width: 17%;
+}
+
+.mini-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dogs-table {
+    width: 90%;
+    margin: auto;
+    background-color: #EFE3DA;
+}
+
+.filter {
+    text-align: left;
+    font-size: x-large;
+    background-color: #D9D9D9;
+}
+
+.filter td{
+    border: none;
+    margin: 5%;
+}
+
+.dogs-table td {
+    padding: 1% 2%;
+}
+
+.dogs-table img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.filter td:last-of-type{
+    min-width: 250px;
+    padding: 0%;
+    text-align: center;
+}
+
+.filter button {
+    background-color: #D4D823;
+    padding: 5% 10%;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.inner-dogs-table {
+    width: 100%;
+}
+
+.inner-dogs-table, .inner-dogs-table td {
+    border:none;
+}
+
+.inner-dogs-table tr {
+    background-color: #A7CDD6;
+    border: 2px solid black;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 25px;
+    text-align: center;
 }
