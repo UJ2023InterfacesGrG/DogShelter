@@ -12,6 +12,7 @@ body {
     color: black;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 /* to podkreślone duże napisy na górze stron */ 
@@ -174,4 +175,195 @@ h1 {
     margin: 0;
     padding: 0;
     float: right;
+}
+
+/* Logowanie i Rejestracja */
+.post_container.form-sign {
+    border-color: #000;
+    margin: 4% auto;
+    height: auto;
+}
+
+.form-sign h1 {
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+    margin: 2%;
+}
+
+.form-sign .option {
+    border: 1px solid black;
+    font-size: x-large;
+    padding: 5%;
+    margin: 2%;
+    min-width: 80%;
+    border-radius: 20px;
+}
+
+.form-sign [type="submit"] {
+    background-color: #D88223;
+}
+
+.form-sign button {
+    font-weight: bold;
+    background-color: #D4D823;
+    width: 90%;
+    cursor: pointer;
+}
+
+/* Panel użytkownika */
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.sidebar {
+    background-color: #D88223;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 10%;
+    border-right: 1px solid black;
+}
+
+.sidebar-option {
+    font-size: large;
+    border: solid black 1px;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar-option:first-of-type {
+    background-color: grey;
+    cursor: default;
+}
+
+.sidebar-option:last-of-type {
+    border-bottom-width: 2px;
+}
+
+.sidebar-option-current{
+    background-color: #D4D823;
+    font-weight: bold;
+}
+
+.sidebar-option img{
+    margin-right: 10px;
+}
+
+.flex-container .main{
+   min-width: 100%;
+}
+
+.flex-container table{
+    margin: 0 5% 5% 5%;
+    min-width: 80%;
+ }
+
+.flex-container th {
+    background-color: #589B3B;
+}
+
+.flex-container tr:nth-child(odd) {
+    background-color: grey;
+}
+
+.flex-container td,th {
+    padding: 30px;
+}
+
+table img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+
+table, td, th {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.cancelWalk {
+    background-color: red;
+    padding: 4% 6%;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Nasze pieski */
+.contact-bubble {
+    background-color: #B7C9F9;
+    border-radius: 30px;
+    padding: 1%;
+    margin: 3% 5%;
+    max-width: 17%;
+}
+
+.mini-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dogs-table {
+    width: 90%;
+    margin: auto;
+    background-color: #EFE3DA;
+}
+
+.filter {
+    text-align: left;
+    font-size: x-large;
+    background-color: #D9D9D9;
+}
+
+.filter td{
+    border: none;
+    margin: 5%;
+}
+
+.dogs-table td {
+    padding: 1% 2%;
+}
+
+.dogs-table img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.filter td:last-of-type{
+    min-width: 250px;
+    padding: 0%;
+    text-align: center;
+}
+
+.filter button {
+    background-color: #D4D823;
+    padding: 5% 10%;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.inner-dogs-table {
+    width: 100%;
+}
+
+.inner-dogs-table, .inner-dogs-table td {
+    border:none;
+}
+
+.inner-dogs-table tr {
+    background-color: #A7CDD6;
+    border: 2px solid black;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 25px;
+    text-align: center;
 }
