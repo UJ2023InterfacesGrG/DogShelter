@@ -1,0 +1,109 @@
+
+
+.spacer_filter {
+	position: relative;
+	bottom: 0;
+	right: 0;
+	background-color: #C8C8C8;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imie_box {
+	padding: 20px;
+}
+
+.wiek_box {
+	padding: 20px;
+}
+
+.dzien_box {
+	padding: 20px;
+}
+
+.godz_box {
+	padding: 20px;
+}
+
+.zatwierdz_box {
+	padding: 20px;
+}
+
+.doggo_and_gap {
+	height: 275px;
+}
+
+.gap {
+    background-color: grey;
+	height: 30px;
+	align: bottom;
+}
+
+.just_doggo {
+	display: flex;
+	background-color: white;
+	height: 245px;
+}
+
+.doggo {
+	background-image: linear-gradient(to right, grey , white);
+	width: 245px;
+	height: 245px;
+}
+
+.doggo_icon {
+	width: 245px;
+	height: 245px;
+}
+
+.doggo_info {
+	width: 245px;
+	height: 245px;
+	display: block;
+}
+
+.doggo_name {
+	width: 245px;
+	height: 60px;
+	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	position: relative;
+	border: #000;
+    border-style: none;
+    border-radius: 25px;
+}
+
+.doggo_label = {
+	justify-content: center;
+	align-items: center;
+}
+
+.doggo_info_text = {
+	display: block;
+}
+
+.spacer_list_class {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.spacer_box {
+	max-height:652px;
+    overflow-y:auto;
+}
+
+
+.filter_icon{
+    width: 2.5%;
+    height: auto;
+    float: left;
+    margin-left: 10px;
+}
+.enter_icon{
+	width: 5%;
+	height: auto;
+	vertical-align: middle;
+    border: 2px solid black;
+}
