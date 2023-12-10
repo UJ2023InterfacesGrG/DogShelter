@@ -31,11 +31,68 @@
             </ul>
         </div>
 		
+		<div class="main_rezerwacja">
+			<div class="rezerwacja_withpadding">
+				<div class="rezerwacja_doggo_info">
+				</div>
+				<div class="rezerwacja_info_box">
+					<div class="rezerwacja_middle">
+						<div class="rezerwacja_doggo_label">
+							<label class="rezerwacja_doggo_label_text" style="font-size:45px">Wybrany Termin Spaceru:<br />30.11.2023 11:00-13:00</label>
+						</div>
+						<div class="info_grid_box">
+							<div class="rigb_imie">
+								<label for="imie_input_rezerwacja">Imię:</label><br />
+								<input type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja">
+							</div>
+							<div class="rigb_naziwsko">
+								<label for="nazwisko_input_rezerwacja">Nazwisko:</label><br />
+								<input type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja">
+							</div>
+							<div class="rigb_telefon">
+								<label for="telefon_input_rezerwacja">Telefon Kontaktowy:</label><br />
+								<input type="text" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja">
+							</div>
+							<div class="rigb_email">
+								<label for="email_input_rezerwacja">Email Kontaktowy:</label><br />
+								<input type="text" id="email_input_rezerwacja" name="email_input_rezerwacja">
+							</div>
+						</div>
+					</div>
+					<div class="rezerwacja_potwierdz">
+						<button class="rezerwacja_potwierdz-button" onclick="OnZatwierdzClick()">
+						<a class="rezerwacja_potwierdz-label"  >Zatwierdź</a>
+						</button>
+					</div>
+					<a class="rezerwacja_missing_info" id="rezerwacja_missing_info"></a>
+				</div>
+			</div>
+		</div>
 		
 		 <!-- footer -->
         <div class="footer">
             <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
         </div>
-
+		
+		
+		<script>
+			function OnZatwierdzClick() {
+				if(
+					document.getElementById("imie_input_rezerwacja").value==""||
+					document.getElementById("nazwisko_input_rezerwacja").value==""||
+					(
+						document.getElementById("telefon_input_rezerwacja").value==""&&
+						document.getElementById("email_input_rezerwacja").value==""
+					)
+				)
+				{
+					document.getElementById("rezerwacja_missing_info").innerHTML = "Brakuje informacji";
+				}
+				else
+				{
+					document.location.href = "spacer_udany.html";
+				}
+			}
+		</script>
     </body>
 </html>
