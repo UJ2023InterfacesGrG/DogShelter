@@ -112,6 +112,7 @@ h1 {
     list-style: none;
     margin-block-start: 0;
     font-size: 18px;
+	display: flex;
 }
 
 .nav-bar li{
@@ -166,6 +167,7 @@ h1 {
     border: #000;
     border-style: solid;
     border-radius: 25px;
+	display:inline-flex;
 }
 
 .login-label{
