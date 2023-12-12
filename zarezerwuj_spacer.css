@@ -109,14 +109,37 @@
 
 .rezerwacja_doggo_info {
 	width:15%;
-	background-color: Grey;
-	display:grid;
+	height: 100%;
+	background-color: lightgrey;
+	display:flex;
+	flex-direction: column; 
 }
 
 .rezerwacja_info_box {
-	display:grid;
+	display:flex;
 	width: 85%;
-	background-color: Lime;
+	height: 100%;
+	background-color: white;
+}
+
+.rezerwacja_doggo_label2 {
+	background-color:CadetBlue;
+	/*width: 100%;*/
+	font-size: 200%;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rezerwacja_doggo_name {
+	vertical-align: middle;
+	height: 60px;
+	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 200%;
 }
 
 .rezerwacja_doggo_label {
@@ -139,30 +162,52 @@
 
 .rigb_imie {
 	height:150px;
-	background-color:MintCream;
+	font-size: 25px;
 	#margin: auto;
 	#text-align: center;
 }
 
 .rigb_naziwsko {
 	height:150px;
-	background-color:MintCream;
+	font-size: 25px;
 }
 
 .rigb_telefon {
 	height:150px;
-	background-color:MintCream;
+	font-size: 25px;
 }
 
 .rigb_email {
 	height:150px;
-	background-color:MintCream;
+	font-size: 25px;
+}
+
+.rezerwacja_potwierdz {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+.rezerwacja_missing_info {
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
 }
 
 .rezerwacja_potwierdz-label {
 	float: left;
     margin-top: 5px;
     margin-right: 5px;
+}
+
+.rezerwacja_potwierdz_wide {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	flex-direction: column;
 }
 
 .rezerwacja_potwierdz-button {
@@ -183,7 +228,7 @@
 .rezerwacja_middle {
 	height: auto;
 	width: 600px;
-	background-color: Red;
+	background-color: White;
 }
 
 .filter_icon{
@@ -205,7 +250,8 @@
 	font-size:2.5rem;
 	justify-content: center;
 	align-items: center;
-	display: table;
+	display: flex;
+	flex-direction: column;
 }
 
 .go-home-button {
@@ -221,4 +267,46 @@
     border: #000;
     border-style: solid;
     border-radius: 25px;
+}
+
+.doggo_calendar_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 50%;
+	background-color: white;
+}
+
+.doggo_calendar {
+	border-style: solid;
+	height: 80%;
+	width: 80%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.doggo_choose_termin {
+	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.doggo_termin {
+	background-color: AliceBlue ;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.doggo_termin_other {
+	background-color: AliceBlue ;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
