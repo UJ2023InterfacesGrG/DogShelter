@@ -1,0 +1,312 @@
+
+
+.spacer_filter {
+	position: relative;
+	bottom: 0;
+	right: 0;
+	background-color: #C8C8C8;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imie_box {
+	padding: 20px;
+}
+
+.wiek_box {
+	padding: 20px;
+}
+
+.dzien_box {
+	padding: 20px;
+}
+
+.godz_box {
+	padding: 20px;
+}
+
+.zatwierdz_box {
+	padding: 20px;
+}
+
+.doggo_and_gap {
+	height: 275px;
+}
+
+.gap {
+    background-color: grey;
+	height: 30px;
+	align: bottom;
+}
+
+.just_doggo {
+	display: flex;
+	background-color: white;
+	height: 245px;
+}
+
+.doggo {
+	background-image: linear-gradient(to right, grey , white);
+	width: 245px;
+	height: 245px;
+}
+
+.doggo_icon {
+	width: 245px;
+	height: 245px;
+}
+
+.doggo_info {
+	width: 245px;
+	height: 245px;
+	display: block;
+}
+
+.doggo_name {
+	width: 245px;
+	height: 60px;
+	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	position: relative;
+	border: #000;
+    border-style: none;
+    border-radius: 25px;
+}
+
+.doggo_label = {
+	justify-content: center;
+	align-items: center;
+}
+
+.doggo_info_text = {
+	display: block;
+}
+
+.spacer_list_class {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.spacer_box {
+	max-height:652px;
+    overflow-y:auto;
+}
+
+.main_rezerwacja {
+	display:flex;
+	max-height:652px;
+	height:652px;
+	justify-content: center;
+}
+
+.rezerwacja_withpadding {
+	width:80%;
+	background-color: LightGrey;
+	display:flex;
+}
+
+.rezerwacja_doggo_info {
+	width:15%;
+	height: 100%;
+	background-color: lightgrey;
+	display:flex;
+	flex-direction: column; 
+}
+
+.rezerwacja_info_box {
+	display:flex;
+	width: 85%;
+	height: 100%;
+	background-color: white;
+}
+
+.rezerwacja_doggo_label2 {
+	background-color:CadetBlue;
+	/*width: 100%;*/
+	font-size: 200%;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rezerwacja_doggo_name {
+	vertical-align: middle;
+	height: 60px;
+	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 200%;
+}
+
+.rezerwacja_doggo_label {
+	height: 150px;
+	width: 600px;
+	background-color: Linen;
+}
+
+.rezerwacja_doggo_label_text {
+	vertical-align: middle;
+}
+
+.info_grid_box {
+	padding-top:100px;
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: 50px;
+	row-gap: 50px;
+}
+
+.rigb_imie {
+	height:150px;
+	font-size: 25px;
+	#margin: auto;
+	#text-align: center;
+}
+
+.rigb_naziwsko {
+	height:150px;
+	font-size: 25px;
+}
+
+.rigb_telefon {
+	height:150px;
+	font-size: 25px;
+}
+
+.rigb_email {
+	height:150px;
+	font-size: 25px;
+}
+
+.rezerwacja_potwierdz {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+.rezerwacja_missing_info {
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+.rezerwacja_potwierdz-label {
+	float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.rezerwacja_potwierdz_wide {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	flex-direction: column;
+}
+
+.rezerwacja_potwierdz-button {
+	font-size: 18px;
+    cursor: pointer;
+    background-color: #D88223;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: #000;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.rezerwacja_middle {
+	height: auto;
+	width: 600px;
+	background-color: White;
+}
+
+.filter_icon{
+    width: 2.5%;
+    height: auto;
+    float: left;
+    margin-left: 10px;
+}
+.enter_icon{
+	width: 5%;
+	height: auto;
+	vertical-align: middle;
+    border: 2px solid black;
+}
+
+.spacer_udany_yay{
+	height: 48.4rem;
+	vertical-align: middle;
+	font-size:2.5rem;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.go-home-button {
+	font-size: 2.5rem;
+    cursor: pointer;
+    background-color: #D88223;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: #000;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.doggo_calendar_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 50%;
+	background-color: white;
+}
+
+.doggo_calendar {
+	border-style: solid;
+	height: 80%;
+	width: 80%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.doggo_choose_termin {
+	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.doggo_termin {
+	background-color: AliceBlue ;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.doggo_termin_other {
+	background-color: AliceBlue ;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

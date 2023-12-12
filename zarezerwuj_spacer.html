@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strona schroniska</title>
+        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+
+    <body>
+        <!-- header with logo + menu -->
+        <div class="header">
+            <ul class="nav-bar">  
+                <li class="nav-dog-title"> 
+                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
+                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                </li>
+                <li class="nav-button"><a href="home.html">Aktualności</a></li>
+                <li class="nav-button"><a href="home.html">Zarezerwuj spacer</a></li>
+                <li class="nav-button"><a href="home.html">Nasze pieski</a></li>
+                <li class="nav-button"><a href="home.html">Wesprzyj nas</a></li>
+                <li class="nav-button"><a href="home.html">Kontakt</a></li>
+                <li class="nav-login-button">
+                <button class="login-button" onclick="window.location.href='home.html';">
+                    <a class="login-label"  >Zaloguj się</a>
+                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                </button>
+            </li>
+            </ul>
+        </div>
+
+
+        <!-- main site -->
+        <div class="main">
+			<form>
+				<div class="spacer_filter">
+				
+					<img class="filter_icon" src="images/filter.png" alt="Filtr" >
+					<div class="imie_box">
+						<label for="imie_input">Imię Psa:</label>
+						<input type="text" id="imie_input" name="imie_input">
+					</div>
+					<div class="wiek_box">
+						<label for="wiek_input">Wiek:</label>
+						<input type="text" id="wiek_input" name="wiek_input">
+					</div>
+					<div class="dzien_box">
+						<label for="dzien_input">Dzień:</label>
+						<select id="dzien_input" name="dzien_input">
+							<option value="dzien_monday">Poniedziałek</option>
+							<option value="dzien_tuesday">Wtorek</option>
+							<option value="dzien_wednesday">Środa</option>
+							<option value="dzien_thursday">Czwartek</option>
+							<option value="dzien_friday">Piątek</option>
+							<option value="dzien_saturday">Sobota</option>
+							<option value="dzien_sunday">Niedziela</option>
+						</select>
+					</div>
+					<div class="godz_box">
+						<label for="godz_input">W godz:</label>
+						<input type="text" id="godz_input" name="godz_input">
+					</div>
+					<div class="zatwierdz_box">
+						<button>Zatwierdź:</label>
+						<img class="enter_icon" src="images/enter.png" alt="Zatwierdz" >
+					</div>
+				
+				</div>
+			</form>
+			<div class="spacer_box">
+				<nav>
+					<ul class="spacer_list_class">
+						<li class="spacer_list_class">
+							<div class="doggo_and_gap">
+								<div class="just_doggo">
+									<div class="doggo">
+										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+									</div>
+									<div class="doggo_info">
+										<div class="doggo_name">
+											<label class="doggo_label" style="font-size:55px">Azor</label>
+										</div>
+										<div class="doggo_info_text">
+											<p>Atrybut 1: Lorem</p>
+											<p>Atrybut 2: Ipsum</p>
+											<p>Atrybut 3: Dolor</p>
+											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
+										</div>
+									</div>
+									<div class="doggo_calendar_box">
+										<div class="doggo_calendar">
+											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
+											<div class="doggo_termin">
+											<a href="chcesz_wyprowadzic.html">Wtorek 11:00 - 13:00</a></div>
+											<div class="doggo_termin"><a href="chcesz_wyprowadzic.html">Środa 12:00 - 14:00</a></div>
+											<div class="doggo_termin"><a href="chcesz_wyprowadzic.html">Czwartek 15:00 - 17:00</a></div>
+											<div class="doggo_termin_other">Wyświetl Inne</div>
+										</div>
+									</div>
+								</div>
+								<div class="gap"></div>
+							</div>
+						</li>
+						<li class="spacer_list_class">
+							<div class="doggo_and_gap">
+								<div class="just_doggo">
+									<div class="doggo">
+										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+									</div>
+									<div class="doggo_info">
+										<div class="doggo_name">
+											<label class="doggo_label" style="font-size:55px">Pimpek</label>
+										</div>
+										<div class="doggo_info_text">
+											<p>Atrybut 1: Lorem</p>
+											<p>Atrybut 2: Ipsum</p>
+											<p>Atrybut 3: Dolor</p>
+											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
+										</div>
+									</div>
+									<div class="doggo_calendar_box">
+										<div class="doggo_calendar">
+										</div>
+									</div>
+								</div>
+								<div class="gap"></div>
+							</div>
+						</li>
+						<li class="spacer_list_class">
+							<div class="doggo_and_gap">
+								<div class="just_doggo">
+									<div class="doggo">
+										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+									</div>
+									<div class="doggo_info">
+										<div class="doggo_name">
+											<label class="doggo_label" style="font-size:55px">Burek</label>
+										</div>
+										<div class="doggo_info_text">
+											<p>Atrybut 1: Lorem</p>
+											<p>Atrybut 2: Ipsum</p>
+											<p>Atrybut 3: Dolor</p>
+											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
+										</div>
+									</div>
+									<div class="doggo_calendar_box">
+										<div class="doggo_calendar">
+										</div>
+									</div>
+								</div>
+								<div class="gap"></div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
+        </div>
+
+    </body>
+</html>

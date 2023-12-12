@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strona schroniska</title>
+        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+
+    <body>
+        <!-- header with logo + menu -->
+        <div class="header">
+            <ul class="nav-bar">  
+                <li class="nav-dog-title"> 
+                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
+                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                </li>
+                <li class="nav-button"><a href="home.html">Aktualności</a></li>
+                <li class="nav-button"><a href="home.html">Zarezerwuj spacer</a></li>
+                <li class="nav-button"><a href="home.html">Nasze pieski</a></li>
+                <li class="nav-button"><a href="home.html">Wesprzyj nas</a></li>
+                <li class="nav-button"><a href="home.html">Kontakt</a></li>
+                <li class="nav-login-button">
+                <button class="login-button" onclick="window.location.href='home.html';">
+                    <a class="login-label"  >Zaloguj się</a>
+                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                </button>
+            </li>
+            </ul>
+        </div>
+		
+		<div class="main_rezerwacja">
+			<div class="rezerwacja_withpadding">
+				<div class="rezerwacja_doggo_info">
+					<div class="rezerwacja_doggo_label2">Chcesz Wyprowadzić...</div>
+					<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+					<div class="rezerwacja_doggo_name">Burek</div>
+					<div class="rezerwacja_doggo_attributes">
+						<p>Atrybut 1: Lorem</p>
+						<p>Atrybut 2: Ipsum</p>
+						<p>Atrybut 3: Dolor</p>
+						<p>Short desc: sit amet consectetur nobiliscing edit.</p>
+					</div>
+				</div> 
+				<div class="rezerwacja_info_box">
+					<div class="rezerwacja_middle">
+						<div class="rezerwacja_doggo_label">
+							<label class="rezerwacja_doggo_label_text" style="font-size:45px">Wybrany Termin Spaceru:<br />30.11.2023 11:00-13:00</label>
+						</div>
+						<div class="info_grid_box">
+							<div class="rigb_imie">
+								<label for="imie_input_rezerwacja">Imię:</label><br />
+								<input type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja">
+							</div>
+							<div class="rigb_naziwsko">
+								<label for="nazwisko_input_rezerwacja">Nazwisko:</label><br />
+								<input type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja">
+							</div>
+							<div class="rigb_telefon">
+								<label for="telefon_input_rezerwacja">Telefon Kontaktowy:</label><br />
+								<input type="tel" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">       
+							</div>
+							<div class="rigb_email">
+								<label for="email_input_rezerwacja">Email Kontaktowy:</label><br />
+								<input type="email" id="email_input_rezerwacja" name="email_input_rezerwacja">
+							</div>
+						</div>
+					</div>
+					<div class="rezerwacja_potwierdz_wide">
+						<div class="rezerwacja_potwierdz">
+							<button class="rezerwacja_potwierdz-button" onclick="OnZatwierdzClick()">
+							<a class="rezerwacja_potwierdz-label"  >Zatwierdź</a>
+							</button>
+						</div>
+						<a class="rezerwacja_missing_info" id="rezerwacja_missing_info"></a>
+					</div>
+				</div> 
+			</div>
+		</div>
+		
+		 <!-- footer -->
+        <div class="footer">
+            <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
+        </div>
+		
+		
+		<script>
+			function OnZatwierdzClick() {
+				if(
+					document.getElementById("imie_input_rezerwacja").value==""||
+					document.getElementById("nazwisko_input_rezerwacja").value==""||
+					(
+						document.getElementById("telefon_input_rezerwacja").value==""&&
+						document.getElementById("email_input_rezerwacja").value==""
+					)
+				)
+				{
+					var Tekst = new String("Brakuje informacji:\n");
+					if(document.getElementById("imie_input_rezerwacja").value=="")
+						Tekst = Tekst.concat("Brak Imienia.\n");
+					if(document.getElementById("nazwisko_input_rezerwacja").value=="")
+						Tekst = Tekst.concat("Brak Nazwiska.\n");
+					if(document.getElementById("telefon_input_rezerwacja").value==""&&
+						document.getElementById("email_input_rezerwacja").value=="")
+						Tekst = Tekst.concat("Brak Telefonu lub Emaila.\n");
+					
+					
+					document.getElementById("rezerwacja_missing_info").innerHTML = Tekst;
+				}
+				else
+				{
+					document.location.href = "spacer_udany.html";
+				}
+			}
+		</script>
+    </body>
+</html>
