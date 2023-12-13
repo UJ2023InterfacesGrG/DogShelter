@@ -1,0 +1,20 @@
+{
+    "dogs": [
+        {
+            "image": "images/dog-icon.png",
+            "name": "Burek",
+            "id": "999",
+            "desc": "Burek jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "date": "01/01/2001",
+            "readyToAdopt": "True"
+        },
+        {
+            "image": "images/dog-icon.png",
+            "name": "Azor",
+            "id": "888",
+            "desc": "Azor jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "date": "02/02/2002",
+            "readyToAdopt": "False"
+        }
+    ]
+}
