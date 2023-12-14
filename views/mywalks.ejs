@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strona schroniska</title>
+        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+
+
+    <body>
+        <!-- header with logo + menu -->
+        <div class="header">
+            <ul class="nav-bar">  
+                <li class="nav-dog-title"> 
+                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
+                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                </li>
+                <li class="nav-button"><a href="home.html">Aktualności</a></li>
+                <li class="nav-button"><a href="home.html">Zarezerwuj spacer</a></li>
+                <li class="nav-button"><a href="home.html">Nasze pieski</a></li>
+                <li class="nav-button"><a href="home.html">Wesprzyj nas</a></li>
+                <li class="nav-button"><a href="home.html">Kontakt</a></li>
+                <li class="nav-login-button">
+                <button class="login-button" onclick="window.location.href='home.html';">
+                    <a class="login-label" href="./login.html">Zaloguj się</a>
+                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                </button>
+            </li>
+            </ul>
+        </div>
+
+
+        <!-- main site -->
+        <div class="flex-container">
+            <div class="sidebar">
+                <div class="sidebar-option">
+                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika">
+                    <span>Jan Kowalski</span>
+                </div>
+                <div class="sidebar-option sidebar-option-current" onclick="location.href='./mywalks.html'">
+                    <span>Moje spacery</span>
+                </div>
+                <div class="sidebar-option" onclick="location.href='./mydetails.html'">
+                    <span>Moje dane</span>
+                </div>
+            </div>
+            <div class="main">
+                <h1>Moje spacery</h1>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Imię Psa</th>
+                        <th>Data Spaceru</th>
+                        <th>Godzina</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/dog-icon.png" alt="Zdjecie pieska" >
+                        </td>
+                        <td>Burek</td>
+                        <td>11.11.2023</td>
+                        <td>12:00</td>
+                        <td>
+                            <button class="cancelWalk" onclick="anulujSpacer()">
+                                Anuluj spacer
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/dog-icon.png" alt="Zdjecie pieska" >
+                        </td>
+                        <td>Reksio</td>
+                        <td>22.11.2023</td>
+                        <td>13:00</td>
+                        <td>
+                            <button class="cancelWalk" onclick="anulujSpacer()">
+                                Anuluj spacer
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/dog-icon.png" alt="Zdjecie pieska" >
+                        </td>
+                        <td>Azor</td>
+                        <td>30.03.2023</td>
+                        <td>14:00</td>
+                        <td>
+                            <button class="cancelWalk" onclick="anulujSpacer()">
+                                Anuluj spacer
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
+        </div>
+
+        <script>
+            function anulujSpacer() {
+              if (confirm("Na pewno chcesz anulować spacer?")) {
+                  location.href = '#';
+              }
+          }
+          </script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strona schroniska</title>
+        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+
+
+    <body>
+        <!-- header with logo + menu -->
+        <div class="header">
+            <ul class="nav-bar">  
+                <li class="nav-dog-title"> 
+                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
+                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                </li>
+                <li class="nav-button"><a href="/">Aktualności</a></li>
+                <li class="nav-button"><a href="home.html">Zarezerwuj spacer</a></li>
+                <li class="nav-button"><a href="/ourDogs">Nasze pieski</a></li>
+                <li class="nav-button"><a href="home.html">Wesprzyj nas</a></li>
+                <li class="nav-button"><a href="home.html">Kontakt</a></li>
+                <li class="nav-login-button">
+                <button class="login-button" onclick="window.location.href='home.html';">
+                    <a class="login-label" href="./login.html">Zaloguj się</a>
+                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                </button>
+            </li>
+            </ul>
+        </div>
+
+
+        <!-- main site -->
+        <div class="main">
+            <div class="mini-flex">
+                <h1>Nasze Pieski</h1>
+                <div class="contact-bubble">
+                    Zainterefowany adopcją? Potrzebujesz więcej informacji? <a href="#">Skontaktuj się</a> z nami!
+                </div>
+            </div>
+            <table class="dogs-table">
+                <tr class="filter">
+                    <form>
+                        <td>
+                            <img src="./images/filter-icon.png" alt="Ikonka filtrowania">
+                        </td>
+                        <td>
+                            <span>Imię psa: </span>
+                            <input type="text" name="name" id="name">
+                        </td>
+                        <td>
+                            <span>Wiek psa: </span>
+                            <input type="number" name="age" id="age">
+                        </td>
+                        <td>
+                            <span>Gotowy do adopcji</span>
+                            <input type="checkbox" name="adoptable" id="adoptable">
+                        </td>
+                        <td>
+                            <button type="submit">Filtruj</button>
+                        </td>
+                    </form>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <table class="inner-dogs-table">
+                            <% Object.keys(dogs).forEach(function(id) { %>
+                            <tr>
+                                <td>
+                                    <img class="dog-icon" src="<%= dogs[id].image %>" alt="Zdjecie pieska" >
+                                </td>
+                                <td>
+                                    <%= dogs[id].name %>
+                                </td>
+                                <td>
+                                    #<%= dogs[id].id %>
+                                </td>
+                                <td>
+                                    <%= dogs[id].desc %>
+                                </td>
+                                <td>
+                                    Jest z nami od:<%= dogs[id].date %>
+                                </td>
+                                <td>
+                                    <% if(dogs[id].readyToAdopt == "True"){ %>
+                                    Gotowy do adopcji!
+                                    <br>
+                                    <img src="./images/check-icon.webp" alt="Ikonka potwiedzenia">
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <% }); %> 
+                        </table>
+                    </td>
+                </tr>
+           </table>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
+        </div>
+
+    </body>
+</html>
