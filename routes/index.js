@@ -14,7 +14,7 @@ router.get('/home', function(req, res, next) {
 
 /* GET walk page. */
 router.get('/walk', function(req, res, next) {
-  res.render('chcesz_wyprowadzic');
+  res.render('walk');
 });
 
 /* GET login page. */
@@ -34,17 +34,22 @@ router.get('/myWalks', function(req, res, next) {
 
 /* GET found page. */
 router.get('/found', function(req, res, next) {
-  res.render('ostatnio_znalezione');
+  res.render('recently_found');
+});
+
+/* GET news page. */
+router.get('/news', function(req, res, next) {
+  res.render('news');
 });
 
 /* GET success page. */
 router.get('/success', function(req, res, next) {
-  res.render('spacer_udany');
+  res.render('walk_success');
 });
 
 /* GET reserveWalk page. */
 router.get('/reserveWalk', function(req, res, next) {
-  res.render('zarezerwuj_spacer');
+  res.render('reserve_walk');
 });
 
 // Endpoint to Get a list of dogs

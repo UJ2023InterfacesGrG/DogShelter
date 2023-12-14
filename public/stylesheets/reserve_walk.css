@@ -38,7 +38,7 @@
 .gap {
     background-color: grey;
 	height: 30px;
-	align: bottom;
+	text-align: bottom;
 }
 
 .just_doggo {
@@ -74,12 +74,12 @@
     border-radius: 25px;
 }
 
-.doggo_label = {
+.doggo_label {
 	justify-content: center;
 	align-items: center;
 }
 
-.doggo_info_text = {
+.doggo_info_text {
 	display: block;
 }
 
@@ -163,8 +163,8 @@
 .rigb_imie {
 	height:150px;
 	font-size: 25px;
-	#margin: auto;
-	#text-align: center;
+	margin: auto;
+	text-align: center;
 }
 
 .rigb_naziwsko {
