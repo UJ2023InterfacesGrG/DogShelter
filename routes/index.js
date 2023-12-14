@@ -47,6 +47,16 @@ router.get('/success', function(req, res, next) {
   res.render('walk_success');
 });
 
+/* GET supportUs page. */
+router.get('/supportUs', function(req, res, next) {
+  res.render('supportus');
+});
+
+/* GET contact page. */
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
+
 /* GET reserveWalk page. */
 router.get('/reserveWalk', function(req, res, next) {
   res.render('reserve_walk');
