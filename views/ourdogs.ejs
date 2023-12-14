@@ -66,25 +66,25 @@
                 <tr>
                     <td colspan="5">
                         <table class="inner-dogs-table">
-                            <% listOfDogs.forEach(function(dog) { %>
+                            <% Object.keys(dogs).forEach(function(id) { %>
                             <tr>
                                 <td>
-                                    <img class="dog-icon" src="<%= dog.image %>" alt="Zdjecie pieska" >
+                                    <img class="dog-icon" src="<%= dogs[id].image %>" alt="Zdjecie pieska" >
                                 </td>
                                 <td>
-                                    <%= dog.name %>
+                                    <%= dogs[id].name %>
                                 </td>
                                 <td>
-                                    #<%= dog.id %>
+                                    #<%= dogs[id].id %>
                                 </td>
                                 <td>
-                                    <%= dog.desc %>
+                                    <%= dogs[id].desc %>
                                 </td>
                                 <td>
-                                    Jest z nami od:<%= dog.date %>
+                                    Jest z nami od:<%= dogs[id].date %>
                                 </td>
                                 <td>
-                                    <% if(dog.readyToAdopt == "True"){ %>
+                                    <% if(dogs[id].readyToAdopt == "True"){ %>
                                     Gotowy do adopcji!
                                     <br>
                                     <img src="./images/check-icon.webp" alt="Ikonka potwiedzenia">

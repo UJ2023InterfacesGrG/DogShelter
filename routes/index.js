@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
+/* GET home page. */
+router.get('/home', function(req, res, next) {
+  res.render('home');
+});
+
 /* GET walk page. */
 router.get('/walk', function(req, res, next) {
   res.render('chcesz_wyprowadzic');
@@ -44,13 +49,13 @@ router.get('/reserveWalk', function(req, res, next) {
 
 // Endpoint to Get a list of dogs
 router.get('/ourDogs', function(req, res){
-  fs.readFile(__dirname + "/" + "data/data.json", 'utf8', function(err, data){
+  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, data){
     try {
       // Parse the JSON data
       const jsonData = JSON.parse(data);
-
+      console.log(jsonData.dog1)
       // Pass the 'dogs' array to the EJS template
-      res.render('ourdogs', { listOfDogs: jsonData.dogs });
+      res.render('ourdogs', { dogs: jsonData });
     } catch (error) {
       console.error('Error parsing JSON:', error);
       res.status(500).send('Internal Server Error');
