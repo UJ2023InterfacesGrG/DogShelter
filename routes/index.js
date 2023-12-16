@@ -64,9 +64,9 @@ router.get('/register', function(req, res, next) {
 
   // Check if user is defined before accessing properties
   if (user) {
-    res.render('home', { user });
+    res.redirect('home');
   } else {
-    res.render('home', { user: null });
+    res.render('register');
   }});
 
 /* GET mywalks page. */
@@ -125,5 +125,11 @@ router.get('/ourDogs', function(req, res){
     }
   });
 })
+
+// Endpoint to Get a logout
+router.get('/user/logout',(req,res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 module.exports = router;
