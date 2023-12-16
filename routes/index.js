@@ -4,17 +4,9 @@ var fs = require('fs');
 const usersData = require('./data/users');
 const bcrypt = require('bcryptjs');
 
-
 /* GET home page. */
 router.get('/:var(home)?', function(req, res, next) {
-  const user = req.session.user || null;
-
-  // Check if user is defined before accessing properties
-  if (user) {
-    res.render('home', { user });
-  } else {
-    res.render('home', { user: null });
-  }
+  res.render('home');
 });
 
 /* GET walk page. */
@@ -24,6 +16,7 @@ router.get('/walk', function(req, res, next) {
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
+  console.log(usersData);
   const user = req.session.user || null;
 
   // Check if user is defined before accessing properties
@@ -50,8 +43,7 @@ router.post('/login', function(req, res, next) {
       email: user.email,
       phone: user.phone
     };
-
-    res.redirect('home')
+    res.redirect('/user/myWalks')
   } else {
     console.log('Login failed');
     res.status(401).json({ message: 'Invalid credentials' });
@@ -67,18 +59,48 @@ router.get('/register', function(req, res, next) {
     res.redirect('home');
   } else {
     res.render('register');
-  }});
+  }
+});
+
+/* POST register page. */
+router.post('/register', function(req, res, next) {
+  const { email, password } = req.body;
+  console.log('Received credentials:', email, password);
+
+  const user = usersData.find(user => user.email === email);
+
+  if (!user) {
+    // Store user information in the request object
+    req.session.user = {
+      name: null,
+      surname: null,
+      email: email,
+      phone: null
+    };
+    usersData.push({
+      name: null,
+      surname: null,
+      email: email,
+      password: bcrypt.hashSync(password, 10),
+      phone: null
+    });
+    res.redirect('/user/myWalks')
+  } else {
+    console.log('Registration failed');
+    res.status(401).json({ message: 'Already created account with given e-mail address' });
+  }
+});
 
 /* GET mywalks page. */
 router.get('/user/myWalks', function(req, res, next) {
   const user = req.session.user || null;
-  console.log(user);
   // Check if user is defined before accessing properties
   if (user) {
     res.render('mywalks');
   } else {
     res.redirect('/login');
-  }});
+  }
+});
 
 /* GET found page. */
 router.get('/found', function(req, res, next) {
