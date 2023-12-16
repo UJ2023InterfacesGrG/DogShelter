@@ -18,13 +18,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/user', express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: 'my-secret-key',
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 300000 }
 }));
+
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;
+  next();
+});
 
 app.use('/', indexRouter);
 

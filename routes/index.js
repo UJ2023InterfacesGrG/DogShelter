@@ -11,7 +11,6 @@ router.get('/:var(home)?', function(req, res, next) {
 
   // Check if user is defined before accessing properties
   if (user) {
-    console.log(user.id);
     res.render('home', { user });
   } else {
     res.render('home', { user: null });
@@ -25,7 +24,14 @@ router.get('/walk', function(req, res, next) {
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  const user = req.session.user || null;
+
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.redirect('home');
+  } else {
+    res.render('login');
+  }
 });
 
 /* POST login page. */
@@ -39,9 +45,10 @@ router.post('/login', function(req, res, next) {
   if (user && bcrypt.compareSync(password, user.password)) {
     // Store user information in the request object
     req.session.user = {
-      id: user.id,
       name: user.name,
+      surname: user.surname,
       email: user.email,
+      phone: user.phone
     };
 
     res.redirect('home')
@@ -53,13 +60,25 @@ router.post('/login', function(req, res, next) {
 
 /* GET register page. */
 router.get('/register', function(req, res, next) {
-  res.render('register');
-});
+  const user = req.session.user || null;
+
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.render('home', { user });
+  } else {
+    res.render('home', { user: null });
+  }});
 
 /* GET mywalks page. */
-router.get('user/myWalks', function(req, res, next) {
-  res.render('mywalks');
-});
+router.get('/user/myWalks', function(req, res, next) {
+  const user = req.session.user || null;
+  console.log(user);
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.render('mywalks');
+  } else {
+    res.redirect('/login');
+  }});
 
 /* GET found page. */
 router.get('/found', function(req, res, next) {
