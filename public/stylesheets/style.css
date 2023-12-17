@@ -303,6 +303,11 @@ table, td, th {
     font-weight: bold;
 }
 
+.logout {
+    background-color: red;
+    font-weight: bold;
+}
+
 /* Nasze pieski */
 .contact-bubble {
     background-color: #B7C9F9;

@@ -1,14 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+const usersData = require('./data/users');
+const bcrypt = require('bcryptjs');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home');
-});
-
-/* GET home page. */
-router.get('/home', function(req, res, next) {
+router.get('/:var(home)?', function(req, res, next) {
   res.render('home');
 });
 
@@ -19,17 +16,90 @@ router.get('/walk', function(req, res, next) {
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  console.log(usersData);
+  const user = req.session.user || null;
+
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.redirect('home');
+  } else {
+    res.render('login');
+  }
+});
+
+/* POST login page. */
+router.post('/login', function(req, res, next) {
+  const { email, password } = req.body;
+  console.log('Received credentials:', email, password);
+
+  const user = usersData.find(user => user.email === email);
+  console.log('Found user:', user);
+
+  if (user && bcrypt.compareSync(password, user.password)) {
+    // Store user information in the request object
+    req.session.user = {
+      name: user.name,
+      surname: user.surname,
+      email: user.email,
+      phone: user.phone
+    };
+    res.redirect('/user/myWalks')
+  } else {
+    console.log('Login failed');
+    res.status(401).json({ message: 'Invalid credentials' });
+  }
 });
 
 /* GET register page. */
 router.get('/register', function(req, res, next) {
-  res.render('register');
+  const user = req.session.user || null;
+
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.redirect('home');
+  } else {
+    res.render('register');
+  }
+});
+
+/* POST register page. */
+router.post('/register', function(req, res, next) {
+  const { email, password } = req.body;
+  console.log('Received credentials:', email, password);
+
+  const user = usersData.find(user => user.email === email);
+
+  if (!user) {
+    // Store user information in the request object
+    req.session.user = {
+      name: null,
+      surname: null,
+      email: email,
+      phone: null
+    };
+    usersData.push({
+      name: null,
+      surname: null,
+      email: email,
+      password: bcrypt.hashSync(password, 10),
+      phone: null
+    });
+    res.redirect('/user/myWalks')
+  } else {
+    console.log('Registration failed');
+    res.status(401).json({ message: 'Already created account with given e-mail address' });
+  }
 });
 
 /* GET mywalks page. */
-router.get('/myWalks', function(req, res, next) {
-  res.render('mywalks');
+router.get('/user/myWalks', function(req, res, next) {
+  const user = req.session.user || null;
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.render('mywalks');
+  } else {
+    res.redirect('/login');
+  }
 });
 
 /* GET found page. */
@@ -77,5 +147,11 @@ router.get('/ourDogs', function(req, res){
     }
   });
 })
+
+// Endpoint to Get a logout
+router.get('/user/logout',(req,res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 module.exports = router;
