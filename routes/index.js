@@ -57,10 +57,29 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
-/* GET reserveWalk page. */
-router.get('/reserveWalk', function(req, res, next) {
-  res.render('reserve_walk');
-});
+router.get('/reserveWalk', function(req, res){
+  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+  {
+    try {
+      const jsonDogData = JSON.parse(dogdata);
+      fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+	  {
+		try {
+		  const jsonReservationData = JSON.parse(reservationdata);
+		  
+		  //console.log(jsonReservationData.dog1)
+		  res.render('reserve_walk', { dogs: jsonDogData, reservations: jsonReservationData });
+		} catch (error) {
+		  console.error('Error parsing JSON:', error);
+		  res.status(500).send('Internal Server Error');
+		}
+	  });
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+})
 
 // Endpoint to Get a list of dogs
 router.get('/ourDogs', function(req, res){

@@ -72,15 +72,16 @@
 			<div class="spacer_box">
 				<nav>
 					<ul class="spacer_list_class">
+						<% Object.keys(dogs).forEach(function(id) { %>
 						<li class="spacer_list_class">
 							<div class="doggo_and_gap">
 								<div class="just_doggo">
 									<div class="doggo">
-										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+										<img class="doggo_icon" src="<%= dogs[id].image %>" alt="doggo" >
 									</div>
 									<div class="doggo_info">
 										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px">Azor</label>
+											<label class="doggo_label" style="font-size:55px"><%= dogs[id].name %></label>
 										</div>
 										<div class="doggo_info_text">
 											<p>Atrybut 1: Lorem</p>
@@ -90,78 +91,25 @@
 										</div>
 									</div>
 									<div class="doggo_calendar_box">
-										<div class="doggo_calendar">
-											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
-											<div class="doggo_termin"><a href="/walk">Wtorek 11:00 - 13:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Środa 12:00 - 14:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Czwartek 15:00 - 17:00</a></div>
-											<div class="doggo_termin_other">Wyświetl Inne</div>
-										</div>
+										<ul class="doggo_calendar">
+											<li class="doggo_choose_termin">Najbliższe Terminy:</li>
+											<%
+												Object.keys(reservations[id]).forEach(function(ReservationId) {
+													let test = reservations[id][ReservationId];
+											%>
+												<li class="doggo_termin"><a href="/walk">
+												<%= test.day + " " + test.start + " - " + test.end%>
+												</a></li>
+												
+											<% }); %>
+											<li class="doggo_termin_other">Wyświetl Inne</li>
+										</ul>
 									</div>
 								</div>
 								<div class="gap"></div>
 							</div>
 						</li>
-						<li class="spacer_list_class">
-							<div class="doggo_and_gap">
-								<div class="just_doggo">
-									<div class="doggo">
-										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
-									</div>
-									<div class="doggo_info">
-										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px">Pimpek</label>
-										</div>
-										<div class="doggo_info_text">
-											<p>Atrybut 1: Lorem</p>
-											<p>Atrybut 2: Ipsum</p>
-											<p>Atrybut 3: Dolor</p>
-											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
-										</div>
-									</div>
-									<div class="doggo_calendar_box">
-										<div class="doggo_calendar">
-											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
-											<div class="doggo_termin"><a href="/walk">Wtorek 11:00 - 13:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Środa 12:00 - 14:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Czwartek 15:00 - 17:00</a></div>
-											<div class="doggo_termin_other">Wyświetl Inne</div>
-										</div>
-									</div>
-								</div>
-								<div class="gap"></div>
-							</div>
-						</li>
-						<li class="spacer_list_class">
-							<div class="doggo_and_gap">
-								<div class="just_doggo">
-									<div class="doggo">
-										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
-									</div>
-									<div class="doggo_info">
-										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px">Burek</label>
-										</div>
-										<div class="doggo_info_text">
-											<p>Atrybut 1: Lorem</p>
-											<p>Atrybut 2: Ipsum</p>
-											<p>Atrybut 3: Dolor</p>
-											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
-										</div>
-									</div>
-									<div class="doggo_calendar_box">
-										<div class="doggo_calendar">
-											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
-											<div class="doggo_termin"><a href="/walk">Wtorek 11:00 - 13:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Środa 12:00 - 14:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Czwartek 15:00 - 17:00</a></div>
-											<div class="doggo_termin_other">Wyświetl Inne</div>
-										</div>
-									</div>
-								</div>
-								<div class="gap"></div>
-							</div>
-						</li>
+						<% }); %> 
 					</ul>
 				</nav>
 			</div>
