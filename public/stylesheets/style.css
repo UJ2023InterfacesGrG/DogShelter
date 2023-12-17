@@ -104,6 +104,7 @@ h1 {
     border:none;
     cursor: pointer;
     padding: 2rem;
+    font-size: 18px;
 }
 
 /* Pasek nawigacji */
@@ -213,7 +214,7 @@ h1 {
 
 .form-sign button {
     font-weight: bold;
-    background-color: #D4D823;
+    background-color: #4719a9;
     width: 90%;
     cursor: pointer;
 }
@@ -319,8 +320,11 @@ table, td, th {
 }
 
 .dogs-table {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
     width: 90%;
-    margin: auto;
+    /* margin: auto; */
     background-color: #EFE3DA;
 }
 
@@ -335,7 +339,7 @@ table, td, th {
     margin: 5%;
 }
 
-.dogs-table td {
+.our-dogs-list {
     padding: 1% 2%;
 }
 
@@ -351,11 +355,11 @@ table, td, th {
 }
 
 .filter button {
-    background-color: #D4D823;
-    padding: 5% 10%;
-    border-radius: 7px;
+    font-size: 18px;
+    background-color: #eced99;
+    width: 25%;
+    padding: 10px;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .inner-dogs-table {
@@ -386,6 +390,10 @@ table, td, th {
 
 .main-title{
     font-weight: normal;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-left: 0px;
 }
 
 .support-button{
@@ -400,10 +408,53 @@ table, td, th {
     border: #000;
     border-style: solid;
     border-radius: 25px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .support-button-box{
-    margin-top: 20px;
+    margin-top: 40px;
 }
+
+
+.main-title-box{
+    border-bottom: solid;
+    width: 20%;
+    margin-left: 150px;
+    padding-left: 0px;
+}
+
+.input-panel{
+    border-radius: 15px;
+    padding: 5px;
+    padding-right: 0px;
+    font-size: 14px;
+}
+
+#adoptable{
+    width: 20px;
+    height: 20px;
+
+}
+
+.input-box{
+    width: 22%;
+}
+
+.spacer_filter label{
+    font-size: 18px;
+}
+
+.zatwierdz_box{
+    margin-left: 50px;
+    width: 10%;
+}
+
+.zatwierdz_box button 
+    {
+        font-size: 18px;
+        background-color: #eced99;
+        width: 90%;
+        cursor: pointer;
+    }
+
 

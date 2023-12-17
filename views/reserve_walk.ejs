@@ -36,19 +36,18 @@
         <div class="main">
 			<form>
 				<div class="spacer_filter">
-				
 					<img class="filter_icon" src="images/filter.png" alt="Filtr" >
 					<div class="imie_box">
 						<label for="imie_input">Imię Psa:</label>
-						<input type="text" id="imie_input" name="imie_input">
+						<input class="input-panel" type="text" id="imie_input" name="imie_input">
 					</div>
 					<div class="wiek_box">
 						<label for="wiek_input">Wiek:</label>
-						<input type="text" id="wiek_input" name="wiek_input">
+						<input class="input-panel" type="number" id="wiek_input" name="wiek_input">
 					</div>
 					<div class="dzien_box">
-						<label for="dzien_input">Dzień:</label>
-						<select id="dzien_input" name="dzien_input">
+						<label  for="dzien_input">Dzień:</label>
+						<select class="input-panel" id="dzien_input" name="dzien_input">
 							<option value="dzien_monday">Poniedziałek</option>
 							<option value="dzien_tuesday">Wtorek</option>
 							<option value="dzien_wednesday">Środa</option>
@@ -59,12 +58,17 @@
 						</select>
 					</div>
 					<div class="godz_box">
-						<label for="godz_input">W godz:</label>
-						<input type="text" id="godz_input" name="godz_input">
+						<label  for="godz_input">W godz:</label>
+						<select class="input-panel" type="text" id="godz_input" name="godz_input">
+							<option value="11:00">11:00</option>
+							<option value="11:00">12:00</option>
+							<option value="11:00">13:00</option>
+							<option value="11:00">14:00</option>
+						</select>
 					</div>
 					<div class="zatwierdz_box">
-						<button>Zatwierdź:</label>
-						<img class="enter_icon" src="images/enter.png" alt="Zatwierdz" >
+						<button class="submit">Zatwierdź</button>
+						<!-- <img class="enter_icon" src="images/enter.png" alt="Zatwierdz" > -->
 					</div>
 				
 				</div>

@@ -35,7 +35,9 @@
         <!-- main site -->
         <div class="main">
             <div class="mini-flex">
-                <h1>Nasze Pieski</h1>
+                <div class="main-title-box">
+                <h1 class="main-title">Nasze Pieski</h1>
+            </div>
                 <div class="contact-bubble">
                     Zainterefowany adopcją? Potrzebujesz więcej informacji? <a href="/contact">Skontaktuj się</a> z nami!
                 </div>
@@ -48,23 +50,23 @@
                         </td>
                         <td>
                             <span>Imię psa: </span>
-                            <input type="text" name="name" id="name">
+                            <input class="input-panel" type="text" name="name" id="name">
                         </td>
                         <td>
                             <span>Wiek psa: </span>
-                            <input type="number" name="age" id="age">
+                            <input  class="input-panel" type="number" name="age" id="age">
                         </td>
-                        <td>
+                        <td class="input-box">
                             <span>Gotowy do adopcji</span>
                             <input type="checkbox" name="adoptable" id="adoptable">
                         </td>
                         <td>
-                            <button type="submit">Filtruj</button>
+                            <button classtype="submit">Filtruj</button>
                         </td>
                     </form>
                 </tr>
                 <tr>
-                    <td colspan="5">
+                    <td class="our-dogs-list" colspan="5">
                         <table class="inner-dogs-table">
                             <% Object.keys(dogs).forEach(function(id) { %>
                             <tr>
