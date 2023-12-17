@@ -57,7 +57,7 @@ h1 {
     padding: 2rem;
 }
 
-.post_container, .contact_container {
+.post_container, .contact_container, .data_container {
     position: relative;
     border-radius: 25px;
     border: 2px solid black;
@@ -461,4 +461,29 @@ textarea {
     color: #589B3B;
 }
 
+
+/* Dane użytkownika */
+
+.data_frame {
+    margin: auto;
+    padding-top: 1rem;
+    width: 70%;
+    padding-right: 3rem;
+    text-align: left;
+    font-size: larger;
+}
+
+.data_container {
+    width: 100%;
+    height: auto;
+    margin-right: 6rem;
+}
+
+.data_container input[type=text] {
+    width: 100%;
+}
+
+.data_frame p {
+   padding-bottom: 2rem;
+}
 

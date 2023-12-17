@@ -148,6 +148,13 @@ router.get('/ourDogs', function(req, res){
   });
 })
 
+
+/* TYMCZASOWE, DO USUNIĘCIA!!! GET myData page. */
+router.get('/myData', function(req, res, next) {
+  res.render('my_data');
+});
+
+
 // Endpoint to Get a logout
 router.get('/user/logout',(req,res) => {
   req.session.destroy();
