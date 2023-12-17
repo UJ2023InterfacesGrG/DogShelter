@@ -107,9 +107,29 @@ router.get('/found', function(req, res, next) {
   res.render('recently_found');
 });
 
-/* GET news page. */
-router.get('/news', function(req, res, next) {
-  res.render('news');
+/* GET news closed page. */
+router.get('/newsClosed', function(req, res, next) {
+  res.render('news_closed');
+});
+
+/* GET news food page. */
+router.get('/newsFood', function(req, res, next) {
+  res.render('news_food');
+});
+
+/* GET news dog day page. */
+router.get('/newsDogDay', function(req, res, next) {
+  res.render('news_dog_day');
+});
+
+/* GET news open day page. */
+router.get('/newsOpenDay', function(req, res, next) {
+  res.render('news_open_day');
+});
+
+/* GET news volunteers page. */
+router.get('/newsVolunteers', function(req, res, next) {
+  res.render('news_volunteers');
 });
 
 /* GET success page. */

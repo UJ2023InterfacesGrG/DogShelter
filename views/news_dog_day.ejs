@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strona schroniska</title>
+        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+
+
+    <body>
+        <!-- header with logo + menu -->
+        <div class="header">
+            <ul class="nav-bar">  
+                <li class="nav-dog-title"> 
+                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
+                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                </li>
+                <li class="nav-button"><a href="/home">Aktualności</a></li>
+                <li class="nav-button"><a href="/reserveWalk">Zarezerwuj spacer</a></li>
+                <li class="nav-button"><a href="/ourDogs">Nasze pieski</a></li>
+                <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
+                <li class="nav-button"><a href="/contact">Kontakt</a></li>
+                <li class="nav-login-button">
+                <% if(user){ %>
+                    <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                        <a class="login-label" > <%= user.name %></a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } else{ %>  
+                    <button class="login-button" onclick="window.location.href='/login';">
+                        <a class="login-label" >Zaloguj się</a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } %>
+            </li>
+            </ul>
+        </div>
+
+
+        <!-- main site -->
+        <div class="main">
+            <h1>Aktualności</h1>
+            <div class="box_container">
+                <div class="single_post_container">
+                    <h2>Zapraszamy na Dzień Kundelka 25.10</h2>
+                    <p>Mamy dla Was niesamowite wydarzenie, które zapowiada się jako prawdziwa uczta dla miłośników czworonogów - Dzień Kundelka w naszym schronisku "Super schronisko w jakimś mieście"! To będzie dzień pełen radości, zabawy i możliwości poznania niezwykłych psiaków, które czekają na swoje nowe domy.</br></br></p>
+                    <h4>Data: 25 października 2023, Godzina: 10:00 - 16:00:</h4></br>
+                    <h4>Atrakcje na Dzień Kundelka:</h4>
+                    <p>1. Adopcje Specjalne: Zapraszamy wszystkich poszukiwaczy nowego przyjaciela do zastanowienia się nad adopcją! Tego dnia przygotowaliśmy specjalne atrakcyjne warunki dla wszystkich, którzy zdecydują się dać dom psiakowi ze schroniska.</p></br>
+                    <p>2. Warsztaty dla Dzieci: Dla najmłodszych miłośników zwierząt przygotowaliśmy kreatywne warsztaty, podczas których będą mogli wyrazić swoją miłość do zwierząt poprzez malowanie i rysowanie.</p></br>
+                    <p>3. Konkursy z Nagrodami: Weź udział w naszych konkursach z pięknymi nagrodami! Będziecie mieli okazję zaprezentować swojego pupila i zdobyć fantastyczne upominki.</p></br>   
+                    <p>4. Kiermasz dla Przysmaków: Przygotowaliśmy pyszne przysmaki dla Was i Waszych psiaków! Kiermasz smakołyków będzie doskonałą okazją do podzielenia się miłością w formie pysznego poczęstunku.</p></br></br>
+                    <p>Przygotujcie się na dzień pełen emocji, miłości i niezapomnianych chwil w towarzystwie naszych uroczych podopiecznych! Zapraszamy Was serdecznie do spędzenia tego wyjątkowego dnia z nami. Do zobaczenia!</br></br></br></br>
+                    Zespół Schroniska dla Zwierząt "Super schronisko w jakimś mieście" </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
+        </div>
+
+    </body>
+</html>
