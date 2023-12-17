@@ -70,7 +70,7 @@ router.get('/ourDogs', function(req, res){
       const jsonData = JSON.parse(data);
       console.log(jsonData.dog1)
       // Pass the 'dogs' array to the EJS template
-      res.render('ourdogs', { dogs: jsonData });
+      res.render('ourdogs', { dogs: jsonData, url: req.url });
     } catch (error) {
       console.error('Error parsing JSON:', error);
       res.status(500).send('Internal Server Error');

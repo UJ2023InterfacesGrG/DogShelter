@@ -65,8 +65,19 @@
                 </tr>
                 <tr>
                     <td colspan="5">
-                        <table class="inner-dogs-table">
-                            <% Object.keys(dogs).forEach(function(id) { %>
+                        <table class="inner-dogs-table" id="inner-dogs-table">
+                            <%
+								Object.keys(dogs).forEach(function(id) { 
+									let params = new URLSearchParams(url);
+									
+									//console.log(url)
+									
+									if(params.get("name") != null && !dogs[id].name.includes(params.get("name")))
+										return;
+										
+									if(params.get("adoptable") == "on" && dogs[id].readyToAdopt == "False")
+										return;
+							%>
                             <tr>
                                 <td>
                                     <img class="dog-icon" src="<%= dogs[id].image %>" alt="Zdjecie pieska" >
