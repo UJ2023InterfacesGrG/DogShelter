@@ -101,6 +101,11 @@
 							if(params.get("wiek_input") != null && !dogs[id].age.includes(params.get("wiek_input")))
 								return;
 							
+							if(!reservations.hasOwnProperty(id)||!reservations[id].some(function(ReservationId) {
+								return true;
+							})) return;
+							
+							
 							if(params.get("dzien_input") != "dzien_any")
 								switch(params.get("dzien_input")) {
 									case "dzien_monday":
@@ -151,8 +156,8 @@
 										</div>
 									</div>
 									<div class="doggo_calendar_box">
-										<ul class="doggo_calendar">
-											<li class="doggo_choose_termin">Najbliższe Terminy:</li>
+										<div class="doggo_calendar">
+											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
 											<%
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
 													let test = reservations[id][ReservationId];
@@ -189,13 +194,12 @@
 															break;
 														}
 											%>
-												<li class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId%>>
+												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId%>>
 												<%= test.day + " " + test.start + " - " + test.end%>
-												</a></li>
+												</a></div>
 												
 											<% }); %>
-											<li class="doggo_termin_other">Wyświetl Inne</li>
-										</ul>
+										</div>
 									</div>
 								</div>
 								<div class="gap"></div>

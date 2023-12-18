@@ -16,5 +16,14 @@
         "date": "02/02/2002",
         "readyToAdopt": "False",
 		"age": "9"
+    },
+    "dog3": {
+        "id": 777,
+        "image": "images/dog-icon.png",
+        "name": "Azorek",
+        "desc": "Azorek jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "02/02/2003",
+        "readyToAdopt": "False",
+		"age": "5"
     }
 }
