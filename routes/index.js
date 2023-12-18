@@ -154,9 +154,28 @@ router.get('/newsVolunteers', function(req, res, next) {
 
 /* GET success page. */
 router.get('/success', function(req, res, next) {
-  res.render('walk_success');
+  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+  {
+    try {
+      const jsonDogData = JSON.parse(dogdata);
+      fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+	  {
+		try {
+		  const jsonReservationData = JSON.parse(reservationdata);
+		  
+		  //console.log(jsonReservationData.dog1)
+		  res.render('walk_success', { dogs: jsonDogData, reservations: jsonReservationData, url: req.url, fs: fs});
+		} catch (error) {
+		  console.error('Error parsing JSON:', error);
+		  res.status(500).send('Internal Server Error');
+		}
+	  });
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 });
-
 /* GET supportUs page. */
 router.get('/supportUs', function(req, res, next) {
   res.render('supportus');

@@ -121,7 +121,8 @@
 				}
 				else
 				{
-					document.location.href = "/success";
+					const params = new URLSearchParams(document.location.href);
+					document.location.href = "/success" + "?filter=yes" + "&dog=" + params.get("dog") + "&id=" + params.get("id");
 				}
 			}
 		</script>

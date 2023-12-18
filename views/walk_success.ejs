@@ -9,6 +9,12 @@
     </head>
 
 
+	<%
+		params = new URLSearchParams(url);
+		//console.log(reservations[params.get("dog")][params.get("id")]);
+		reservations[params.get("dog")].splice(params.get("id"), 1);
+		//fs.writeFileSync("routes\\data\\" + "reservations_test.json", JSON.stringify(reservations,null, 8), "utf8");
+	%>
     <body>
         <!-- header with logo + menu -->
         <div class="header">
