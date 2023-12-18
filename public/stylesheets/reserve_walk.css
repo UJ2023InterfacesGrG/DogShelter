@@ -288,6 +288,15 @@
 	flex-direction: column;
 }
 
+.doggo_calendar-copy {
+	height: 80%;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
 .doggo_choose_termin {
 	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
 	height: 20%;
@@ -300,6 +309,7 @@
 .doggo_termin {
 	background-color: AliceBlue ;
 	height: 20%;
+	width: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
