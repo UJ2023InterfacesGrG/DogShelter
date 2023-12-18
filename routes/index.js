@@ -11,7 +11,27 @@ router.get('/:var(home)?', function(req, res, next) {
 
 /* GET walk page. */
 router.get('/walk', function(req, res, next) {
-  res.render('walk');
+  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+  {
+    try {
+      const jsonDogData = JSON.parse(dogdata);
+      fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+	  {
+		try {
+		  const jsonReservationData = JSON.parse(reservationdata);
+		  
+		  //console.log(jsonReservationData.dog1)
+		  res.render('walk', { dogs: jsonDogData, reservations: jsonReservationData, url: req.url });
+		} catch (error) {
+		  console.error('Error parsing JSON:', error);
+		  res.status(500).send('Internal Server Error');
+		}
+	  });
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 });
 
 /* GET login page. */
@@ -158,7 +178,7 @@ router.get('/reserveWalk', function(req, res){
 		  const jsonReservationData = JSON.parse(reservationdata);
 		  
 		  //console.log(jsonReservationData.dog1)
-		  res.render('reserve_walk', { dogs: jsonDogData, reservations: jsonReservationData });
+		  res.render('reserve_walk', { dogs: jsonDogData, reservations: jsonReservationData, url: req.url });
 		} catch (error) {
 		  console.error('Error parsing JSON:', error);
 		  res.status(500).send('Internal Server Error');

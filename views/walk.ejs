@@ -37,24 +37,27 @@
             </li>
             </ul>
         </div>
-		
+		<% 
+			let params = new URLSearchParams(url);
+		%>
 		<div class="main_rezerwacja">
 			<div class="rezerwacja_withpadding">
 				<div class="rezerwacja_doggo_info">
 					<div class="rezerwacja_doggo_label2">Chcesz Wyprowadzić...</div>
 					<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
-					<div class="rezerwacja_doggo_name">Burek</div>
+					<div class="rezerwacja_doggo_name"><%= dogs[params.get("dog")].name%></div>
 					<div class="rezerwacja_doggo_attributes">
-						<p>Atrybut 1: Lorem</p>
+						<p>Wiek: <%= dogs[params.get("dog")].age%> lat</p>
 						<p>Atrybut 2: Ipsum</p>
 						<p>Atrybut 3: Dolor</p>
-						<p>Short desc: sit amet consectetur nobiliscing edit.</p>
+						<p><%= dogs[params.get("dog")].desc%></p>
 					</div>
 				</div> 
 				<div class="rezerwacja_info_box">
 					<div class="rezerwacja_middle">
 						<div class="rezerwacja_doggo_label">
-							<label class="rezerwacja_doggo_label_text" style="font-size:45px">Wybrany Termin Spaceru:<br />30.11.2023 11:00-13:00</label>
+							<% let res = reservations[params.get("dog")][params.get("id")] %>
+							<label class="rezerwacja_doggo_label_text" style="font-size:45px">Wybrany Termin Spaceru:<br /><%= res.date + " " + res.start + " - " + res.end%></label>
 						</div>
 						<div class="info_grid_box">
 							<div class="rigb_imie">
