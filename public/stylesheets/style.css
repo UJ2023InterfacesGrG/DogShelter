@@ -57,7 +57,7 @@ h1 {
     padding: 2rem;
 }
 
-.post_container {
+.post_container, .contact_container {
     position: relative;
     border-radius: 25px;
     border: 2px solid black;
@@ -88,11 +88,18 @@ h1 {
     width: 80%;
     height: auto;
     margin: 1.5rem;
+    padding-bottom: 4rem;
 }
 
-.single_post_container p {
+.single_post_container h2 {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.single_post_container p, h4 {
     text-align: justify;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /* przycisk czytaj dalej przy aktualnościach */
@@ -303,6 +310,11 @@ table, td, th {
     font-weight: bold;
 }
 
+.logout {
+    background-color: red;
+    font-weight: bold;
+}
+
 /* Nasze pieski */
 .contact-bubble {
     background-color: #B7C9F9;
@@ -388,7 +400,7 @@ table, td, th {
     font-weight: normal;
 }
 
-.support-button{
+.support-button, input[type=submit]{
     font-size: 18px;
     cursor: pointer;
     background-color: #D88223;
@@ -406,4 +418,54 @@ table, td, th {
 .support-button-box{
     margin-top: 20px;
 }
+
+/* Kontakt */
+
+input[type=submit] {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+input[type=text], textarea {
+    width: 49%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+textarea {
+    width: 99%;
+    height: 120px;
+    font-family: Helvetica;
+}
+
+.contact_container {
+    width: 600px;
+    height: 300px;
+}
+
+.contact_frame {
+    margin: auto;
+    padding-right: 3rem;
+    text-align: left;
+    font-size: larger;
+}
+
+.contact_with_icon {
+    display: flex;
+    align-items: center;
+}
+
+.contact_with_icon p {
+    margin-left: 1rem;
+}
+
+.fa {
+    color: #589B3B;
+}
+
 

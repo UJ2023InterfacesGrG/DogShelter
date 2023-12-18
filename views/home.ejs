@@ -23,10 +23,18 @@
                 <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
                 <li class="nav-button"><a href="/contact">Kontakt</a></li>
                 <li class="nav-login-button">
-                <button class="login-button" onclick="window.location.href='/login';">
-                    <a class="login-label" >Zaloguj się</a>
-                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
-                </button>
+                <% if(user){ %>
+                    <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                        <a class="login-label" > <%= user.name %></a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } else{ %>  
+                    <button class="login-button" onclick="window.location.href='/login';">
+                        <a class="login-label" >Zaloguj się</a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } %>
+
             </li>
             </ul>
         </div>
@@ -38,33 +46,33 @@
             <div class="box_container">
                 <div class="post_container">
                     <h2>Ostatnio znalezione</h2>
-                    <p>Opis piesków Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <p>Opis piesków - obecnie roboczo</p>
                     <button class="astext" onclick='window.location.href = "./found"'>Czytaj dalej</button>
                 </div>
                 <div class="post_container">
-                    <h2>News 1</h2>
-                    <p>Opis newsa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-                    <button class="astext" onclick='window.location.href = "./news"'>Czytaj dalej</button>
+                    <h2>Zamknięcie schroniska w okresie świątecznym</h2>
+                    <p>Schronisko będzie zamknięte w dniach od 24 grudnia do 26 grudnia, włącznie z dniem Bożego Narodzenia. W przypadku sytuacji pilnej i nieodzownej, prosimy o kontakt telefoniczny pod numerem 123 456 789. Chętnie udzielimy wsparcia i podjęcie niezbędnych działań w nagłych przypadkach. </p>
+                    <button class="astext" onclick='window.location.href = "./newsClosed"'>Czytaj dalej</button>
                 </div>
                 <div class="post_container">
-                    <h2>News 2</h2>
-                    <p>Opis newsa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <button class="astext" onclick='window.location.href = "./news"'>Czytaj dalej</button>
+                    <h2>Zbiórka karmy dla psów</h2>
+                    <p>Ogłaszamy serdeczne i potrzebne wydarzenie - zbiórkę karmy dla naszych niezwykłych podopiecznych psiaków, które czekają na nowy dom i szansę na szczęśliwe życie. Zbiórka karmy dla psów rozpocznie się już 1 grudnia i potrwa przez cały miesiąc. To doskonała okazja, aby podzielić się dobrem i wpłynąć pozytywnie na życie tych wiernych zwierząt, które znalazły się w trudnej sytuacji.</p>
+                    <button class="astext" onclick='window.location.href = "./newsFood"'>Czytaj dalej</button>
                 </div>
                 <div class="post_container">
-                    <h2>News 3</h2>
-                    <p>Opis newsa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <button class="astext" onclick='window.location.href = "./news"'>Czytaj dalej</button>
+                    <h2>Dzień Kundelka 25.10</h2>
+                    <p>Mamy dla Was niesamowite wydarzenie, które zapowiada się jako prawdziwa uczta dla miłośników czworonogów i odbędzie się 25.10.2023 w godzinach 10:00-16:00. Dzień Kundelka w naszym schronisku będzie dniem pełnym radości, licznych atrakcji i możliwości poznania niezwykłych psiaków, które czekają na swoje nowe domy.</p>
+                    <button class="astext" onclick='window.location.href = "./newsDogDay"'>Czytaj dalej</button>
                 </div>
                 <div class="post_container">
-                    <h2>News 4</h2>
-                    <p>Opis newsa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <button class="astext" onclick='window.location.href = "./news"'>Czytaj dalej</button>
+                    <h2>Dzień Otwarty 01.10.2023</h2>
+                    <p>Mamy zaszczyt ogłosić Dzień Otwarty w naszym ukochanym schronisku! To wyjątkowa okazja, abyście mogli bliżej poznać naszą misję, interaktywnie spędzić czas z naszymi podopiecznymi i być może znaleźć nowego, wiernego przyjaciela. Przygotujcie się na dzień pełen atrakcji i możliwości nawiązania wyjątkowej więzi z naszymi niezastąpionymi podopiecznymi. </p>
+                    <button class="astext" onclick='window.location.href = "./newsOpenDay"'>Czytaj dalej</button>
                 </div>
                 <div class="post_container">
-                    <h2>News 5</h2>
-                    <p>Opis newsa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <button class="astext" onclick='window.location.href = "./news"'>Czytaj dalej</button>
+                    <h2>Rekrutacja wolontariuszy</h2>
+                    <p>Wspaniałe wieści! Nasze schronisko "Super schronisko w jakimś mieście" rozpoczyna rekrutację wolontariuszy, którzy chcieliby wnieść swoją pasję, miłość i poświęcenie w pomoc naszym uroczym podopiecznym. Jeśli marzysz o pracy z psami, to ta szansa jest właśnie dla Ciebie! Czekamy na zgłoszenia do 31.07.2023.</p>
+                    <button class="astext" onclick='window.location.href = "./newsVolunteers"'>Czytaj dalej</button>
                 </div>
             </div>
         </div>
