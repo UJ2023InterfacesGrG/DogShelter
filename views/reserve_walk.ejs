@@ -68,8 +68,12 @@
 							</select>
 						</div>
 						<div class="godz_box">
-							<label for="godz_input">W godz:</label>
-							<input type="text" id="godz_input" name="godz_input">
+							<label for="godz_start_input">Od godz:</label>
+							<input type="text" id="godz_start_input" name="godz_start_input">
+						</div>
+						<div class="godz_box">
+							<label for="godz_end_input">Do godz:</label>
+							<input type="text" id="godz_end_input" name="godz_end_input">
 						</div>
 						<div class="zatwierdz_box">
 							<button>Zatwierdź:</label>
@@ -90,6 +94,19 @@
 									return true;
 							});
 						}
+						function HasAnyReservationHour(Keys,Start,GEnd) {
+							console.log(Keys)
+							return Keys.some(function(ReservationId) {
+								let test = ReservationId;
+								
+								//Konieczne aby "0", "1" itp dialaly
+								if(Start.length=="1")
+									Start = "0".concat(Start)
+								
+								if(test.start.split(":")[0] >= Start&&test.end.split(":")[0] <= GEnd)
+									return true;
+							});
+						}
 						
 						Object.keys(dogs).forEach(function(id) { 
 							let params = new URLSearchParams(url);
@@ -105,6 +122,11 @@
 								return true;
 							})) return;
 							
+							if(params.get("godz_start_input") != null && params.get("godz_end_input") != null) {
+								if(!HasAnyReservationHour(reservations[id],params.get("godz_start_input"),params.get("godz_end_input"))) {
+									return;
+								}
+							}
 							
 							if(params.get("dzien_input") != "dzien_any")
 								switch(params.get("dzien_input")) {
