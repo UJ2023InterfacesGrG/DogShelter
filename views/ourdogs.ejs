@@ -43,6 +43,7 @@
             <table class="dogs-table">
                 <tr class="filter">
                     <form>
+						<input class="filter_hide" name="filter" id="filter">
                         <td>
                             <img src="./images/filter-icon.png" alt="Ikonka filtrowania">
                         </td>
@@ -77,6 +78,9 @@
 										
 									if(params.get("adoptable") == "on" && dogs[id].readyToAdopt == "False")
 										return;
+										
+									if(params.get("age") != null && !dogs[id].age.includes(params.get("age")))
+										return;
 							%>
                             <tr>
                                 <td>
@@ -86,7 +90,7 @@
                                     <%= dogs[id].name %>
                                 </td>
                                 <td>
-                                    #<%= dogs[id].id %>
+                                    <%= dogs[id].age %> lat
                                 </td>
                                 <td>
                                     <%= dogs[id].desc %>
