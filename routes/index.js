@@ -159,13 +159,41 @@ router.get('/user/myData', function(req, res, next) {
 });
 
 router.post('/user/update', function(req, res, next) {
-  const { name, surname, phone, email } = req.body;
-  console.log('Received new data:', name, surname, phone, email);
+  const { name, surname, phone, email, password } = req.body;
+  console.log('Received new data:', name, surname, phone, email, password);
+  
+  var userIndex;
+  for (var i = 0; i < usersData.length; i++){
+    if(usersData[i].email === req.session.user.email){
+      userIndex = i;
+      break;
+    }
+  }
 
-  if (name) req.session.user.name = name;
-  if (surname) req.session.user.surname = surname;
-  if (phone) req.session.user.phone = phone;
-  if (email) req.session.user.email = email;
+  if (name) {
+    req.session.user.name = name;
+    usersData[userIndex].name = name;
+  }
+
+  if (surname) {
+    req.session.user.surname = surname;
+    usersData[userIndex].surname = surname;
+  }
+
+  if (phone) {
+    req.session.user.phone = phone;
+    usersData[userIndex].phone = phone;
+  }
+
+  if (email) {
+    req.session.user.email = email;
+    usersData[userIndex].email = email;
+  }
+
+  if (password) {
+    usersData[userIndex].password = bcrypt.hashSync(password, 10);
+  }
+
   res.redirect('/user/myData');
 });
 
