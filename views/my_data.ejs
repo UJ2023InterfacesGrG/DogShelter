@@ -22,7 +22,10 @@
                 <li class="nav-button"><a href="/ourDogs">Nasze pieski</a></li>
                 <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
                 <li class="nav-button"><a href="/contact">Kontakt</a></li>
-                <!-- dodać button z zalogowanym użytkownikiem jak w "mywalks.ejs"-->
+                <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                    <a class="login-label" ><%= user.name %></a>
+                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                </button> 
             </ul>
         </div>
 
@@ -37,7 +40,7 @@
                 <div class="sidebar-option sidebar-option-current" onclick="location.href='/user/myWalks'">
                     <span>Moje spacery</span>
                 </div>
-                <div class="sidebar-option" onclick="location.href='/user/details'">
+                <div class="sidebar-option" onclick="location.href='/user/myData'">
                     <span>Moje dane</span>
                 </div>
                 <div class="sidebar-option logout" onclick="location.href='/user/logout'">
@@ -48,21 +51,22 @@
                 <h1>Moje dane</h3>
                 <div class="data_frame">
                     <h3>Imię:</h3>
-                    <p>Jan (wziąć z pliku z informacjami o użytkowniku)</p>
+                    <p><%= user.name %></p>
                     <h3>Nazwisko:</h3>
-                    <p>Kowalski (wziąć z pliku z informacjami o użytkowniku)</p>
+                    <p><%= user.surname %></p>
                     <h3>E-mail:</h3>
-                    <p>j.kowalski@example.com (wziąć z pliku z informacjami o użytkowniku)</p>
+                    <p><%= user.email %></p>
                     <h3>Telefon:</h3>
-                    <p>123 456 789 (wziąć z pliku z informacjami o użytkowniku)</p>
+                    <p><%= user.phone %></p>
                 </div>
                 <div class="box_container">
                     <div class="data_container">
-                        <form action="action_page.php">
-                            <h3>Zmiana daych:</h3>
-                            <input type="text" id="fname" name="names" placeholder="Nowe imię...">
-                            <input type="text" id="fname" name="names" placeholder="Nowe nazwisko...">      
-                            <input type="text" id="tel" name="tel" placeholder="Nowy nr telefonu...">         
+                        <form method="post" action="/user/update">
+                            <h3>Zmiana danych:</h3>
+                            <input type="text" id="name" name="name" placeholder="Nowe imię...">
+                            <input type="text" id="surname" name="surname" placeholder="Nowe nazwisko...">      
+                            <input type="text" id="email" name="email" placeholder="Nowy adres e-mail..."> 
+                            <input type="text" id="phone" name="phone" placeholder="Nowy nr telefonu...">                 
                             <input type="submit" value="   Zmień dane   ">
                         </form>
                       </div>

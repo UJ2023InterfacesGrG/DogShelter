@@ -148,12 +148,26 @@ router.get('/ourDogs', function(req, res){
   });
 })
 
-
-/* TYMCZASOWE, DO USUNIĘCIA!!! GET myData page. */
-router.get('/myData', function(req, res, next) {
-  res.render('my_data');
+router.get('/user/myData', function(req, res, next) {
+  const user = req.session.user || null;
+  // Check if user is defined before accessing properties
+  if (user) {
+    res.render('my_data');
+  } else {
+    res.redirect('/login');
+  }
 });
 
+router.post('/user/update', function(req, res, next) {
+  const { name, surname, phone, email } = req.body;
+  console.log('Received new data:', name, surname, phone, email);
+
+  if (name) req.session.user.name = name;
+  if (surname) req.session.user.surname = surname;
+  if (phone) req.session.user.phone = phone;
+  if (email) req.session.user.email = email;
+  res.redirect('/user/myData');
+});
 
 // Endpoint to Get a logout
 router.get('/user/logout',(req,res) => {
