@@ -102,6 +102,23 @@ h1 {
     padding-right: 2rem;
 }
 
+.dog_container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width:100%;
+    margin: 1rem;
+}
+
+.dog_container .container {
+    margin: 0.8rem;
+}
+
+.dog_container img {
+    padding-right: 1rem;
+}
+
 /* przycisk czytaj dalej przy aktualnościach */
 .astext {
     position: absolute;
