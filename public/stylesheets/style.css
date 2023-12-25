@@ -419,7 +419,7 @@ input[type=submit] {
     margin-top: 10px;
 }
 
-input[type=text], textarea {
+input[type=text], input[type=password], textarea {
     width: 49%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -465,21 +465,18 @@ textarea {
 /* Dane użytkownika */
 
 .data_frame {
-    margin: auto;
     padding-top: 1rem;
-    width: 70%;
-    padding-right: 3rem;
+    width: 30%;
     text-align: left;
     font-size: larger;
 }
 
 .data_container {
-    width: 100%;
+    width: 50%;
     height: auto;
-    margin-right: 6rem;
 }
 
-.data_container input[type=text] {
+.data_container input[type=text], .data_container input[type=password]{
     width: 100%;
 }
 

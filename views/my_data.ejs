@@ -49,17 +49,17 @@
             </div>
             <div class="main">
                 <h1>Moje dane</h3>
-                <div class="data_frame">
-                    <h3>Imię:</h3>
-                    <p><%= user.name %></p>
-                    <h3>Nazwisko:</h3>
-                    <p><%= user.surname %></p>
-                    <h3>Telefon:</h3>
-                    <p><%= user.phone %></p>
-                    <h3>E-mail:</h3>
-                    <p><%= user.email %></p>
-                </div>
                 <div class="box_container">
+                    <div class="data_frame">
+                        <h3>Imię:</h3>
+                        <p><%= user.name %></p>
+                        <h3>Nazwisko:</h3>
+                        <p><%= user.surname %></p>
+                        <h3>Telefon:</h3>
+                        <p><%= user.phone %></p>
+                        <h3>E-mail:</h3>
+                        <p><%= user.email %></p>
+                    </div>
                     <div class="data_container">
                         <form method="post" action="/user/update">
                             <h3>Zmiana danych:</h3>
@@ -67,10 +67,10 @@
                             <input type="text" id="surname" name="surname" placeholder="Nowe nazwisko...">      
                             <input type="text" id="phone" name="phone" placeholder="Nowy nr telefonu...">
                             <input type="text" id="email" name="email" placeholder="Nowy adres e-mail..."> 
-                            <input type="text" id="password" name="password" placeholder="Nowe hasło...">                                  
+                            <input type="password" id="password" name="password" placeholder="Nowe hasło...">                                  
                             <input type="submit" value="   Zmień dane   ">
                         </form>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
