@@ -23,10 +23,17 @@
                 <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
                 <li class="nav-button"><a href="/contact">Kontakt</a></li>
                 <li class="nav-login-button">
-                <button class="login-button" onclick="window.location.href='/login';">
-                    <a class="login-label" >Zaloguj się</a>
-                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
-                </button>
+                <% if(user){ %>
+                    <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                        <a class="login-label" > <%= user.name %></a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } else{ %>  
+                    <button class="login-button" onclick="window.location.href='/login';">
+                        <a class="login-label" >Zaloguj się</a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } %>
             </li>
             </ul>
         </div>
@@ -37,12 +44,13 @@
             <div class="mini-flex">
                 <h1>Nasze Pieski</h1>
                 <div class="contact-bubble">
-                    Zainterefowany adopcją? Potrzebujesz więcej informacji? <a href="/contact">Skontaktuj się</a> z nami!
+                    Zainteresowany adopcją? Potrzebujesz więcej informacji? <a href="/contact">Skontaktuj się</a> z nami!
                 </div>
             </div>
             <table class="dogs-table">
                 <tr class="filter">
                     <form>
+						<input class="filter_hide" name="filter" id="filter">
                         <td>
                             <img src="./images/filter-icon.png" alt="Ikonka filtrowania">
                         </td>
@@ -65,8 +73,22 @@
                 </tr>
                 <tr>
                     <td colspan="5">
-                        <table class="inner-dogs-table">
-                            <% Object.keys(dogs).forEach(function(id) { %>
+                        <table class="inner-dogs-table" id="inner-dogs-table">
+                            <%
+								Object.keys(dogs).forEach(function(id) { 
+									let params = new URLSearchParams(url);
+									
+									//console.log(url)
+									
+									if(params.get("name") != null && !dogs[id].name.includes(params.get("name")))
+										return;
+										
+									if(params.get("adoptable") == "on" && dogs[id].readyToAdopt == "False")
+										return;
+										
+									if(params.get("age") != null && !dogs[id].age.includes(params.get("age")))
+										return;
+							%>
                             <tr>
                                 <td>
                                     <img class="dog-icon" src="<%= dogs[id].image %>" alt="Zdjecie pieska" >
@@ -75,7 +97,7 @@
                                     <%= dogs[id].name %>
                                 </td>
                                 <td>
-                                    #<%= dogs[id].id %>
+                                    <%= dogs[id].age %> lat
                                 </td>
                                 <td>
                                     <%= dogs[id].desc %>

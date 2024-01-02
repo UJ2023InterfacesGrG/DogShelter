@@ -23,10 +23,17 @@
                 <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
                 <li class="nav-button"><a href="/contact">Kontakt</a></li>
                 <li class="nav-login-button">
-                <button class="login-button" onclick="window.location.href='/login';">
-                    <a class="login-label" >Zaloguj się</a>
-                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
-                </button>
+				<% if(user){ %>
+					<button class="login-button" onclick="window.location.href='/user/myWalks';">
+						<a class="login-label" > <%= user.name %></a>
+						<img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+					</button>
+				<% } else{ %>  
+					<button class="login-button" onclick="window.location.href='/login';">
+						<a class="login-label" >Zaloguj się</a>
+						<img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+					</button>
+				<% } %>
             </li>
             </ul>
         </div>
@@ -36,132 +43,193 @@
         <div class="main">
 			<form>
 				<div class="spacer_filter">
-				
-					<img class="filter_icon" src="images/filter.png" alt="Filtr" >
-					<div class="imie_box">
-						<label for="imie_input">Imię Psa:</label>
-						<input type="text" id="imie_input" name="imie_input">
-					</div>
-					<div class="wiek_box">
-						<label for="wiek_input">Wiek:</label>
-						<input type="text" id="wiek_input" name="wiek_input">
-					</div>
-					<div class="dzien_box">
-						<label for="dzien_input">Dzień:</label>
-						<select id="dzien_input" name="dzien_input">
-							<option value="dzien_monday">Poniedziałek</option>
-							<option value="dzien_tuesday">Wtorek</option>
-							<option value="dzien_wednesday">Środa</option>
-							<option value="dzien_thursday">Czwartek</option>
-							<option value="dzien_friday">Piątek</option>
-							<option value="dzien_saturday">Sobota</option>
-							<option value="dzien_sunday">Niedziela</option>
-						</select>
-					</div>
-					<div class="godz_box">
-						<label for="godz_input">W godz:</label>
-						<input type="text" id="godz_input" name="godz_input">
-					</div>
-					<div class="zatwierdz_box">
-						<button>Zatwierdź:</label>
-						<img class="enter_icon" src="images/enter.png" alt="Zatwierdz" >
-					</div>
-				
+					<form>
+						<img class="filter_icon" src="images/filter.png" alt="Filtr" >
+						<input class="filter_hide" name="filter" id="filter">
+						<div class="imie_box">
+							<label for="imie_input">Imię Psa:</label>
+							<input type="text" id="imie_input" name="imie_input">
+						</div>
+						<div class="wiek_box">
+							<label for="wiek_input">Wiek:</label>
+							<input type="text" id="wiek_input" name="wiek_input">
+						</div>
+						<div class="dzien_box">
+							<label for="dzien_input">Dzień:</label>
+							<select id="dzien_input" name="dzien_input">
+								<option value="dzien_any">Jakikolwiek</option>
+								<option value="dzien_monday">Poniedziałek</option>
+								<option value="dzien_tuesday">Wtorek</option>
+								<option value="dzien_wednesday">Środa</option>
+								<option value="dzien_thursday">Czwartek</option>
+								<option value="dzien_friday">Piątek</option>
+								<option value="dzien_saturday">Sobota</option>
+								<option value="dzien_sunday">Niedziela</option>
+							</select>
+						</div>
+						<div class="godz_box">
+							<label for="godz_start_input">Od godz:</label>
+							<input type="text" id="godz_start_input" name="godz_start_input">
+						</div>
+						<div class="godz_box">
+							<label for="godz_end_input">Do godz:</label>
+							<input type="text" id="godz_end_input" name="godz_end_input">
+						</div>
+						<div class="zatwierdz_box">
+							<button>Zatwierdź:</label>
+							<img class="enter_icon" src="images/enter.png" alt="Zatwierdz" >
+						</div>
+					</form>
 				</div>
 			</form>
 			<div class="spacer_box">
 				<nav>
 					<ul class="spacer_list_class">
+						<% 
+						
+						function HasAnyReservation(Keys,WhichDay) {
+							return Keys.some(function(ReservationId) {
+								let test = ReservationId;
+								if(test.day === WhichDay)
+									return true;
+							});
+						}
+						function HasAnyReservationHour(Keys,Start,GEnd) {
+							console.log(Keys)
+							return Keys.some(function(ReservationId) {
+								let test = ReservationId;
+								
+								//Konieczne aby "0", "1" itp dialaly
+								if(Start.length=="1")
+									Start = "0".concat(Start)
+								
+								if(test.start.split(":")[0] >= Start&&test.end.split(":")[0] <= GEnd)
+									return true;
+							});
+						}
+						
+						Object.keys(dogs).forEach(function(id) { 
+							let params = new URLSearchParams(url);
+							//console.log(url)
+							
+							if(params.get("imie_input") != null && !dogs[id].name.includes(params.get("imie_input")))
+								return;
+								
+							if(params.get("wiek_input") != null && !dogs[id].age.includes(params.get("wiek_input")))
+								return;
+							
+							if(!reservations.hasOwnProperty(id)||!reservations[id].some(function(ReservationId) {
+								return true;
+							})) return;
+							
+							if(params.get("godz_start_input") != null && params.get("godz_end_input") != null) {
+								if(!HasAnyReservationHour(reservations[id],params.get("godz_start_input"),params.get("godz_end_input"))) {
+									return;
+								}
+							}
+							
+							if(params.get("dzien_input") != "dzien_any")
+								switch(params.get("dzien_input")) {
+									case "dzien_monday":
+										if(!HasAnyReservation(reservations[id], "Poniedziałek"))
+											return;
+									break;
+									case "dzien_tuesday":
+										if(!HasAnyReservation(reservations[id], "Wtorek"))
+											return;
+									break;
+									case "dzien_wednesday":
+										if(!HasAnyReservation(reservations[id], "Środa"))
+											return;
+									break;
+									case "dzien_thursday":
+										if(!HasAnyReservation(reservations[id], "Czwartek"))
+											return;
+									break;
+									case "dzien_friday":
+										if(!HasAnyReservation(reservations[id], "Piątek"))
+											return;
+									break;
+									case "dzien_saturday":
+										if(!HasAnyReservation(reservations[id], "Sobota"))
+											return;
+									break;
+									case "dzien_sunday":
+										if(!HasAnyReservation(reservations[id], "Niedziela"))
+											return;
+									break;
+								}
+						%>
 						<li class="spacer_list_class">
 							<div class="doggo_and_gap">
 								<div class="just_doggo">
 									<div class="doggo">
-										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+										<img class="doggo_icon" src="<%= dogs[id].image %>" alt="doggo" >
 									</div>
 									<div class="doggo_info">
 										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px">Azor</label>
+											<label class="doggo_label" style="font-size:55px"><%= dogs[id].name %></label>
 										</div>
 										<div class="doggo_info_text">
-											<p>Atrybut 1: Lorem</p>
+											<p>Wiek: <%= dogs[id].age %> Lat</p>
 											<p>Atrybut 2: Ipsum</p>
 											<p>Atrybut 3: Dolor</p>
-											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
+											<p><%= dogs[id].desc %></p>
 										</div>
 									</div>
 									<div class="doggo_calendar_box">
 										<div class="doggo_calendar">
 											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
-											<div class="doggo_termin"><a href="/walk">Wtorek 11:00 - 13:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Środa 12:00 - 14:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Czwartek 15:00 - 17:00</a></div>
-											<div class="doggo_termin_other">Wyświetl Inne</div>
+											<div class="doggo_calendar-copy">
+											<%
+												Object.keys(reservations[id]).forEach(function(ReservationId) {
+													let test = reservations[id][ReservationId];
+													
+													if(params.get("dzien_input") != "dzien_any")
+														switch(params.get("dzien_input")) {
+															case "dzien_monday":
+																if(test.day!="Poniedziałek")
+																	return;
+															break;
+															case "dzien_tuesday":
+																if(test.day!="Wtorek")
+																	return;
+															break;
+															case "dzien_wednesday":
+																if(test.day!="Środa")
+																	return;
+															break;
+															case "dzien_thursday":
+																if(test.day!="Czwartek")
+																	return;
+															break;
+															case "dzien_friday":
+																if(test.day!="Piątek")
+																	return;
+															break;
+															case "dzien_saturday":
+																if(test.day!="Sobota")
+																	return;
+															break;
+															case "dzien_sunday":
+																if(test.day!="Niedziela")
+																	return;
+															break;
+														}
+											%>
+												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId%>>
+												<%= test.day + " " + test.start + " - " + test.end%>
+												</a></div>
+												
+											<% }); %>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="gap"></div>
 							</div>
 						</li>
-						<li class="spacer_list_class">
-							<div class="doggo_and_gap">
-								<div class="just_doggo">
-									<div class="doggo">
-										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
-									</div>
-									<div class="doggo_info">
-										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px">Pimpek</label>
-										</div>
-										<div class="doggo_info_text">
-											<p>Atrybut 1: Lorem</p>
-											<p>Atrybut 2: Ipsum</p>
-											<p>Atrybut 3: Dolor</p>
-											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
-										</div>
-									</div>
-									<div class="doggo_calendar_box">
-										<div class="doggo_calendar">
-											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
-											<div class="doggo_termin"><a href="/walk">Wtorek 11:00 - 13:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Środa 12:00 - 14:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Czwartek 15:00 - 17:00</a></div>
-											<div class="doggo_termin_other">Wyświetl Inne</div>
-										</div>
-									</div>
-								</div>
-								<div class="gap"></div>
-							</div>
-						</li>
-						<li class="spacer_list_class">
-							<div class="doggo_and_gap">
-								<div class="just_doggo">
-									<div class="doggo">
-										<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
-									</div>
-									<div class="doggo_info">
-										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px">Burek</label>
-										</div>
-										<div class="doggo_info_text">
-											<p>Atrybut 1: Lorem</p>
-											<p>Atrybut 2: Ipsum</p>
-											<p>Atrybut 3: Dolor</p>
-											<p>Short desc: sit amet consectetur nobiliscing edit.</p>
-										</div>
-									</div>
-									<div class="doggo_calendar_box">
-										<div class="doggo_calendar">
-											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
-											<div class="doggo_termin"><a href="/walk">Wtorek 11:00 - 13:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Środa 12:00 - 14:00</a></div>
-											<div class="doggo_termin"><a href="/walk">Czwartek 15:00 - 17:00</a></div>
-											<div class="doggo_termin_other">Wyświetl Inne</div>
-										</div>
-									</div>
-								</div>
-								<div class="gap"></div>
-							</div>
-						</li>
+						<% }); %> 
 					</ul>
 				</nav>
 			</div>

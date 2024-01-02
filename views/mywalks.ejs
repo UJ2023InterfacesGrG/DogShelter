@@ -23,10 +23,10 @@
                 <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
                 <li class="nav-button"><a href="/contact">Kontakt</a></li>
                 <li class="nav-login-button">
-                <button class="login-button" onclick="window.location.href='/login';">
-                    <a class="login-label" >Zaloguj się</a>
+                <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                    <a class="login-label" > <%= user.name %></a>
                     <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
-                </button>
+                </button>  
             </li>
             </ul>
         </div>
@@ -37,13 +37,16 @@
             <div class="sidebar">
                 <div class="sidebar-option">
                     <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika">
-                    <span>Jan Kowalski</span>
+                    <span><%= user.name %> <%= user.surname %></span>
                 </div>
-                <div class="sidebar-option sidebar-option-current" onclick="location.href='./mywalks.html'">
+                <div class="sidebar-option sidebar-option-current" onclick="location.href='/user/myWalks'">
                     <span>Moje spacery</span>
                 </div>
-                <div class="sidebar-option" onclick="location.href='./mydetails.html'">
+                <div class="sidebar-option" onclick="location.href='/user/myData'">
                     <span>Moje dane</span>
+                </div>
+                <div class="sidebar-option logout" onclick="location.href='/user/logout'">
+                    <span>Wyloguj się</span>
                 </div>
             </div>
             <div class="main">

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strona schroniska</title>
+        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+
+
+    <body>
+        <!-- header with logo + menu -->
+        <div class="header">
+            <ul class="nav-bar">  
+                <li class="nav-dog-title"> 
+                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
+                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                </li>
+                <li class="nav-button"><a href="/home">Aktualności</a></li>
+                <li class="nav-button"><a href="/reserveWalk">Zarezerwuj spacer</a></li>
+                <li class="nav-button"><a href="/ourDogs">Nasze pieski</a></li>
+                <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
+                <li class="nav-button"><a href="/contact">Kontakt</a></li>
+                <li class="nav-login-button">
+                <% if(user){ %>
+                    <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                        <a class="login-label" > <%= user.name %></a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } else{ %>  
+                    <button class="login-button" onclick="window.location.href='/login';">
+                        <a class="login-label" >Zaloguj się</a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } %>
+            </li>
+            </ul>
+        </div>
+
+
+        <!-- main site -->
+        <div class="main">
+            <h1>Aktualności</h1>
+            <div class="box_container">
+                <div class="single_post_container">
+                    <h2>Zamknięcie schroniska w okresie świątecznym</h2>
+                    <p> Szanowni Przyjaciele Zwierząt,</br></br></br>
+                    Z okazji nadchodzących Świąt Bożego Narodzenia i Nowego Roku, składamy Wam serdeczne życzenia spokoju, radości oraz pełnych miłości chwil spędzonych w gronie bliskich i ukochanych zwierząt. Niech ten czas będzie okazją do wzajemnej życzliwości i refleksji.</br></br>
+                    Z radością informujemy, że schronisko dla psów "Super schronisko w jakimś mieście" jest miejscem, gdzie troszczymy się o naszych futrzastych podopiecznych przez cały rok. Jednakże, z uwagi na zbliżający się okres świąteczny, pragniemy poinformować Was o planowanym czasowym zamknięciu schroniska.</br></br></p>
+                    <h4>Termin Zamknięcia:</h4>
+                    <p>Schronisko będzie zamknięte w dniach od 24 grudnia do 26 grudnia, włącznie z dniem Bożego Narodzenia. W tych dniach nasi pracownicy również zasługują na chwilę spokoju i wypoczynku w gronie swoich rodzin.</p></br>
+                    <h4>Powrót do Normalnego Trybu:</h4>
+                    <p>Po krótkim okresie przerwy, schronisko wznowi swoją codzienną działalność z dnia 27 grudnia. Będziemy gotowi przyjąć odwiedzających, wolontariuszy oraz tych, którzy rozważają adopcję w tym szczególnym okresie.</p></br>
+                    <h4>Pomoc w Nagłych Wypadkach:</h4>
+                    <p>W przypadku sytuacji pilnej i nieodzownej, prosimy o kontakt telefoniczny pod numerem [numer kontaktowy]. Chętnie udzielimy wsparcia i podjęcie niezbędnych działań w nagłych przypadkach.</br></br></br></br>
+                    Dziękujemy za zrozumienie i wsparcie, które nam okazujecie przez cały rok. Życzymy Wam wspaniałych Świąt i udanego początku Nowego Roku!</br></br></br></br>
+                    Z wyrazami szacunku,</br>
+                    Zespół Schroniska dla Zwierząt "Super schronisko w jakimś mieście" </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
+        </div>
+
+    </body>
+</html>

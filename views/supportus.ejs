@@ -23,10 +23,17 @@
                 <li class="nav-button"><a href="/supportUs">Wesprzyj nas</a></li>
                 <li class="nav-button"><a href="/contact">Kontakt</a></li>
                 <li class="nav-login-button">
-                <button class="login-button" onclick="window.location.href='/login';">
-                    <a class="login-label" >Zaloguj się</a>
-                    <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
-                </button>
+                <% if(user){ %>
+                    <button class="login-button" onclick="window.location.href='/user/myWalks';">
+                        <a class="login-label" > <%= user.name %></a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } else{ %>  
+                    <button class="login-button" onclick="window.location.href='/login';">
+                        <a class="login-label" >Zaloguj się</a>
+                        <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika" >
+                    </button>
+                <% } %>
             </li>
             </ul>
         </div>

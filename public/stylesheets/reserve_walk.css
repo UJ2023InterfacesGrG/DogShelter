@@ -274,7 +274,7 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	width: 50%;
+	width: 100%;
 	background-color: white;
 }
 
@@ -284,6 +284,16 @@
 	width: 80%;
 	background-color: white;
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.doggo_calendar-copy {
+	height: 80%;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 }
 
@@ -291,6 +301,7 @@
 	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
 	height: 20%;
 	display: flex;
+	width: auto;
 	align-items: center;
 	justify-content: center;
 }
@@ -298,6 +309,7 @@
 .doggo_termin {
 	background-color: AliceBlue ;
 	height: 20%;
+	width: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -309,4 +321,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.filter_hide {
+	display: none;
 }
