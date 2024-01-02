@@ -262,7 +262,7 @@ h1 {
 .sidebar-option {
     font-size: large;
     border: solid black 1px;
-    height: 15%;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,7 +270,8 @@ h1 {
 }
 
 .sidebar-option:first-of-type {
-    background-color: grey;
+    height: 150px;
+    background-color: rgb(184, 182, 182);
     cursor: default;
 }
 
@@ -301,7 +302,7 @@ h1 {
 }
 
 .flex-container tr:nth-child(odd) {
-    background-color: grey;
+    background-color: rgb(184, 182, 182);
 }
 
 .flex-container td,th {
