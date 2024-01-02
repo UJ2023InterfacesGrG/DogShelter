@@ -1,12 +1,12 @@
 {
-    "dog1":{
+    "dog1": {
         "id": 999,
         "image": "images/dog-icon.png",
         "name": "Burek",
         "desc": "Burek jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "date": "01/01/2001",
         "readyToAdopt": "True",
-		"age": "7"
+        "age": "7"
     },
     "dog2": {
         "id": 888,
@@ -15,7 +15,7 @@
         "desc": "Azor jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "date": "02/02/2002",
         "readyToAdopt": "False",
-		"age": "9"
+        "age": "9"
     },
     "dog3": {
         "id": 777,
@@ -24,6 +24,231 @@
         "desc": "Azorek jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "date": "02/02/2003",
         "readyToAdopt": "False",
-		"age": "5"
+        "age": "5"
+    },
+    "Tobi0": {
+        "id": "0",
+        "image": "images/dog-icon.png",
+        "name": "Tobi",
+        "desc": "Tobi jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "9",
+        "readyToAdopt": "False"
+    },
+    "Zyzio1": {
+        "id": "1",
+        "image": "images/dog-icon.png",
+        "name": "Zyzio",
+        "desc": "Zyzio jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "1",
+        "readyToAdopt": "True"
+    },
+    "Hana2": {
+        "id": "2",
+        "image": "images/dog-icon.png",
+        "name": "Hana",
+        "desc": "Hana jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "3",
+        "readyToAdopt": "False"
+    },
+    "Neo3": {
+        "id": "3",
+        "image": "images/dog-icon.png",
+        "name": "Neo",
+        "desc": "Neo jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "1",
+        "readyToAdopt": "False"
+    },
+    "Nastka4": {
+        "id": "4",
+        "image": "images/dog-icon.png",
+        "name": "Nastka",
+        "desc": "Nastka jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "5",
+        "readyToAdopt": "False"
+    },
+    "Daisy5": {
+        "id": "5",
+        "image": "images/dog-icon.png",
+        "name": "Daisy",
+        "desc": "Daisy jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "3",
+        "readyToAdopt": "False"
+    },
+    "\u0141atka6": {
+        "id": "6",
+        "image": "images/dog-icon.png",
+        "name": "\u0141atka",
+        "desc": "\u0141atka jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "7",
+        "readyToAdopt": "True"
+    },
+    "Figiel7": {
+        "id": "7",
+        "image": "images/dog-icon.png",
+        "name": "Figiel",
+        "desc": "Figiel jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "1",
+        "readyToAdopt": "False"
+    },
+    "Fela8": {
+        "id": "8",
+        "image": "images/dog-icon.png",
+        "name": "Fela",
+        "desc": "Fela jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "4",
+        "readyToAdopt": "False"
+    },
+    "Cezar9": {
+        "id": "9",
+        "image": "images/dog-icon.png",
+        "name": "Cezar",
+        "desc": "Cezar jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "1",
+        "readyToAdopt": "True"
+    },
+    "Hektor10": {
+        "id": "10",
+        "image": "images/dog-icon.png",
+        "name": "Hektor",
+        "desc": "Hektor jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "6",
+        "readyToAdopt": "False"
+    },
+    "Iwo11": {
+        "id": "11",
+        "image": "images/dog-icon.png",
+        "name": "Iwo",
+        "desc": "Iwo jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "7",
+        "readyToAdopt": "True"
+    },
+    "Biszkopt12": {
+        "id": "12",
+        "image": "images/dog-icon.png",
+        "name": "Biszkopt",
+        "desc": "Biszkopt jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "8",
+        "readyToAdopt": "False"
+    },
+    "Okruszek13": {
+        "id": "13",
+        "image": "images/dog-icon.png",
+        "name": "Okruszek",
+        "desc": "Okruszek jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "3",
+        "readyToAdopt": "False"
+    },
+    "Tiger14": {
+        "id": "14",
+        "image": "images/dog-icon.png",
+        "name": "Tiger",
+        "desc": "Tiger jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "2",
+        "readyToAdopt": "False"
+    },
+    "Hermiona15": {
+        "id": "15",
+        "image": "images/dog-icon.png",
+        "name": "Hermiona",
+        "desc": "Hermiona jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "1",
+        "readyToAdopt": "False"
+    },
+    "Laser16": {
+        "id": "16",
+        "image": "images/dog-icon.png",
+        "name": "Laser",
+        "desc": "Laser jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "3",
+        "readyToAdopt": "True"
+    },
+    "Koral17": {
+        "id": "17",
+        "image": "images/dog-icon.png",
+        "name": "Koral",
+        "desc": "Koral jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "8",
+        "readyToAdopt": "False"
+    },
+    "Karmel18": {
+        "id": "18",
+        "image": "images/dog-icon.png",
+        "name": "Karmel",
+        "desc": "Karmel jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "5",
+        "readyToAdopt": "True"
+    },
+    "Emi19": {
+        "id": "19",
+        "image": "images/dog-icon.png",
+        "name": "Emi",
+        "desc": "Emi jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "6",
+        "readyToAdopt": "True"
+    },
+    "Wika20": {
+        "id": "20",
+        "image": "images/dog-icon.png",
+        "name": "Wika",
+        "desc": "Wika jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "1",
+        "readyToAdopt": "False"
+    },
+    "Jumbo21": {
+        "id": "21",
+        "image": "images/dog-icon.png",
+        "name": "Jumbo",
+        "desc": "Jumbo jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "7",
+        "readyToAdopt": "False"
+    },
+    "Becky22": {
+        "id": "22",
+        "image": "images/dog-icon.png",
+        "name": "Becky",
+        "desc": "Becky jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "7",
+        "readyToAdopt": "False"
+    },
+    "Oskar23": {
+        "id": "23",
+        "image": "images/dog-icon.png",
+        "name": "Oskar",
+        "desc": "Oskar jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "7",
+        "readyToAdopt": "False"
+    },
+    "Rumba24": {
+        "id": "24",
+        "image": "images/dog-icon.png",
+        "name": "Rumba",
+        "desc": "Rumba jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "date": "01/01/2023",
+        "age": "2",
+        "readyToAdopt": "False"
     }
 }
