@@ -64,9 +64,9 @@
                 <div class="contact_container">
                     <form action="action_page.php">
                         <h2>Napisz do nas!</h2>
-                        <input type="text" id="fname" name="names" placeholder="Imię i nazwisko...">
-                        <input type="text" id="femail" name="put_email" placeholder="E-mail...">
-                        <textarea id="subject" name="subject" placeholder="Wiadomość..."></textarea>           
+                        <input type="text" id="fname" name="names" placeholder="Imię i nazwisko..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')">
+                        <input type="text" id="femail" name="put_email" placeholder="E-mail..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')">
+                        <textarea id="subject" name="subject" placeholder="Wiadomość..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')"></textarea>           
                         <input type="submit" value="   Wyślij   ">
                     </form>
                   </div>
