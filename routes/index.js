@@ -43,7 +43,7 @@ router.get('/login', function(req, res, next) {
   if (user) {
     res.redirect('home');
   } else {
-    res.render('login');
+    res.render('login', { message: null });
   }
 });
 
@@ -66,7 +66,8 @@ router.post('/login', function(req, res, next) {
     res.redirect('/user/myWalks')
   } else {
     console.log('Login failed');
-    res.status(401).json({ message: 'Invalid credentials' });
+    let message = 'Niepoprawne dane';
+    res.render('login', { message: message })
   }
 });
 
@@ -78,7 +79,7 @@ router.get('/register', function(req, res, next) {
   if (user) {
     res.redirect('home');
   } else {
-    res.render('register');
+    res.render('register', { message: null });
   }
 });
 
@@ -104,10 +105,11 @@ router.post('/register', function(req, res, next) {
       password: bcrypt.hashSync(password, 10),
       phone: null
     });
-    res.redirect('/user/myWalks')
+    res.redirect('/user/myWalks');
   } else {
     console.log('Registration failed');
-    res.status(401).json({ message: 'Already created account with given e-mail address' });
+    let message = 'Konto o podanym adresie e-mail już istnieje';
+    res.render('register', { message: message })
   }
 });
 

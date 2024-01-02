@@ -242,6 +242,11 @@ h1 {
     cursor: pointer;
 }
 
+.message {
+    color: rgb(219, 20, 20);
+    display: block;
+}
+
 /* Panel użytkownika */
 
 .flex-container {
