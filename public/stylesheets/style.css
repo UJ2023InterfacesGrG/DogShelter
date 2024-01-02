@@ -57,7 +57,7 @@ h1 {
     padding: 2rem;
 }
 
-.post_container, .contact_container {
+.post_container, .contact_container, .data_container {
     position: relative;
     border-radius: 25px;
     border: 2px solid black;
@@ -443,7 +443,7 @@ input[type=submit] {
     margin-top: 10px;
 }
 
-input[type=text], textarea {
+input[type=text], input[type=password], textarea {
     width: 49%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -485,4 +485,26 @@ textarea {
     color: #589B3B;
 }
 
+
+/* Dane użytkownika */
+
+.data_frame {
+    padding-top: 1rem;
+    width: 30%;
+    text-align: left;
+    font-size: larger;
+}
+
+.data_container {
+    width: 50%;
+    height: auto;
+}
+
+.data_container input[type=text], .data_container input[type=password]{
+    width: 100%;
+}
+
+.data_frame p {
+   padding-bottom: 2rem;
+}
 

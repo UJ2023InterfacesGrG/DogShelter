@@ -37,12 +37,12 @@
             <div class="sidebar">
                 <div class="sidebar-option">
                     <img class="user-icon"src="images/user-icon.png" alt="Logo uzytkownika">
-                    <span>Jan Kowalski</span>
+                    <span><%= user.name %> <%= user.surname %></span>
                 </div>
                 <div class="sidebar-option sidebar-option-current" onclick="location.href='/user/myWalks'">
                     <span>Moje spacery</span>
                 </div>
-                <div class="sidebar-option" onclick="location.href='/user/details'">
+                <div class="sidebar-option" onclick="location.href='/user/myData'">
                     <span>Moje dane</span>
                 </div>
                 <div class="sidebar-option logout" onclick="location.href='/user/logout'">
