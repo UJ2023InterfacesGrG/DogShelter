@@ -27,6 +27,7 @@ for i in range(amount):
     Dogdict[name+id]["name"] = name
     Dogdict[name+id]["desc"] = f"{name} jest super pieskiem. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     Dogdict[name+id]["date"] = "01/01/2023"
+    Dogdict[name+id]["age"] = random.randint(1,10)
     if random.randint(0,1):
         Dogdict[name+id]["readyToAdopt"] = "True"
     else:
