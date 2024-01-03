@@ -109,12 +109,28 @@
             <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
         </div>
 
-        <script>
-            function anulujSpacer() {
-              if (confirm("Na pewno chcesz anulować spacer?")) {
-                  location.href = '#';
-              }
-          }
-          </script>
+        <div id="custom-modal" class="modal">
+			<div class="modal-content">
+				<p>Czy na pewno chcesz anulować wybrany spacer?</p>
+				<button onclick="proceed()">Tak</button>
+				<button onclick="close()">Nie</button>
+			</div>
+		</div>
+
+		<script>
+			function anulujSpacer() {
+				var modal = document.getElementById("custom-modal");
+				modal.style.display = "block";
+			}
+
+			function proceed() {
+				window.location.href = "#";
+			}
+
+			function close() {
+                var modal = document.getElementById("custom-modal");
+				modal.style.display = "none";
+			}
+		</script>
     </body>
 </html>

@@ -513,3 +513,24 @@ textarea {
    padding-bottom: 2rem;
 }
 
+/* Customowy confirm box */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+.modal-content {
+    text-align: center;
+}
+
+.modal-content button{
+    text-align: center;
+    margin: 3px;
+}

@@ -217,7 +217,11 @@
 															break;
 														}
 											%>
+											<% if (user) { %>
 												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId%>>
+											<% } else { %>
+												<div class="doggo_termin"><a href="#" onclick='showConfirmationPopup("<%= id %>", "<%= ReservationId %>")'>
+											<% } %>
 												<%= test.day + " " + test.start + " - " + test.end%>
 												</a></div>
 												
@@ -241,5 +245,39 @@
             <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
         </div>
 
+		<div id="custom-modal" class="modal">
+			<div class="modal-content">
+				<p>Czy chcesz kontynuować bez logowania, czy zalogować się?</p>
+				<button onclick="proceed()">Kontynuuj</button>
+				<button onclick="login()">Zaloguj się</button>
+				<button onclick="goBack()">Powrót</button>
+			</div>
+		</div>
+
+		<script>
+			function showConfirmationPopup(id, ReservationId) {
+				var modal = document.getElementById("custom-modal");
+				modal.style.display = "block";
+				
+				// Store the link in a data attribute for later use
+				modal.dataset.link = "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId;
+			}
+
+			function proceed() {
+				var modal = document.getElementById("custom-modal");
+				var link = modal.dataset.link;
+				
+				window.location.href = link;
+			}
+
+			function login() {
+				window.location.href = "/login";
+			}
+
+			function goBack() {
+				var modal = document.getElementById("custom-modal");
+				modal.style.display = "none";
+			}
+		</script>
     </body>
 </html>
