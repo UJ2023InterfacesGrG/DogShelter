@@ -157,7 +157,7 @@ h1 {
     width: 10%;
     height: auto;
     float: left;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .nav-title{
     float: left;
@@ -344,13 +344,15 @@ table, td, th {
     border-radius: 30px;
     padding: 1%;
     margin: 3% 5%;
-    max-width: 17%;
+    max-width: 20%;
+    float: right;
 }
 
 .mini-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    float: right;
 }
 
 .dogs-table {
@@ -415,13 +417,11 @@ table, td, th {
 .support-us-message{
     text-align: left;
     font-weight: normal;
-    margin-left: 40px;
+    margin-left: 20%;
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
-.main-title{
-    font-weight: normal;
-}
 
 .support-button, input[type=submit]{
     font-size: 18px;
@@ -514,3 +514,19 @@ textarea {
    padding-bottom: 2rem;
 }
 
+.site-title{
+    margin-bottom: 5px;
+    padding-bottom: 0;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.site-title-line{
+    margin-top: 0;
+    width: 18%;
+    float: left;
+    margin-left: 11%;
+    border: 0; 
+    height: 2px; 
+    background-color: black; 
+}
