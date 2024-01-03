@@ -108,7 +108,7 @@
 }
 
 .rezerwacja_doggo_info {
-	width:15%;
+	width:20%;
 	height: 100%;
 	background-color: lightgrey;
 	display:flex;
@@ -143,25 +143,30 @@
 }
 
 .rezerwacja_doggo_label {
+	
 	height: 150px;
 	width: 600px;
-	background-color: Linen;
+	background-color: lightblue;
 }
 
 .rezerwacja_doggo_label_text {
 	vertical-align: middle;
+	font-size: 30px;
 }
 
 .info_grid_box {
 	padding-top:100px;
 	display: grid;
 	grid-template-columns: auto auto;
-	column-gap: 50px;
-	row-gap: 50px;
+	column-gap: 20px;
+	row-gap: 20px;
+	background-color: linen;
+
 }
 
 .rigb_imie {
 	height:150px;
+	width: 100%;
 	font-size: 25px;
 	margin: auto;
 	text-align: center;
@@ -169,16 +174,19 @@
 
 .rigb_naziwsko {
 	height:150px;
+	width: 100%;
 	font-size: 25px;
 }
 
 .rigb_telefon {
 	height:150px;
+	width: 100%;
 	font-size: 25px;
 }
 
 .rigb_email {
 	height:150px;
+	width: 100%;
 	font-size: 25px;
 }
 
@@ -325,4 +333,12 @@
 
 .filter_hide {
 	display: none;
+}
+
+.input_walk{
+	width: 50%;
+	height: 20px;
+	border: solid lightgrey;
+	border-width: thin;
+	border-radius: 5%;
 }
