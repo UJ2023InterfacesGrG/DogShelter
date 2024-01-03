@@ -157,7 +157,7 @@ h1 {
     width: 10%;
     height: auto;
     float: left;
-    margin-left: 5px;
+    margin-left: 0px;
 }
 .nav-title{
     float: left;
@@ -361,6 +361,7 @@ table, td, th {
     background-color: #EFE3DA;
 }
 
+
 .filter {
     text-align: left;
     font-size: x-large;
@@ -370,6 +371,7 @@ table, td, th {
 .filter td{
     border: none;
     margin: 5%;
+    padding: none;
 }
 
 .dogs-table td {
@@ -393,6 +395,11 @@ table, td, th {
     border-radius: 7px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 15px;
+}
+
+.filter  input{
+    width: 40%;
 }
 
 .inner-dogs-table {
@@ -529,4 +536,42 @@ textarea {
     border: 0; 
     height: 2px; 
     background-color: black; 
+}
+
+.our-dogs-desc{
+    width: 40%;
+    margin-left: 20px;
+}
+
+.our-dogs-age{
+    
+    width: 20%;
+}
+
+#our_dogs_name{
+    width: 50%;
+    height: 35px;
+    font-size: 20px;
+    padding: 2px;
+   
+}
+
+#our_dogs_age{
+    width: 30%;
+    height: 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5%;
+    margin-right: 0px;
+}
+
+#our_dogs_adoptable_td{
+    text-align: center;
+    width: 30%;
+}
+
+
+input.checkbox-ourdogs{
+    width: 30px;
+    height: 30px;
 }

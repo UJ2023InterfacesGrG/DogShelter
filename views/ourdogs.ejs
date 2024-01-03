@@ -59,15 +59,16 @@
                         </td>
                         <td>
                             <span>Imię psa: </span>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="name" id="our_dogs_name">
                         </td>
-                        <td>
+                        <td >
                             <span>Wiek psa: </span>
-                            <input type="number" name="age" id="age">
+                            <input type="number" name="age" id="our_dogs_age">
                         </td>
-                        <td>
+                        <td id="our_dogs_adoptable_td">
+    
                             <span>Gotowy do adopcji</span>
-                            <input type="checkbox" name="adoptable" id="adoptable">
+                            <input type="checkbox" name="adoptable" class="checkbox-ourdogs" >
                         </td>
                         <td>
                             <button type="submit">Filtruj</button>
@@ -99,10 +100,10 @@
                                 <td>
                                     <%= dogs[id].name %>
                                 </td>
-                                <td>
+                                <td class="our-dogs-age">
                                     <%= dogs[id].age %> lat
                                 </td>
-                                <td>
+                                <td class="our-dogs-desc">
                                     <%= dogs[id].desc %>
                                 </td>
                                 <td>
