@@ -116,8 +116,29 @@ router.get('/user/myWalks', function(req, res, next) {
   const user = req.session.user || null;
   // Check if user is defined before accessing properties
   if (user) {
-    res.render('mywalks');
-  } else {
+	fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+	  {
+		try {
+		  const jsonDogData = JSON.parse(dogdata);
+		  fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+		  {
+			try {
+			  const jsonReservationData = JSON.parse(reservationdata);
+			  
+			  //console.log(jsonReservationData.dog1)
+			  res.render('mywalks', { dogs: jsonDogData, reservations: jsonReservationData, url: req.url });
+			} catch (error) {
+			  console.error('Error parsing JSON:', error);
+			  res.status(500).send('Internal Server Error');
+			}
+		  });
+		} catch (error) {
+		  console.error('Error parsing JSON:', error);
+		  res.status(500).send('Internal Server Error');
+		}
+	  });
+	}
+	else {
     res.redirect('/login');
   }
 });
