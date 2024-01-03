@@ -63,19 +63,23 @@
 						<div class="info_grid_box">
 							<div class="rigb_imie">
 								<label for="imie_input_rezerwacja">Twoje imię:</label><br />
-								<input class="input_walk" type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja">
+								<input class="input_walk" type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja"
+									<% if(user) { %> value="<%=user.name%>" <% } %> >									
 							</div>
 							<div class="rigb_naziwsko">
 								<label for="nazwisko_input_rezerwacja">Twoje nazwisko:</label><br />
-								<input class="input_walk" type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja">
+								<input class="input_walk" type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja"
+								<% if(user) { %> value="<%=user.surname%>" <% } %> >	
 							</div>
 							<div class="rigb_telefon">
 								<label for="telefon_input_rezerwacja">Numer telefonu:</label><br />
-								<input class="input_walk" type="tel" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">       
+								<input class="input_walk" type="tel" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"    
+								<% if(user) { %> value="<%=user.phone%>" <% } %> >	
 							</div>
 							<div class="rigb_email">
 								<label for="email_input_rezerwacja">Twój e-mail:</label><br />
-								<input class="input_walk" type="email" id="email_input_rezerwacja" name="email_input_rezerwacja">
+								<input class="input_walk" type="email" id="email_input_rezerwacja" name="email_input_rezerwacja"
+								<% if(user) { %> value="<%=user.email%>" <% } %> >	
 							</div>
 						</div>
 					</div>
@@ -123,7 +127,15 @@
 				else
 				{
 					const params = new URLSearchParams(document.location.href);
-					document.location.href = "/success" + "?filter=yes" + "&dog=" + params.get("dog") + "&id=" + params.get("id");
+					let telparam = "";
+					let emailparam = "";
+					if(!document.getElementById("telefon_input_rezerwacja").value=="") {
+						telparam = "&tel=" + document.getElementById("telefon_input_rezerwacja").value;
+					}
+					if(!document.getElementById("email_input_rezerwacja").value=="") {
+						emailparam = "&email=" + document.getElementById("email_input_rezerwacja").value;
+					}
+					document.location.href = "/success" + "?filter=yes" + "&dog=" + params.get("dog") + "&id=" + params.get("id") + telparam + emailparam;
 				}
 			}
 		</script>
