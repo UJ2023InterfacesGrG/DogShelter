@@ -91,9 +91,16 @@ function FilterWalk(walk) {
                         <td><%= reservations[dog][reservation].date %></td>
                         <td><%= reservations[dog][reservation].start %></td>
                         <td>
-                            <button class="cancelWalk" onclick='anulujSpacer("<%=dog%>","<%=reservation%>")'>
+                            <button class="cancelWalk" onclick='anulujSpacer()'>
                                 Anuluj spacer
                             </button>
+                            <div id="custom-modal" class="modal">
+                            <div class="modal-content">
+                                <p>Czy na pewno chcesz anulować spacer z <%=dogs[dog].name%> dnia <%=reservations[dog][reservation].date%> w godzinach: <%=reservations[dog][reservation].start%> - <%=reservations[dog][reservation].end%>?</p>
+                                <button onclick='proceed("<%=dog%>","<%=reservation%>")'>Tak</button>
+                                <button onclick="goBack()">Nie</button>
+                            </div>
+                        </div>
                         </td>
                     </tr>
 					<%
@@ -111,16 +118,26 @@ function FilterWalk(walk) {
             <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
         </div>
 
-        <script>
-            function anulujSpacer(dog, reservation) {
-              if (confirm("Na pewno chcesz anulować spacer?")) {
-				
-				<%
-					//reservations[dog][reservation].remove("takenby");
-					//fs.writeFileSync("routes\\data\\" + "reservations_test.json", JSON.stringify(reservations,null, 8), "utf8");
-				%>
-              }
-          }
-          </script>
+		<script>
+			function anulujSpacer() {
+				var modal = document.getElementById("custom-modal");
+				modal.style.display = "block";
+			}
+
+			function proceed(dog, reservation) {
+                fetch(`/user/myWalks/cancel?dog=${dog}&reservation=${reservation}`, {
+                    method: 'POST',
+                })
+                .then(response => {
+                    window.location.reload();
+                })
+                .catch(error => console.error('Error:', error));
+			}
+
+			function goBack() {
+                var modal = document.getElementById("custom-modal");
+				modal.style.display = "none";
+			}
+		</script>
     </body>
 </html>

@@ -43,7 +43,7 @@ router.get('/login', function(req, res, next) {
   if (user) {
     res.redirect('home');
   } else {
-    res.render('login');
+    res.render('login', { message: null });
   }
 });
 
@@ -66,7 +66,8 @@ router.post('/login', function(req, res, next) {
     res.redirect('/user/myWalks')
   } else {
     console.log('Login failed');
-    res.status(401).json({ message: 'Invalid credentials' });
+    let message = 'Niepoprawne dane';
+    res.render('login', { message: message })
   }
 });
 
@@ -78,7 +79,7 @@ router.get('/register', function(req, res, next) {
   if (user) {
     res.redirect('home');
   } else {
-    res.render('register');
+    res.render('register', { message: null });
   }
 });
 
@@ -104,10 +105,11 @@ router.post('/register', function(req, res, next) {
       password: bcrypt.hashSync(password, 10),
       phone: null
     });
-    res.redirect('/user/myWalks')
+    res.redirect('/user/myWalks');
   } else {
     console.log('Registration failed');
-    res.status(401).json({ message: 'Already created account with given e-mail address' });
+    let message = 'Konto o podanym adresie e-mail już istnieje';
+    res.render('register', { message: message })
   }
 });
 
@@ -294,6 +296,26 @@ router.post('/user/update', function(req, res, next) {
   }
 
   res.redirect('/user/myData');
+});
+
+// Endpoint to cancelling a walk
+router.post('/user/myWalks/cancel',(req,res) => {
+  const dog = req.query.dog;
+  const reservation = req.query.reservation;
+
+  try {
+    let reservationdata = fs.readFileSync(__dirname + '/data/reservations_test.json', 'utf8');
+    const reservations = JSON.parse(reservationdata);
+    
+    delete reservations[dog][reservation].takenby;
+
+    fs.writeFileSync(__dirname + '/data/reservations_test.json', JSON.stringify(reservations, null, 2), 'utf8');
+
+    res.send('Success');
+  } catch (error) {
+    console.error('Error parsing JSON:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 // Endpoint to Get a logout
