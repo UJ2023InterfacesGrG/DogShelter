@@ -1,11 +1,26 @@
+<%
+function FilterWalk(walk) {
+	if(!walk.hasOwnProperty("takenby"))
+		return true;
+	if((walk.takenby==user.email||walk.takenby==user.phone))
+		return false;
+
+
+
+	return true;
+}
+%>
+
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Strona schroniska</title>
-        <!--   LOGO -> <link rel="icon" href="" type="image/x-icon">  -->
+        <link rel="icon" href="images/dog-icon.png" type="image/x-icon">
         <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
 
@@ -14,8 +29,8 @@
         <div class="header">
             <ul class="nav-bar">  
                 <li class="nav-dog-title"> 
-                    <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska" >
-                    <a class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                    <a href="/home"><img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska"></a>
+                    <a href="/home" class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
                 </li>
                 <li class="nav-button"><a href="/home">Aktualności</a></li>
                 <li class="nav-button"><a href="/reserveWalk">Zarezerwuj spacer</a></li>
@@ -50,7 +65,10 @@
                 </div>
             </div>
             <div class="main">
-                <h1>Moje spacery</h1>
+           
+                <h1 class="site-title">Moje spacery</h1>
+                <hr class="site-title-line">
+				
                 <table>
                     <tr>
                         <th></th>
@@ -59,45 +77,29 @@
                         <th>Godzina</th>
                         <th></th>
                     </tr>
+					<%
+						Object.keys(reservations).forEach(function(dog) {
+							Object.keys(reservations[dog]).forEach(function(reservation){						
+								if(FilterWalk(reservations[dog][reservation]))
+									return;
+					%>
                     <tr>
                         <td>
-                            <img src="images/dog-icon.png" alt="Zdjecie pieska" >
+                            <img src="<%= dogs[dog].image %>" alt="Zdjecie pieska" >
                         </td>
-                        <td>Burek</td>
-                        <td>11.11.2023</td>
-                        <td>12:00</td>
+                        <td><%= dogs[dog].name %></td>
+                        <td><%= reservations[dog][reservation].date %></td>
+                        <td><%= reservations[dog][reservation].start %></td>
                         <td>
-                            <button class="cancelWalk" onclick="anulujSpacer()">
+                            <button class="cancelWalk" onclick='anulujSpacer("<%=dog%>","<%=reservation%>")'>
                                 Anuluj spacer
                             </button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <img src="images/dog-icon.png" alt="Zdjecie pieska" >
-                        </td>
-                        <td>Reksio</td>
-                        <td>22.11.2023</td>
-                        <td>13:00</td>
-                        <td>
-                            <button class="cancelWalk" onclick="anulujSpacer()">
-                                Anuluj spacer
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="images/dog-icon.png" alt="Zdjecie pieska" >
-                        </td>
-                        <td>Azor</td>
-                        <td>30.03.2023</td>
-                        <td>14:00</td>
-                        <td>
-                            <button class="cancelWalk" onclick="anulujSpacer()">
-                                Anuluj spacer
-                            </button>
-                        </td>
-                    </tr>
+					<%
+							});
+						});
+					%>
                 </table>
             </div>
         </div>
@@ -124,6 +126,10 @@
 			}
 
 			function proceed() {
+                <%
+					reservations[dog][reservation].remove("takenby");
+					fs.writeFileSync("routes\\data\\" + "reservations_test.json", JSON.stringify(reservations,null, 8), "utf8");
+				%>
 				window.location.href = "#";
 			}
 
