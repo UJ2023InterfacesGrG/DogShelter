@@ -42,7 +42,6 @@ function TestReservationHour(params,Reservation, Start, GEnd) {
 	let DataKonca = GetJSDateFromDogDate(Reservation.date, Reservation.end);
 	
 	if(DataStartu.getTime()>=Data1.getTime() && DataKonca.getTime()<= Data2.getTime()){
-		console.log("I win")
 		return true;
 	}	
 	return false;
