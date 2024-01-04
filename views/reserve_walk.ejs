@@ -280,26 +280,39 @@ function FilterDog(params, id) {
 											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
 											<div class="doggo_calendar-copy">
 											<%
+												Object.keys(reservations[id]).forEach(function(ReservationId) {
+													let test = reservations[id][ReservationId];
+													test["id"] = ReservationId;
+												});
+												
 												reservations[id].sort(function(a,b) {
 													let DataStartu = GetJSDateFromDogDate(a.date, a.start);
 													let DataKonca = GetJSDateFromDogDate(b.date, b.start);
 													return DataStartu.getTime() - DataKonca.getTime();
 												});
+												
+												let i = -1;
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
 													let test = reservations[id][ReservationId];
+													i = i+1;
 													
 													if(FilterReservation(params, test))
 														return;
 											%>
 											<% if (user) { %>
-												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId%>>
+												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + test.id %>>
 											<% } else { %>
-												<div class="doggo_termin"><a href="#" onclick='showConfirmationPopup("<%= id %>", "<%= ReservationId %>")'>
+												<div class="doggo_termin"><a href="#" onclick='showConfirmationPopup("<%= id %>", "<%= test.id %>")'>
 											<% } %>
 												<%= test.date + " " + test.day + " " + test.start + " - " + test.end%>
 												</a></div>
 												
-											<% }); %>
+											<% });
+												Object.keys(reservations[id]).forEach(function(ReservationId) {
+													let test = reservations[id][ReservationId];
+													delete test.id;
+												});
+											%>
 											</div>
 										</div>
 									</div>
