@@ -1,3 +1,110 @@
+<%
+
+const day_conversion = {
+	"dzien_monday": "Poniedziałek",
+	"dzien_tuesday": "Wtorek",
+	"dzien_wednesday": "Środa",
+	"dzien_thursday": "Czwartek",
+	"dzien_friday": "Piątek",
+	"dzien_saturday": "Sobota",
+	"dzien_sunday": "Niedziela"
+};
+
+function GetJSDateFromDogDate(data, godzina) {
+	console.log(data)
+	console.log(godzina)
+	Segmenty = data.split('.');
+	start = godzina.split(':');
+	let hour = "0";
+	if(start.length > 1)
+		hour = start[1];
+	
+	return new Date(Segmenty[2], Segmenty[1] - 1, Segmenty[0], start[0], hour, 0);
+}
+
+function TestReservationHour(params,Reservation, Start, GEnd) {
+	let date_start_input = params.get("date_start_input");
+	if(date_start_input==null)
+		date_start_input = (new Date()).getDate() + "." + ((new Date()).getMonth() + 1) + "." + ((new Date()).getYear() + 1900);
+		
+	let date_end_input = params.get("date_end_input");
+	if(date_end_input==null) {
+		DateIn2Weeks = new Date();
+		DateIn2Weeks.setDate(DateIn2Weeks.getDate() +1000);
+		date_end_input = DateIn2Weeks.getDate() + "." + (DateIn2Weeks.getMonth() + 1) + "." + (DateIn2Weeks.getYear() + 1900);
+	}
+	
+	console.log("log")
+	let Data1 = GetJSDateFromDogDate(date_start_input, Start);
+	let Data2 = GetJSDateFromDogDate(date_end_input, GEnd);
+	console.log("log2")
+	let DataStartu = GetJSDateFromDogDate(Reservation.date, Reservation.start);
+	let DataKonca = GetJSDateFromDogDate(Reservation.date, Reservation.end);
+	
+	if(DataStartu.getTime()>=Data1.getTime() && DataKonca.getTime()<= Data2.getTime()){
+		console.log("I win")
+		return true;
+	}	
+	return false;
+}
+
+function FilterReservation(params, test) {
+	//czy ta rejestracja nie jest zajeta
+	if(test.hasOwnProperty("takenby"))
+		return true;
+
+	//czy ta rejestracja miesci sie w przedziale godzinnym
+	let godz_start = "";
+	if(params.get("godz_start_input") == null ||params.get("godz_start_input") == "")
+		godz_start = "0";
+	else
+		godz_start = params.get("godz_start_input");
+		
+	let godz_end = "";
+	if(params.get("godz_end_input") == null||params.get("godz_end_input") == "")
+		godz_end = "24";
+	else
+		godz_end = params.get("godz_end_input");
+		
+	if(!TestReservationHour(params,test, godz_start, godz_end))
+		return true;
+	
+	
+	//filtr dnia
+	if(params.get("dzien_input") != "dzien_any"&& params.get("dzien_input") != null)
+		if(test.day!=day_conversion[params.get("dzien_input")])
+			return true;
+	
+	return false;
+}
+
+function FilterDog(params, id) {
+	dog = dogs[id];
+	
+	//czy ten pies spelnia podstawowe filtry
+	if(params.get("imie_input") != null && !dog.name.includes(params.get("imie_input")))
+		return true;
+	if(params.get("wiek_input") != null && !dog.age.includes(params.get("wiek_input")))
+		return true;
+	
+	//czy ten pies ma jakies rezerwacje
+	if(!reservations.hasOwnProperty(id)||!reservations[id].some(function(ReservationId) {
+		return true;
+	})) return true;
+	
+	//czy ten pies ma jakies rezerwacje ktore filtracja przyjmuje
+	if(!(reservations[id].some(function(reservationID) {
+		if(!(FilterReservation(params, reservationID)))
+			return true;
+	}))) return true;
+		
+	
+	return false;
+}
+%>
+
+
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -69,12 +176,74 @@
 							</select>
 						</div>
 						<div class="godz_box">
+							<label for="date_start_input">Od dnia:</label>
+							<input type="text" id="date_start_input" name="date_start_input" value = "<%=new Date().getDate()%>.<%=new Date().getMonth()+1%>.<%=new Date().getYear()+1900%>">
+						</div>
+						<div class="godz_box">
 							<label for="godz_start_input">Od godz:</label>
-							<input type="text" id="godz_start_input" name="godz_start_input">
+							<select type="text" id="godz_start_input" name="godz_start_input">
+								<option value="00:00" selected="selected">00:00</option>
+								<option value="01:00">01:00</option>
+								<option value="02:00">02:00</option>
+								<option value="03:00">03:00</option>
+								<option value="04:00">04:00</option>
+								<option value="05:00">05:00</option>
+								<option value="06:00">06:00</option>
+								<option value="07:00">07:00</option>
+								<option value="08:00">08:00</option>
+								<option value="09:00">09:00</option>
+								<option value="10:00">10:00</option>
+								<option value="11:00">11:00</option>
+								<option value="12:00">12:00</option>
+								<option value="13:00">13:00</option>
+								<option value="14:00">14:00</option>
+								<option value="15:00">15:00</option>
+								<option value="16:00">16:00</option>
+								<option value="17:00">17:00</option>
+								<option value="18:00">18:00</option>
+								<option value="19:00">19:00</option>
+								<option value="20:00">20:00</option>
+								<option value="21:00">21:00</option>
+								<option value="22:00">22:00</option>
+								<option value="23:00">23:00</option>
+								<option value="24:00">24:00</option>
+							</select>
+						</div>
+						<div class="godz_box">
+							<% 	DateIn2Weeks = new Date();
+								DateIn2Weeks.setDate(DateIn2Weeks.getDate() +1000); %>
+							<label for="date_end_input">Do dnia:</label> 
+							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
 						<div class="godz_box">
 							<label for="godz_end_input">Do godz:</label>
-							<input type="text" id="godz_end_input" name="godz_end_input">
+							<select type="text" id="godz_end_input" name="godz_end_input" selected="24:00">
+								<option value="00:00">00:00</option>
+								<option value="01:00">01:00</option>
+								<option value="02:00">02:00</option>
+								<option value="03:00">03:00</option>
+								<option value="04:00">04:00</option>
+								<option value="05:00">05:00</option>
+								<option value="06:00">06:00</option>
+								<option value="07:00">07:00</option>
+								<option value="08:00">08:00</option>
+								<option value="09:00">09:00</option>
+								<option value="10:00">10:00</option>
+								<option value="11:00">11:00</option>
+								<option value="12:00">12:00</option>
+								<option value="13:00">13:00</option>
+								<option value="14:00">14:00</option>
+								<option value="15:00">15:00</option>
+								<option value="16:00">16:00</option>
+								<option value="17:00">17:00</option>
+								<option value="18:00">18:00</option>
+								<option value="19:00">19:00</option>
+								<option value="20:00">20:00</option>
+								<option value="21:00">21:00</option>
+								<option value="22:00">22:00</option>
+								<option value="23:00">23:00</option>
+								<option value="24:00" selected="selected">24:00</option>
+							</select>
 						</div>
 						<div class="zatwierdz_box">
 							<button>Zatwierdź:</label>
@@ -87,79 +256,11 @@
 				<nav>
 					<ul class="spacer_list_class">
 						<% 
-						
-						function HasAnyReservation(Keys,WhichDay) {
-							return Keys.some(function(ReservationId) {
-								let test = ReservationId;
-								if(test.day === WhichDay)
-									return true;
-							});
-						}
-						function HasAnyReservationHour(Keys,Start,GEnd) {
-							console.log(Keys)
-							return Keys.some(function(ReservationId) {
-								let test = ReservationId;
-								
-								//Konieczne aby "0", "1" itp dialaly
-								if(Start.length=="1")
-									Start = "0".concat(Start)
-								
-								if(test.start.split(":")[0] >= Start&&test.end.split(":")[0] <= GEnd)
-									return true;
-							});
-						}
-						
 						Object.keys(dogs).forEach(function(id) { 
 							let params = new URLSearchParams(url);
-							//console.log(url)
 							
-							if(params.get("imie_input") != null && !dogs[id].name.includes(params.get("imie_input")))
+							if(FilterDog(params, id))
 								return;
-								
-							if(params.get("wiek_input") != null && !dogs[id].age.includes(params.get("wiek_input")))
-								return;
-							
-							if(!reservations.hasOwnProperty(id)||!reservations[id].some(function(ReservationId) {
-								return true;
-							})) return;
-							
-							if(params.get("godz_start_input") != null && params.get("godz_end_input") != null) {
-								if(!HasAnyReservationHour(reservations[id],params.get("godz_start_input"),params.get("godz_end_input"))) {
-									return;
-								}
-							}
-							
-							if(params.get("dzien_input") != "dzien_any")
-								switch(params.get("dzien_input")) {
-									case "dzien_monday":
-										if(!HasAnyReservation(reservations[id], "Poniedziałek"))
-											return;
-									break;
-									case "dzien_tuesday":
-										if(!HasAnyReservation(reservations[id], "Wtorek"))
-											return;
-									break;
-									case "dzien_wednesday":
-										if(!HasAnyReservation(reservations[id], "Środa"))
-											return;
-									break;
-									case "dzien_thursday":
-										if(!HasAnyReservation(reservations[id], "Czwartek"))
-											return;
-									break;
-									case "dzien_friday":
-										if(!HasAnyReservation(reservations[id], "Piątek"))
-											return;
-									break;
-									case "dzien_saturday":
-										if(!HasAnyReservation(reservations[id], "Sobota"))
-											return;
-									break;
-									case "dzien_sunday":
-										if(!HasAnyReservation(reservations[id], "Niedziela"))
-											return;
-									break;
-								}
 						%>
 						<li class="spacer_list_class">
 							<div class="doggo_and_gap">
@@ -183,43 +284,17 @@
 											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
 											<div class="doggo_calendar-copy">
 											<%
+												//reservations[id] = Object.keys(reservations[id]).sort(function(a,b) {
+													//return new Date(b.date) - new Date(a.date);
+												//});
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
 													let test = reservations[id][ReservationId];
 													
-													if(params.get("dzien_input") != "dzien_any")
-														switch(params.get("dzien_input")) {
-															case "dzien_monday":
-																if(test.day!="Poniedziałek")
-																	return;
-															break;
-															case "dzien_tuesday":
-																if(test.day!="Wtorek")
-																	return;
-															break;
-															case "dzien_wednesday":
-																if(test.day!="Środa")
-																	return;
-															break;
-															case "dzien_thursday":
-																if(test.day!="Czwartek")
-																	return;
-															break;
-															case "dzien_friday":
-																if(test.day!="Piątek")
-																	return;
-															break;
-															case "dzien_saturday":
-																if(test.day!="Sobota")
-																	return;
-															break;
-															case "dzien_sunday":
-																if(test.day!="Niedziela")
-																	return;
-															break;
-														}
+													if(FilterReservation(params, test))
+														return;
 											%>
 												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId%>>
-												<%= test.day + " " + test.start + " - " + test.end%>
+												<%= test.date + " " + test.day + " " + test.start + " - " + test.end%>
 												</a></div>
 												
 											<% }); %>
