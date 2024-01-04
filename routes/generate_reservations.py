@@ -38,7 +38,7 @@ for dog in existingdogdict:
             Rezerwacja = ReservationDict[dog][i]
             
             wylosowanadata = RandomizeDate()
-            Rezerwacja["date"] = f"{wylosowanadata.year}.{wylosowanadata.month}.{wylosowanadata.day}"
+            Rezerwacja["date"] = f"{wylosowanadata.day}.{wylosowanadata.month}.{wylosowanadata.year}"
 
             randomstarthour = random.randint(7,16)
             randomoffset = random.randint(2,3)
