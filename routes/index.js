@@ -15,7 +15,7 @@ router.get('/walk', function(req, res, next) {
   {
     try {
       const jsonDogData = JSON.parse(dogdata);
-      fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+      fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
 	  {
 		try {
 		  const jsonReservationData = JSON.parse(reservationdata);
@@ -122,7 +122,7 @@ router.get('/user/myWalks', function(req, res, next) {
 	  {
 		try {
 		  const jsonDogData = JSON.parse(dogdata);
-		  fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+		  fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
 		  {
 			try {
 			  const jsonReservationData = JSON.parse(reservationdata);
@@ -181,7 +181,7 @@ router.get('/success', function(req, res, next) {
   {
     try {
       const jsonDogData = JSON.parse(dogdata);
-      fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+      fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
 	  {
 		try {
 		  const jsonReservationData = JSON.parse(reservationdata);
@@ -214,7 +214,7 @@ router.get('/reserveWalk', function(req, res){
   {
     try {
       const jsonDogData = JSON.parse(dogdata);
-      fs.readFile(__dirname + "/" + "data/reservations_test.json", 'utf8', function(err, reservationdata)
+      fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
 	  {
 		try {
 		  const jsonReservationData = JSON.parse(reservationdata);
@@ -304,12 +304,12 @@ router.post('/user/myWalks/cancel',(req,res) => {
   const reservation = req.query.reservation;
 
   try {
-    let reservationdata = fs.readFileSync(__dirname + '/data/reservations_test.json', 'utf8');
+    let reservationdata = fs.readFileSync(__dirname + '/data/reservations.json', 'utf8');
     const reservations = JSON.parse(reservationdata);
     
     delete reservations[dog][reservation].takenby;
 
-    fs.writeFileSync(__dirname + '/data/reservations_test.json', JSON.stringify(reservations, null, 2), 'utf8');
+    fs.writeFileSync(__dirname + '/data/reservations.json', JSON.stringify(reservations, null, 2), 'utf8');
 
     res.send('Success');
   } catch (error) {
