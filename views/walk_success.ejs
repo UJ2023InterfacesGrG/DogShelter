@@ -27,7 +27,7 @@
 				reservations[params.get("dog")][params.get("id")].takenby = params.get("tel");
 			}
 		
-			fs.writeFileSync("routes\\data\\" + "reservations_test.json", JSON.stringify(reservations,null, '\t'), "utf8");
+			fs.writeFileSync("routes\\data\\" + "reservations.json", JSON.stringify(reservations,null, '\t'), "utf8");
 		}
 	%>
     <body>
