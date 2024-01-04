@@ -43,7 +43,7 @@ for dog in existingdogdict:
             randomstarthour = random.randint(7,16)
             randomoffset = random.randint(2,3)
             Rezerwacja["start"] = f"{randomstarthour}:00"
-            Rezerwacja["end"] = f"{randomstarthour}:00"
+            Rezerwacja["end"] = f"{randomstarthour + randomoffset}:00"
             Rezerwacja["day"] = f"{DniTygodnia[wylosowanadata.weekday()]}"
             
             
