@@ -36,6 +36,9 @@ router.get('/walk', function(req, res, next) {
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
+  if (req.query.dog && req.query.id)
+    req.session.originalURL = `/walk?param=yes&dog=${req.query.dog}&id=${req.query.id}`;
+  
   console.log(usersData);
   const user = req.session.user || null;
 
@@ -63,7 +66,10 @@ router.post('/login', function(req, res, next) {
       email: user.email,
       phone: user.phone
     };
-    res.redirect('/user/myWalks')
+    const originalURL = req.session.originalURL || '/user/myWalks';
+    delete req.session.originalURL;
+    console.log(originalURL);
+    res.redirect(originalURL);
   } else {
     console.log('Login failed');
     let message = 'Niepoprawne dane';
@@ -105,7 +111,9 @@ router.post('/register', function(req, res, next) {
       password: bcrypt.hashSync(password, 10),
       phone: null
     });
-    res.redirect('/user/myWalks');
+    const originalURL = req.session.originalURL || '/user/myWalks';
+    delete req.session.originalURL;
+    res.redirect(originalURL);
   } else {
     console.log('Registration failed');
     let message = 'Konto o podanym adresie e-mail już istnieje';

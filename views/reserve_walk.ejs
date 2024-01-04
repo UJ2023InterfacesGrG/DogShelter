@@ -334,20 +334,18 @@ function FilterDog(params, id) {
 			function showConfirmationPopup(id, ReservationId) {
 				var modal = document.getElementById("custom-modal");
 				modal.style.display = "block";
-				
-				// Store the link in a data attribute for later use
-				modal.dataset.link = "/walk?param=yes" + "&dog="  + id + "&id=" + ReservationId;
+				modal.dataset.dog = id;
+				modal.dataset.id = ReservationId;
 			}
 
 			function proceed() {
 				var modal = document.getElementById("custom-modal");
-				var link = modal.dataset.link;
-				
-				window.location.href = link;
+				window.location.href = `/walk?param=yes&dog=${modal.dataset.dog}&id=${modal.dataset.id}`;
 			}
 
 			function login() {
-				window.location.href = "/login";
+				var modal = document.getElementById("custom-modal");
+				window.location.href = `/login?dog=${modal.dataset.dog}&id=${modal.dataset.id}`;
 			}
 
 			function goBack() {
