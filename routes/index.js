@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-const usersData = require('./data/users');
+const users = fs.readFileSync(__dirname + "/data/users.json", 'utf8');
+const usersData = JSON.parse(users);
 const bcrypt = require('bcryptjs');
 
 /* GET home page. */
@@ -36,6 +37,9 @@ router.get('/walk', function(req, res, next) {
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
+  if (req.query.dog && req.query.id)
+    req.session.originalURL = `/walk?param=yes&dog=${req.query.dog}&id=${req.query.id}`;
+  
   console.log(usersData);
   const user = req.session.user || null;
 
@@ -63,7 +67,10 @@ router.post('/login', function(req, res, next) {
       email: user.email,
       phone: user.phone
     };
-    res.redirect('/user/myWalks')
+    const originalURL = req.session.originalURL || '/user/myWalks';
+    delete req.session.originalURL;
+    console.log(originalURL);
+    res.redirect(originalURL);
   } else {
     console.log('Login failed');
     let message = 'Niepoprawne dane';
@@ -105,7 +112,20 @@ router.post('/register', function(req, res, next) {
       password: bcrypt.hashSync(password, 10),
       phone: null
     });
-    res.redirect('/user/myWalks');
+
+    // Saving new user to file
+    const jsonString = JSON.stringify(usersData, null, 2);
+    fs.writeFile(__dirname + '/data/users.json', jsonString, 'utf8', (err) => {
+      if (err) {
+        console.error('Error writing JSON file:', err);
+      } else {
+        console.log('Array saved to JSON file successfully!');
+      }
+    });
+
+    const originalURL = req.session.originalURL || '/user/myWalks';
+    delete req.session.originalURL;
+    res.redirect(originalURL);
   } else {
     console.log('Registration failed');
     let message = 'Konto o podanym adresie e-mail już istnieje';
@@ -294,6 +314,16 @@ router.post('/user/update', function(req, res, next) {
   if (password) {
     usersData[userIndex].password = bcrypt.hashSync(password, 10);
   }
+
+  // Saving changes
+  const jsonString = JSON.stringify(usersData, null, 2);
+  fs.writeFile(__dirname + '/data/users.json', jsonString, 'utf8', (err) => {
+    if (err) {
+      console.error('Error writing JSON file:', err);
+    } else {
+      console.log('Array saved to JSON file successfully!');
+    }
+  });
 
   res.redirect('/user/myData');
 });

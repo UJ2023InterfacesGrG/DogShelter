@@ -1,0 +1,16 @@
+[
+  {
+    "name": null,
+    "surname": null,
+    "email": "john@example.com",
+    "password": "$2a$10$Vt0jTUNHj2bBJlRkaQt3o.WZfkXEP6iy.LMSchoml2pTJ0JZPL2Nu",
+    "phone": null
+  },
+  {
+    "name": "Piotr",
+    "surname": null,
+    "email": "piotr@mail.com",
+    "password": "$2a$10$ydVFYwR49w1yjTUsJwPDb.x266Kz5zR2r9sKKuFMCGxfo62DUBZMa",
+    "phone": null
+  }
+]
