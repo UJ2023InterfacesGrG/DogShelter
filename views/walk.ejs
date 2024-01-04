@@ -103,12 +103,13 @@
 		
 		<script>
 			function OnZatwierdzClick() {
+				var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 				if(
 					document.getElementById("imie_input_rezerwacja").value==""||
 					document.getElementById("nazwisko_input_rezerwacja").value==""||
 					(
-						document.getElementById("telefon_input_rezerwacja").value==""&&
-						document.getElementById("email_input_rezerwacja").value==""
+						document.getElementById("telefon_input_rezerwacja").value.length != 9 &&
+						!emailRegex.test(document.getElementById("email_input_rezerwacja").value)
 					)
 				)
 				{
@@ -120,6 +121,12 @@
 					if(document.getElementById("telefon_input_rezerwacja").value==""&&
 						document.getElementById("email_input_rezerwacja").value=="")
 						Tekst = Tekst.concat("Brak numeru telefonu lub e-maila.\n");
+					if(document.getElementById("telefon_input_rezerwacja").value.length > 0 &&
+						document.getElementById("telefon_input_rezerwacja").value.length < 9)
+						Tekst = Tekst.concat("Numer telefonu jest niepoprawny. \n");
+					if(!emailRegex.test(document.getElementById("email_input_rezerwacja").value))
+						Tekst = Tekst.concat("Email jest niepoprawny. \n");
+
 					
 					
 					document.getElementById("rezerwacja_missing_info").innerHTML = Tekst;
@@ -129,13 +136,15 @@
 					const params = new URLSearchParams(document.location.href);
 					let telparam = "";
 					let emailparam = "";
-					if(!document.getElementById("telefon_input_rezerwacja").value=="") {
+					if(!document.getElementById("telefon_input_rezerwacja").value==""  && document.getElementById("telefon_input_rezerwacja").value.length == 9) {
 						telparam = "&tel=" + document.getElementById("telefon_input_rezerwacja").value;
 					}
 					if(!document.getElementById("email_input_rezerwacja").value=="") {
 						emailparam = "&email=" + document.getElementById("email_input_rezerwacja").value;
 					}
+					if (telparam || emailparam) {
 					document.location.href = "/success" + "?filter=yes" + "&dog=" + params.get("dog") + "&id=" + params.get("id") + telparam + emailparam;
+					}
 				}
 			}
 		</script>
