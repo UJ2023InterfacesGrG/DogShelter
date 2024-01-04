@@ -11,8 +11,6 @@ const day_conversion = {
 };
 
 function GetJSDateFromDogDate(data, godzina) {
-	console.log(data)
-	console.log(godzina)
 	Segmenty = data.split('.');
 	start = godzina.split(':');
 	let hour = "0";
@@ -34,10 +32,9 @@ function TestReservationHour(params,Reservation, Start, GEnd) {
 		date_end_input = DateIn2Weeks.getDate() + "." + (DateIn2Weeks.getMonth() + 1) + "." + (DateIn2Weeks.getYear() + 1900);
 	}
 	
-	console.log("log")
 	let Data1 = GetJSDateFromDogDate(date_start_input, Start);
 	let Data2 = GetJSDateFromDogDate(date_end_input, GEnd);
-	console.log("log2")
+	
 	let DataStartu = GetJSDateFromDogDate(Reservation.date, Reservation.start);
 	let DataKonca = GetJSDateFromDogDate(Reservation.date, Reservation.end);
 	
@@ -283,9 +280,11 @@ function FilterDog(params, id) {
 											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
 											<div class="doggo_calendar-copy">
 											<%
-												//reservations[id] = Object.keys(reservations[id]).sort(function(a,b) {
-													//return new Date(b.date) - new Date(a.date);
-												//});
+												reservations[id].sort(function(a,b) {
+													let DataStartu = GetJSDateFromDogDate(a.date, a.start);
+													let DataKonca = GetJSDateFromDogDate(b.date, b.start);
+													return DataStartu.getTime() - DataKonca.getTime();
+												});
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
 													let test = reservations[id][ReservationId];
 													
