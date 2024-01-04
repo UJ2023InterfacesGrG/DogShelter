@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-const usersData = require('./data/users');
+const users = fs.readFileSync(__dirname + "/data/users.json", 'utf8');
+const usersData = JSON.parse(users);
 const bcrypt = require('bcryptjs');
 
 /* GET home page. */
@@ -111,6 +112,17 @@ router.post('/register', function(req, res, next) {
       password: bcrypt.hashSync(password, 10),
       phone: null
     });
+
+    // Saving new user to file
+    const jsonString = JSON.stringify(usersData, null, 2);
+    fs.writeFile(__dirname + '/data/users.json', jsonString, 'utf8', (err) => {
+      if (err) {
+        console.error('Error writing JSON file:', err);
+      } else {
+        console.log('Array saved to JSON file successfully!');
+      }
+    });
+
     const originalURL = req.session.originalURL || '/user/myWalks';
     delete req.session.originalURL;
     res.redirect(originalURL);
@@ -302,6 +314,16 @@ router.post('/user/update', function(req, res, next) {
   if (password) {
     usersData[userIndex].password = bcrypt.hashSync(password, 10);
   }
+
+  // Saving changes
+  const jsonString = JSON.stringify(usersData, null, 2);
+  fs.writeFile(__dirname + '/data/users.json', jsonString, 'utf8', (err) => {
+    if (err) {
+      console.error('Error writing JSON file:', err);
+    } else {
+      console.log('Array saved to JSON file successfully!');
+    }
+  });
 
   res.redirect('/user/myData');
 });
