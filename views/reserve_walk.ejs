@@ -38,7 +38,10 @@ function TestReservationHour(params,Reservation, Start, GEnd) {
 	let DataStartu = GetJSDateFromDogDate(Reservation.date, Reservation.start);
 	let DataKonca = GetJSDateFromDogDate(Reservation.date, Reservation.end);
 	
-	if(DataStartu.getTime()>=Data1.getTime() && DataKonca.getTime()<= Data2.getTime()){
+	let LowerHour = GetJSDateFromDogDate(Reservation.date, Start);
+	let UpperHour = GetJSDateFromDogDate(Reservation.date, GEnd);
+	
+	if(DataStartu.getTime()>=Data1.getTime() && DataKonca.getTime()<= Data2.getTime() && DataStartu.getTime() >= LowerHour.getTime() && DataKonca.getTime() <= UpperHour.getTime()) {
 		return true;
 	}	
 	return false;
@@ -176,6 +179,12 @@ function FilterDog(params, id) {
 							<input type="text" id="date_start_input" name="date_start_input" value = "<%=new Date().getDate()%>.<%=new Date().getMonth()+1%>.<%=new Date().getYear()+1900%>">
 						</div>
 						<div class="godz_box">
+							<% 	DateIn2Weeks = new Date();
+								DateIn2Weeks.setDate(DateIn2Weeks.getDate() +1000); %>
+							<label for="date_end_input">Do dnia:</label> 
+							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
+						</div>
+						<div class="godz_box">
 							<label for="godz_start_input">Od godz:</label>
 							<select type="text" id="godz_start_input" name="godz_start_input">
 								<option value="00:00" selected="selected">00:00</option>
@@ -204,12 +213,6 @@ function FilterDog(params, id) {
 								<option value="23:00">23:00</option>
 								<option value="24:00">24:00</option>
 							</select>
-						</div>
-						<div class="godz_box">
-							<% 	DateIn2Weeks = new Date();
-								DateIn2Weeks.setDate(DateIn2Weeks.getDate() +1000); %>
-							<label for="date_end_input">Do dnia:</label> 
-							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
 						<div class="godz_box">
 							<label for="godz_end_input">Do godz:</label>
