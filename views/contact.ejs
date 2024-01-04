@@ -63,7 +63,7 @@
                 </div>
                 <!-- contact form -->
                 <div class="contact_container">
-                    <form action="action_page.php">
+                    <form onsubmit="confirmFormSent()">
                         <h2>Napisz do nas!</h2>
                         <input type="text" id="fname" name="names" placeholder="Imię i nazwisko..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')">
                         <input type="text" id="femail" name="put_email" placeholder="E-mail..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')">
@@ -79,6 +79,14 @@
         <div class="footer">
             <div class="creator">©2023 Created by <span>Grupa G</span> | All rights reserved</div>
         </div>
+
+        <script>
+            function confirmFormSent() {
+                if(!alert('Wiadomość została wysłana!')){
+                    window.location.reload(true);
+                }
+             }
+          </script>
 
     </body>
 </html>
