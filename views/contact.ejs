@@ -66,7 +66,7 @@
                     <form onsubmit="confirmFormSent()">
                         <h2>Napisz do nas!</h2>
                         <input type="text" id="fname" name="names" placeholder="Imię i nazwisko..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')">
-                        <input type="text" id="femail" name="put_email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]$" placeholder="E-mail..." required oninvalid="if (this.value!=''){this.setCustomValidity('Niepoprawny adres e-mail')} else {this.setCustomValidity('Pole wymagane')}" oninput="this.setCustomValidity('')">
+                        <input type="text" id="femail" name="put_email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{1,}$" placeholder="E-mail..." required oninvalid="if (this.value!=''){this.setCustomValidity('Niepoprawny adres e-mail')} else {this.setCustomValidity('Pole wymagane')}" oninput="this.setCustomValidity('')">
                         <textarea id="subject" name="subject" placeholder="Wiadomość..." required oninvalid="this.setCustomValidity('Pole wymagane')" oninput="this.setCustomValidity('')"></textarea>           
                         <input type="submit" value="   Wyślij   ">
                     </form>
