@@ -34,7 +34,8 @@
 			"date": "11.1.2024",
 			"start": "7:00",
 			"end": "10:00",
-			"day": "Czwartek"
+			"day": "Czwartek",
+			"takenby": "123456789"
 		}
 	],
 	"dog3": [
@@ -78,7 +79,8 @@
 			"date": "30.1.2024",
 			"start": "9:00",
 			"end": "11:00",
-			"day": "Wtorek"
+			"day": "Wtorek",
+			"takenby": "123456789"
 		},
 		{
 			"date": "12.1.2024",
@@ -108,7 +110,8 @@
 			"date": "24.1.2024",
 			"start": "10:00",
 			"end": "12:00",
-			"day": "Środa"
+			"day": "Środa",
+			"takenby": "123456789"
 		},
 		{
 			"date": "9.1.2024",
@@ -170,7 +173,8 @@
 			"date": "30.1.2024",
 			"start": "9:00",
 			"end": "12:00",
-			"day": "Wtorek"
+			"day": "Wtorek",
+			"takenby": "piotr@mail.com"
 		}
 	],
 	"dog6": [

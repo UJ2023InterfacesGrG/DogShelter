@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+const path = require('path');
 const users = fs.readFileSync(__dirname + "/data/users.json", 'utf8');
 const usersData = JSON.parse(users);
 const bcrypt = require('bcryptjs');
@@ -196,29 +197,32 @@ router.get('/newsVolunteers', function(req, res, next) {
 });
 
 /* GET success page. */
-router.get('/success', function(req, res, next) {
-  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
-  {
-    try {
-      const jsonDogData = JSON.parse(dogdata);
-      fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
-	  {
-		try {
-		  const jsonReservationData = JSON.parse(reservationdata);
-		  
-		  //console.log(jsonReservationData.dog1)
-		  res.render('walk_success', { dogs: jsonDogData, reservations: jsonReservationData, url: req.url, fs: fs});
-		} catch (error) {
-		  console.error('Error parsing JSON:', error);
-		  res.status(500).send('Internal Server Error');
-		}
-	  });
-    } catch (error) {
-      console.error('Error parsing JSON:', error);
-      res.status(500).send('Internal Server Error');
+router.get('/success', async (req, res) => {
+  const { dog, id, email, tel } = req.query;
+
+  try {
+    const filePath = path.join(__dirname, 'data', 'reservations.json');
+    const reservationsData = await fs.promises.readFile(filePath, 'utf8');
+    const reservations = JSON.parse(reservationsData);
+
+    let Success = true;
+
+    if (reservations[dog]?.[id]?.takenby) {
+      if (!(reservations[dog][id].takenby === email || reservations[dog][id].takenby === tel)) {
+        Success = false;
+      }
+    } else {
+      reservations[dog][id].takenby = email || tel;
+      await fs.promises.writeFile(filePath, JSON.stringify(reservations, null, '\t'), 'utf8');
     }
-  });
+
+    res.render('walk_success', { Success });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
+
 /* GET supportUs page. */
 router.get('/supportUs', function(req, res, next) {
   res.render('supportus');

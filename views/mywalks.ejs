@@ -96,7 +96,7 @@ function FilterWalk(walk) {
                             </button>
                             <div id="custom-modal" class="modal">
                             <div class="modal-content">
-                                <p>Czy na pewno chcesz anulować spacer z <%=dogs[dog].name%> dnia <%=reservations[dog][reservation].date%> w godzinach: <%=reservations[dog][reservation].start%> - <%=reservations[dog][reservation].end%>?</p>
+                                <p>Czy na pewno chcesz anulować spacer z <%=dogs[dog].name%> dnia <%=reservations[dog][reservation].date%> o godzinie <%=reservations[dog][reservation].start%>?</p>
                                 <button onclick='proceed("<%=dog%>","<%=reservation%>")'>Tak</button>
                                 <button onclick="goBack()">Nie</button>
                             </div>

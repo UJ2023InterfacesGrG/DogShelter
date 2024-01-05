@@ -9,27 +9,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-
-	<%
-		params = new URLSearchParams(url);
-		
-		let Success = true;
-		if(reservations[params.get("dog")][params.get("id")].hasOwnProperty("takenby")) { //nie chcemy nadpisywać czyjejś rejestracji
-			if(!(reservations[params.get("dog")][params.get("id")].takenby === params.get("email") || reservations[params.get("dog")][params.get("id")].takenby === params.get("tel")))
-				Success = false; //Ale rejestracja jest tylko nieudana wtedy kiedy to nadpisanie by zajęło komuś rejestrację
-		}
-		else {		
-			if(params.get("email") != null) {
-				reservations[params.get("dog")][params.get("id")].takenby = params.get("email");
-			}
-			else
-			{
-				reservations[params.get("dog")][params.get("id")].takenby = params.get("tel");
-			}
-		
-			fs.writeFileSync("routes\\data\\" + "reservations.json", JSON.stringify(reservations,null, '\t'), "utf8");
-		}
-	%>
     <body>
         <!-- header with logo + menu -->
         <div class="header">
@@ -71,9 +50,16 @@
 			</label>
 			<br />
 			<br />
-			<button class="go-home-button" onclick="window.location.href='/home';">
-				<a class="login-label">Powrót do Strony Głównej</a>
-			</button>
+            <% if(user){ %>
+                <button class="go-home-button" onclick="window.location.href='/user/myWalks';">
+				    <a class="login-label">Przejdź do listy zarezerwowanych spacerów</a>
+			    </button>
+            <% } else{ %>  
+                <button class="go-home-button" onclick="window.location.href='/home';">
+				    <a class="login-label">Powrót do Strony Głównej</a>
+			    </button>
+            <% } %>
+			
 		</div>
 		
 		 <!-- footer -->
