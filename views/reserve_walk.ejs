@@ -100,6 +100,16 @@ function FilterDog(params, id) {
 	
 	return false;
 }
+
+function reformatDate(date) {
+	const parts = date.split('.');
+	if (parts[0].length == 1)
+		parts[0] = '0' + parts[0] ;
+	if (parts[1].length == 1)
+		parts[1] = '0' + parts[1];
+	
+	return [parts[0], parts[1]].join('.');
+}
 %>
 
 
@@ -186,63 +196,11 @@ function FilterDog(params, id) {
 						</div>
 						<div class="godz_box">
 							<label for="godz_start_input">Od godz:</label>
-							<select type="text" id="godz_start_input" name="godz_start_input">
-								<option value="00:00" selected="selected">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
-								<option value="24:00">24:00</option>
-							</select>
+							<input type="time" id="godz_start_input" name="godz_start_input" value="00:00">
 						</div>
 						<div class="godz_box">
 							<label for="godz_end_input">Do godz:</label>
-							<select type="text" id="godz_end_input" name="godz_end_input" selected="24:00">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
-								<option value="24:00" selected="selected">24:00</option>
-							</select>
+							<input type="time" id="godz_end_input" name="godz_end_input" value="23:59">
 						</div>
 						<div class="zatwierdz_box">
 							<button>Zatwierdź:</label>
@@ -305,7 +263,7 @@ function FilterDog(params, id) {
 											<% } else { %>
 												<div class="doggo_termin"><a href="#" onclick='showConfirmationPopup("<%= id %>", "<%= test.id %>")'>
 											<% } %>
-												<%= test.date + " " + test.day + " " + test.start + " - " + test.end%>
+												<%= reformatDate(test.date) + " - " + test.day + " - " + test.start + "-" + test.end%>
 												</a></div>
 												
 											<% });
