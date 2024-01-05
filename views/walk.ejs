@@ -110,7 +110,8 @@
 					if(document.getElementById("telefon_input_rezerwacja").value.length > 0 &&
 						document.getElementById("telefon_input_rezerwacja").value.length < 9)
 						Tekst = Tekst.concat("Numer telefonu jest niepoprawny. \n");
-					if(!emailRegex.test(document.getElementById("email_input_rezerwacja").value))
+					if(document.getElementById("email_input_rezerwacja").value.length != 0 && 
+						!emailRegex.test(document.getElementById("email_input_rezerwacja").value))
 						Tekst = Tekst.concat("Email jest niepoprawny. \n");
 
 					
