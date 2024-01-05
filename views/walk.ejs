@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -41,59 +42,44 @@
 		<% 
 			let params = new URLSearchParams(url);
 		%>
-		<div class="main_rezerwacja">
-			<div class="rezerwacja_withpadding">
-				<div class="rezerwacja_doggo_info">
-					<div class="rezerwacja_doggo_label2">Chcesz wyprowadzić...</div>
-					<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
-					<div class="rezerwacja_doggo_name"><%= dogs[params.get("dog")].name%></div>
-					<div class="rezerwacja_doggo_attributes">
-						<p>Wiek: <%= dogs[params.get("dog")].age%> lat</p>
-						<p>Atrybut 2: Ipsum</p>
-						<p>Atrybut 3: Dolor</p>
+
+		<div class="main">
+			<h1 class="site-title">Wyprowadź <%= dogs[params.get("dog")].name%>!</h1>
+			<hr class="site-title-line">
+			<div class="flex-reservation">
+				<div class="reservation-left">
+					<div>
+						<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+					</div>
+					<div>
 						<p><%= dogs[params.get("dog")].desc%></p>
 					</div>
-				</div> 
-				<div class="rezerwacja_info_box">
-					<div class="rezerwacja_middle">
-						<div class="rezerwacja_doggo_label">
-							<% let res = reservations[params.get("dog")][params.get("id")] %>
-							<label class="rezerwacja_doggo_label_text"><br/>Wybrany Termin Spaceru:<br /><br/><%= res.date + " " + res.start + " - " + res.end%></label>
-						</div>
-						<div class="info_grid_box">
-							<div class="rigb_imie">
-								<label for="imie_input_rezerwacja">Twoje imię:</label><br />
-								<input class="input_walk" type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja"
-									<% if(user) { %> value="<%=user.name%>" <% } %> >									
-							</div>
-							<div class="rigb_naziwsko">
-								<label for="nazwisko_input_rezerwacja">Twoje nazwisko:</label><br />
-								<input class="input_walk" type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja"
-								<% if(user) { %> value="<%=user.surname%>" <% } %> >	
-							</div>
-							<div class="rigb_telefon">
-								<label for="telefon_input_rezerwacja">Numer telefonu:</label><br />
-								<input class="input_walk" type="tel" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"    
-								<% if(user) { %> value="<%=user.phone%>" <% } %> >	
-							</div>
-							<div class="rigb_email">
-								<label for="email_input_rezerwacja">Twój e-mail:</label><br />
-								<input class="input_walk" type="email" id="email_input_rezerwacja" name="email_input_rezerwacja"
-								<% if(user) { %> value="<%=user.email%>" <% } %> >	
-							</div>
-						</div>
+				</div>
+				<div class="reservation-right">
+					<% let res = reservations[params.get("dog")][params.get("id")] %>
+					<label><h2>Wybrany termin spaceru: <b><%- res.date + "</b>, w godzinach <b>" + res.start + "-" + res.end%></b></h2></label>
+					
+					<div class="flex-reservation-right">
+						<input type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja"
+						placeholder="Twoje imię" <% if(user) { %> value="<%=user.name%>" <% } %> >	
+						<div class="distancer"></div>
+						<input type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja"
+						placeholder="Twoje nazwisko" <% if(user) { %> value="<%=user.surname%>" <% } %> >	
+						
+						<input type="tel" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"    
+						placeholder="Numer telefonu" <% if(user) { %> value="<%=user.phone%>" <% } %> >
+						<div class="distancer">lub</div>
+						<input type="email" id="email_input_rezerwacja" name="email_input_rezerwacja"
+						placeholder="Adres email" <% if(user) { %> value="<%=user.email%>" <% } %> >
 					</div>
-					<div class="rezerwacja_potwierdz_wide">
-						<div class="rezerwacja_potwierdz">
-							<button class="rezerwacja_potwierdz-button" onclick="OnZatwierdzClick()">
-							<a class="rezerwacja_potwierdz-label"  >Zatwierdź</a>
-							</button>
-						</div>
+					<div class="button_message">
+						<button class="rezerwacja_potwierdz-button" onclick="OnZatwierdzClick()">Zarezerwuj!</button><br>
 						<a class="rezerwacja_missing_info" id="rezerwacja_missing_info"></a>
 					</div>
-				</div> 
+				</div>
 			</div>
 		</div>
+
 		
 		 <!-- footer -->
         <div class="footer">
