@@ -4,70 +4,161 @@
 	position: relative;
 	bottom: 0;
 	right: 0;
-	background-color: #C8C8C8;
-	height: 60px;
+	width: 90%;
+    margin: auto;
+	margin-top: 50px;
+    background-color: lightgrey;
+	border: solid;
+	border-width: 2px;
+	border-color: #000;
+	height: 100px;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
+	font-size: 18px;
 }
 
 .imie_box {
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: auto;
 }
 
 .wiek_box {
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .dzien_box {
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .godz_box {
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#date_start_input{
+	width: 110px;
+	height: 30px;
+	font-size: 16px;
+	
+}
+#date_end_input{
+	width: 110px;
+	height: 30px;
+	font-size: 16px;
+}
+
+#imie_input{
+	font-size: 16px;
+	width: 100px;
+	margin-right: 10px;
+	height: 30px;
+}
+
+#dzien_input{
+	height: 30px;
+	margin-left: 10px;
+	border: none;
+	border-radius: 5%;
+	font-size: 16px;
+}
+
+#godz_end_input{
+	height: 30px;
+	margin-left: 10px;
+	border: none;
+	border-radius: 5%;
+	font-size: 16px;
+	margin-right: 20px;
+	font-family: 'Segoe UI';
+}
+
+#godz_start_input{
+	height: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: none;
+	font-family: 'Segoe UI';
+	border-radius: 5%;
+	font-size: 16px;
 }
 
 .zatwierdz_box {
 	padding: 20px;
+	
+}
+
+
+.confirm_reserve_filter{
+	background-color: #D4D823;
+    padding: 5% 10%;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .doggo_and_gap {
-	height: 275px;
+	height: 220px;
+	border: #000 solid 2px;
+	background-color: lightblue;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 10px;
 }
 
 .gap {
-    background-color: grey;
+    /* background-color: grey; */
 	height: 30px;
 	text-align: bottom;
 }
 
 .just_doggo {
 	display: flex;
-	background-color: white;
 	height: 245px;
 }
 
 .doggo {
-	background-image: linear-gradient(to right, grey , white);
+	margin-left: 30px;
+	margin-top: 35px;
 	width: 245px;
 	height: 245px;
 }
 
 .doggo_icon {
-	width: 245px;
-	height: 245px;
+	width: 130px;
+	height: 130px;
+
 }
 
 .doggo_info {
 	width: 245px;
 	height: 245px;
 	display: block;
+	margin-left: 50px;
 }
 
 .doggo_name {
+	margin-top: 25px;
 	width: 245px;
 	height: 60px;
-	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	/* background-image: linear-gradient(to right, Aquamarine, DarkTurquoise); */
 	position: relative;
 	border: #000;
     border-style: none;
@@ -75,6 +166,7 @@
 }
 
 .doggo_label {
+	font-size: 45px;
 	justify-content: center;
 	align-items: center;
 }
@@ -85,13 +177,18 @@
 
 .spacer_list_class {
     list-style:none;
-    padding:0;
-    margin:0;
+	padding-left: 0px;
 }
+
 
 .spacer_box {
 	max-height:652px;
     overflow-y:auto;
+	width: 90%;
+    margin: auto;
+    background-color:antiquewhite;
+	border: #000 solid 2px;
+	border-top: none;
 }
 
 .main_rezerwacja {
@@ -103,14 +200,14 @@
 
 .rezerwacja_withpadding {
 	width:80%;
-	background-color: LightGrey;
+	/* background-color: LightGrey; */
 	display:flex;
 }
 
 .rezerwacja_doggo_info {
 	width:20%;
 	height: 100%;
-	background-color: lightgrey;
+	/* background-color: lightgrey; */
 	display:flex;
 	flex-direction: column; 
 }
@@ -119,11 +216,11 @@
 	display:flex;
 	width: 85%;
 	height: 100%;
-	background-color: white;
+	/* background-color: white; */
 }
 
 .rezerwacja_doggo_label2 {
-	background-color:CadetBlue;
+	/* background-color:CadetBlue; */
 	/*width: 100%;*/
 	font-size: 200%;
 	height: 150px;
@@ -135,7 +232,7 @@
 .rezerwacja_doggo_name {
 	vertical-align: middle;
 	height: 60px;
-	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	/* background-image: linear-gradient(to right, Aquamarine, DarkTurquoise); */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -146,7 +243,7 @@
 	
 	height: 150px;
 	width: 600px;
-	background-color: lightblue;
+	/* background-color: lightblue; */
 }
 
 .rezerwacja_doggo_label_text {
@@ -160,7 +257,7 @@
 	grid-template-columns: auto auto;
 	column-gap: 20px;
 	row-gap: 20px;
-	background-color: linen;
+	/* background-color: linen; */
 
 }
 
@@ -243,7 +340,7 @@
     width: 2.5%;
     height: auto;
     float: left;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .enter_icon{
 	width: 5%;
@@ -281,16 +378,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	height: 230px;
 	width: 100%;
-	background-color: white;
+	margin-left: 100px;
+	/* background-color: white; */
 }
 
 .doggo_calendar {
-	border-style: solid;
-	height: 80%;
-	width: 80%;
-	background-color: white;
+	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -299,32 +395,38 @@
 .doggo_calendar-copy {
 	height: 80%;
 	width: 100%;
-	background-color: white;
+	/* text-decoration: none; */
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 }
 
 .doggo_choose_termin {
-	background-image: linear-gradient(to right, Aquamarine, DarkTurquoise);
+	/* background-image: linear-gradient(to right, Aquamarine, DarkTurquoise); */
 	height: 20%;
 	display: flex;
 	width: auto;
 	align-items: center;
 	justify-content: center;
+	font-size: 18px;
 }
 
 .doggo_termin {
-	background-color: AliceBlue ;
-	height: 20%;
+	height: 15%;
 	width: auto;
+	text-decoration: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+.doggo_termin a {
+	text-decoration: none;
+	color: #000;
+}
+
 .doggo_termin_other {
-	background-color: AliceBlue ;
+	/* background-color: AliceBlue ; */
 	height: 20%;
 	display: flex;
 	align-items: center;
