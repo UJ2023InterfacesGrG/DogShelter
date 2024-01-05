@@ -158,6 +158,8 @@ function reformatDate(date) {
 
         <!-- main site -->
         <div class="main">
+			<h1 class="site-title">Zarezerwuj spacer</h1>
+            <hr class="site-title-line">
 			<form>
 				<div class="spacer_filter">
 					<form>
@@ -167,12 +169,8 @@ function reformatDate(date) {
 							<label for="imie_input">Imię Psa:</label>
 							<input type="text" id="imie_input" name="imie_input">
 						</div>
-						<div class="wiek_box">
-							<label for="wiek_input">Wiek:</label>
-							<input type="text" id="wiek_input" name="wiek_input">
-						</div>
-						<div class="dzien_box">
-							<label for="dzien_input">Dzień:</label>
+						<!-- <div class="dzien_box"> -->
+							<label class="day_label"for="dzien_input">Dzień: </label>
 							<select id="dzien_input" name="dzien_input">
 								<option value="dzien_any">Jakikolwiek</option>
 								<option value="dzien_monday">Poniedziałek</option>
@@ -183,7 +181,7 @@ function reformatDate(date) {
 								<option value="dzien_saturday">Sobota</option>
 								<option value="dzien_sunday">Niedziela</option>
 							</select>
-						</div>
+						<!-- </div> -->
 						<div class="godz_box">
 							<label for="date_start_input">Od dnia:</label>
 							<input type="text" id="date_start_input" name="date_start_input" value = "<%=new Date().getDate()%>.<%=new Date().getMonth()+1%>.<%=new Date().getYear()+1900%>">
@@ -194,17 +192,16 @@ function reformatDate(date) {
 							<label for="date_end_input">Do dnia:</label> 
 							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
-						<div class="godz_box">
+						<!-- <div class="godz_box"> -->
 							<label for="godz_start_input">Od godz:</label>
 							<input type="time" id="godz_start_input" name="godz_start_input" value="00:00">
-						</div>
-						<div class="godz_box">
+						<!-- </div> -->
+						<!-- <div class="godz_box"> -->
 							<label for="godz_end_input">Do godz:</label>
 							<input type="time" id="godz_end_input" name="godz_end_input" value="23:59">
-						</div>
+						<!-- </div> -->
 						<div class="zatwierdz_box">
-							<button>Zatwierdź:</label>
-							<img class="enter_icon" src="images/enter.png" alt="Zatwierdz" >
+							<button class="confirm_reserve_filter">Zatwierdź</label>
 						</div>
 					</form>
 				</div>
@@ -227,7 +224,7 @@ function reformatDate(date) {
 									</div>
 									<div class="doggo_info">
 										<div class="doggo_name">
-											<label class="doggo_label" style="font-size:55px"><%= dogs[id].name %></label>
+											<label class="doggo_label"><%= dogs[id].name %></label>
 										</div>
 										<div class="doggo_info_text">
 											<p>Wiek: <%= dogs[id].age %> Lat</p>
@@ -236,7 +233,7 @@ function reformatDate(date) {
 									</div>
 									<div class="doggo_calendar_box">
 										<div class="doggo_calendar">
-											<div class="doggo_choose_termin">Najbliższe Terminy:</div>
+											<div class="doggo_choose_termin"><b>Najbliższe Terminy:</b></div>
 											<div class="doggo_calendar-copy">
 											<%
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
@@ -284,6 +281,8 @@ function reformatDate(date) {
 				</nav>
 			</div>
         </div>
+
+		
 
 
         <!-- footer -->
