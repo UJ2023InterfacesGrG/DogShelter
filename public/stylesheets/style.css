@@ -349,7 +349,7 @@ table, td, th {
     background-color: #B7C9F9;
     border-radius: 30px;
     padding: 1%;
-    margin: 3% 5%;
+    margin-right: 50px;
     max-width: 20%;
     float: right;
 }
@@ -666,5 +666,17 @@ input.checkbox-ourdogs{
     margin: 3%;
     border: black solid 3px;
     border-radius: 25px;
+}
+
+.ourdogs-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ourdogs-title{
+    width: 50%;
+    height: 200px;
 }
 

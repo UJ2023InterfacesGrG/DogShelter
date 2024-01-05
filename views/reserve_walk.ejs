@@ -158,8 +158,8 @@ function reformatDate(date) {
 
         <!-- main site -->
         <div class="main">
-			<h1 class="site-title">Zarezerwuj spacer</h1>
-            <hr class="site-title-line">
+			<h1 class="site-title" style="margin-left: 60px;">Zarezerwuj spacer</h1>
+            <hr class="site-title-line" style="width: 350px; margin-left: 70px;">
 			<form>
 				<div class="spacer_filter">
 					<form>
@@ -169,7 +169,6 @@ function reformatDate(date) {
 							<label for="imie_input">Imię Psa:</label>
 							<input type="text" id="imie_input" name="imie_input">
 						</div>
-						<!-- <div class="dzien_box"> -->
 							<label class="day_label"for="dzien_input">Dzień: </label>
 							<select id="dzien_input" name="dzien_input">
 								<option value="dzien_any">Jakikolwiek</option>
@@ -181,7 +180,6 @@ function reformatDate(date) {
 								<option value="dzien_saturday">Sobota</option>
 								<option value="dzien_sunday">Niedziela</option>
 							</select>
-						<!-- </div> -->
 						<div class="godz_box">
 							<label for="date_start_input">Od dnia:</label>
 							<input type="text" id="date_start_input" name="date_start_input" value = "<%=new Date().getDate()%>.<%=new Date().getMonth()+1%>.<%=new Date().getYear()+1900%>">
@@ -192,14 +190,10 @@ function reformatDate(date) {
 							<label for="date_end_input">Do dnia:</label> 
 							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
-						<!-- <div class="godz_box"> -->
 							<label for="godz_start_input">Od godz:</label>
 							<input type="time" id="godz_start_input" name="godz_start_input" value="00:00">
-						<!-- </div> -->
-						<!-- <div class="godz_box"> -->
 							<label for="godz_end_input">Do godz:</label>
 							<input type="time" id="godz_end_input" name="godz_end_input" value="23:59">
-						<!-- </div> -->
 						<div class="zatwierdz_box">
 							<button class="confirm_reserve_filter">Zatwierdź</label>
 						</div>
