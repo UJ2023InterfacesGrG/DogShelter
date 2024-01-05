@@ -604,3 +604,67 @@ input.checkbox-ourdogs{
     text-align: center;
     margin: 3px;
 }
+
+/* Walk - Rezerwacja */
+.flex-reservation {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 2% 12%;
+    gap: 10%;
+}
+
+.reservation-left {
+    padding-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 15%;
+    gap: 20px;
+}
+
+.reservation-right {
+    text-align: center;
+}
+
+.reservation-right h2{
+ font-weight: normal;
+}
+
+.flex-reservation-right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    row-gap: 50px;
+    margin: 6% auto;
+}
+
+.distancer {
+    margin: 10px;
+}
+
+.flex-reservation-right input{
+    text-align: center;
+    width: 43%;
+    border: rgb(105, 105, 105) solid 1px;
+    border-radius: 4px;
+}
+
+.flex-reservation-right input[type=text]{
+    width: 40.5%;
+    border: rgb(105, 105, 105) solid 1px;
+    box-sizing: initial;
+}
+
+
+.rezerwacja_potwierdz-button {
+	font-size: 18px;
+    cursor: pointer;
+    background-color: #D88223;
+    padding: 4% 6%;
+    margin: 3%;
+    border: black solid 3px;
+    border-radius: 25px;
+}
+

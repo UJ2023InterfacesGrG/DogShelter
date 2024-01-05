@@ -218,21 +218,6 @@
 	flex-direction: column;
 }
 
-.rezerwacja_potwierdz-button {
-	font-size: 18px;
-    cursor: pointer;
-    background-color: #D88223;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    float: left;
-    margin-left: 0px;
-    margin-right: 0px;
-    border: #000;
-    border-style: solid;
-    border-radius: 25px;
-}
-
 .rezerwacja_middle {
 	height: auto;
 	width: 600px;
@@ -333,12 +318,4 @@
 
 .filter_hide {
 	display: none;
-}
-
-.input_walk{
-	width: 50%;
-	height: 20px;
-	border: solid lightgrey;
-	border-width: thin;
-	border-radius: 5%;
 }

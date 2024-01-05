@@ -28,7 +28,8 @@
 			"date": "7.1.2024",
 			"start": "11:00",
 			"end": "13:00",
-			"day": "Niedziela"
+			"day": "Niedziela",
+			"takenby": "123456789"
 		},
 		{
 			"date": "11.1.2024",
@@ -268,7 +269,8 @@
 			"date": "25.1.2024",
 			"start": "15:00",
 			"end": "17:00",
-			"day": "Czwartek"
+			"day": "Czwartek",
+			"takenby": "piotr@mail.com"
 		},
 		{
 			"date": "14.1.2024",
@@ -303,4 +305,4 @@
 			"day": "Środa"
 		}
 	]
-} 
+}
