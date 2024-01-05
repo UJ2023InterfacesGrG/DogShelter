@@ -12,5 +12,12 @@
     "email": "piotr@mail.com",
     "password": "$2a$10$ydVFYwR49w1yjTUsJwPDb.x266Kz5zR2r9sKKuFMCGxfo62DUBZMa",
     "phone": null
+  },
+  {
+    "name": null,
+    "surname": null,
+    "email": "natalia@natalia.com",
+    "password": "$2a$10$k7Kp82Bpy06k2SXxHPQUNeIbSSLgGhnIzwyi1ict.Mz4fhltodHOm",
+    "phone": "123456789"
   }
 ]
