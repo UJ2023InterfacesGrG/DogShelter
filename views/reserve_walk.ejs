@@ -244,10 +244,12 @@ function reformatDate(date) {
 												let i = -1;
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
 													let test = reservations[id][ReservationId];
-													i = i+1;
-													
 													if(FilterReservation(params, test))
 														return;
+														
+													i = i+1;
+													
+													if(i>11) return;
 											%>
 											<% if (user) { %>
 												<div class="doggo_termin"><a href= <%= "/walk?param=yes" + "&dog="  + id + "&id=" + test.id %>>
