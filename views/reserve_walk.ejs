@@ -181,12 +181,14 @@ function reformatDate(date) {
 								<option value="dzien_sunday">Niedziela</option>
 							</select>
 						<div class="godz_box">
+							<% 	DateIn1Day = new Date();
+								DateIn1Day.setDate(DateIn1Day.getDate() +1); %>
 							<label for="date_start_input">Od dnia:</label>
-							<input type="text" id="date_start_input" name="date_start_input" value = "<%=new Date().getDate()%>.<%=new Date().getMonth()+1%>.<%=new Date().getYear()+1900%>">
+							<input type="text" id="date_start_input" name="date_start_input" value = "<%=DateIn1Day.getDate()%>.<%=DateIn1Day.getMonth()+1%>.<%=DateIn1Day.getYear()+1900%>">
 						</div>
 						<div class="godz_box">
 							<% 	DateIn2Weeks = new Date();
-								DateIn2Weeks.setDate(DateIn2Weeks.getDate() +1000); %>
+								DateIn2Weeks.setDate(DateIn2Weeks.getDate() +15); %>
 							<label for="date_end_input">Do dnia:</label> 
 							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
