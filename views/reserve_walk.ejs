@@ -169,7 +169,7 @@ function reformatDate(date) {
 							<label for="imie_input">Imię Psa:</label>
 							<input type="text" id="imie_input" name="imie_input">
 						</div>
-							<label class="day_label"for="dzien_input">Dzień: </label>
+							<label class="day_label"for="dzien_input">Dzień Tygodnia: </label>
 							<select id="dzien_input" name="dzien_input">
 								<option value="dzien_any">Jakikolwiek</option>
 								<option value="dzien_monday">Poniedziałek</option>
@@ -183,13 +183,13 @@ function reformatDate(date) {
 						<div class="godz_box">
 							<% 	DateIn1Day = new Date();
 								DateIn1Day.setDate(DateIn1Day.getDate() +1); %>
-							<label for="date_start_input">Od dnia:</label>
+							<label for="date_start_input">Od daty:</label>
 							<input type="text" id="date_start_input" name="date_start_input" value = "<%=DateIn1Day.getDate()%>.<%=DateIn1Day.getMonth()+1%>.<%=DateIn1Day.getYear()+1900%>">
 						</div>
 						<div class="godz_box">
 							<% 	DateIn2Weeks = new Date();
 								DateIn2Weeks.setDate(DateIn2Weeks.getDate() +15); %>
-							<label for="date_end_input">Do dnia:</label> 
+							<label for="date_end_input">Do daty:</label> 
 							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
 							<label for="godz_start_input">Od godz:</label>
@@ -197,7 +197,7 @@ function reformatDate(date) {
 							<label for="godz_end_input">Do godz:</label>
 							<input type="time" id="godz_end_input" name="godz_end_input" value="23:59">
 						<div class="zatwierdz_box">
-							<button class="confirm_reserve_filter">Zatwierdź</label>
+							<button class="confirm_reserve_filter">Filtruj</label>
 						</div>
 					</form>
 				</div>
@@ -229,7 +229,7 @@ function reformatDate(date) {
 									</div>
 									<div class="doggo_calendar_box">
 										<div class="doggo_calendar">
-											<div class="doggo_choose_termin"><b>Najbliższe Terminy:</b></div>
+											<div class="doggo_choose_termin"><b>Najbliższe Wolne Terminy:</b></div>
 											<div class="doggo_calendar-copy">
 											<%
 												Object.keys(reservations[id]).forEach(function(ReservationId) {
