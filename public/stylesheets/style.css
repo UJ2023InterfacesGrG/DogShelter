@@ -129,10 +129,12 @@ h1 {
     position: absolute;
     bottom: 0;
     right: 0;
-    background:none;
+    background:#D88223;
     border:none;
+    border-radius: 12px;
     cursor: pointer;
-    padding: 2rem;
+    padding: 12px;
+    margin: 2rem 2.5rem;
 }
 
 /* Pasek nawigacji */
