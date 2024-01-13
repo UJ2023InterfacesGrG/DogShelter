@@ -93,22 +93,22 @@ router.get('/register', function(req, res, next) {
 
 /* POST register page. */
 router.post('/register', function(req, res, next) {
-  const { email, password } = req.body;
-  console.log('Received credentials:', email, password);
+  const { name, surname, phone, email, password } = req.body;
+  console.log('Received credentials:', name, surname, phone, email, password);
 
   const user = usersData.find(user => user.email === email);
 
   if (!user) {
     // Store user information in the request object
     req.session.user = {
-      name: null,
-      surname: null,
+      name: name,
+      surname: surname,
       email: email,
-      phone: null
+      phone: phone
     };
     usersData.push({
-      name: null,
-      surname: null,
+      name: name,
+      surname: surname,
       email: email,
       password: bcrypt.hashSync(password, 10),
       phone: null
