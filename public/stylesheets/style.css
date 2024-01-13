@@ -35,7 +35,7 @@ h1 {
 .header { 
     height: 100px;
     background-color: #589B3B;
-   
+    border-bottom: 1px solid black;
 }
 
 .footer { 
@@ -45,6 +45,7 @@ h1 {
     height: 50px;
     background-color: #589B3B;
     padding-top: 30px;
+    border-top: 1px solid black;
 }
 
 
@@ -280,6 +281,7 @@ h1 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #b2712b;
 }
 
 .sidebar-option:first-of-type {
@@ -288,13 +290,14 @@ h1 {
     cursor: default;
 }
 
-.sidebar-option:last-of-type {
+.sidebar-option-last {
     border-bottom-width: 2px;
 }
 
 .sidebar-option-current{
     background-color: #D4D823;
     font-weight: bold;
+    border-width: 2px;
 }
 
 .sidebar-option img{
@@ -342,8 +345,11 @@ table, td, th {
 }
 
 .logout {
-    background-color: red;
-    font-weight: bold;
+    background-color: rgb(192, 23, 23);
+    margin-top: auto;
+    margin-bottom: 80px;
+    border-bottom: 0px;
+    border-top-width: 2px;
 }
 
 /* Nasze pieski */
