@@ -97,14 +97,14 @@
 }
 
 .zatwierdz_box {
-	padding: 20px;
-	
+	margin-left: auto;
+	margin-right: 9%;
 }
 
 
 .confirm_reserve_filter{
 	background-color: #D4D823;
-    padding: 5% 10%;
+    padding: 10% 20%;
     border-radius: 7px;
     cursor: pointer;
     font-weight: bold;
