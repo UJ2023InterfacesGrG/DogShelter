@@ -19,5 +19,12 @@
     "email": "natalia@natalia.com",
     "password": "$2a$10$k7Kp82Bpy06k2SXxHPQUNeIbSSLgGhnIzwyi1ict.Mz4fhltodHOm",
     "phone": "123456789"
+  },
+  {
+    "name": "a",
+    "surname": "a",
+    "email": "aaa@aaa.com",
+    "password": "$2a$10$sga17duoFryuRlQFjhxlJ.8B3yykyA/JSeBP1iP6qQ2gtdQ36nyZe",
+    "phone": null
   }
 ]
