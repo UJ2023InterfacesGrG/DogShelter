@@ -2,7 +2,7 @@
 function FilterWalk(walk) {
 	if(!walk.hasOwnProperty("takenby"))
 		return true;
-	if((walk.takenby==user.email||walk.takenby==user.phone))
+	if((walk.takenby==user.email))
 		return false;
 
 
