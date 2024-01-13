@@ -2,11 +2,8 @@
 function FilterWalk(walk) {
 	if(!walk.hasOwnProperty("takenby"))
 		return true;
-	if((walk.takenby==user.email||walk.takenby==user.phone))
+	if((walk.takenby==user.email))
 		return false;
-
-
-
 	return true;
 }
 %>
@@ -57,7 +54,7 @@ function FilterWalk(walk) {
                 <div class="sidebar-option sidebar-option-current" onclick="location.href='/user/myWalks'">
                     <span>Moje spacery</span>
                 </div>
-                <div class="sidebar-option" onclick="location.href='/user/myData'">
+                <div class="sidebar-option sidebar-option-last" onclick="location.href='/user/myData'">
                     <span>Moje dane</span>
                 </div>
                 <div class="sidebar-option logout" onclick="location.href='/user/logout'">
@@ -91,14 +88,14 @@ function FilterWalk(walk) {
                         <td><%= reservations[dog][reservation].date %></td>
                         <td><%= reservations[dog][reservation].start %></td>
                         <td>
-                            <button class="cancelWalk" onclick='anulujSpacer()'>
+                            <button class="cancelWalk" onclick='anulujSpacer("<%=dog + reservations[dog][reservation].date + reservations[dog][reservation].start %>")'>
                                 Anuluj spacer
                             </button>
-                            <div id="custom-modal" class="modal">
+                            <div id="<%=dog + reservations[dog][reservation].date + reservations[dog][reservation].start %>" class="modal">
                             <div class="modal-content">
                                 <p>Czy na pewno chcesz anulować spacer z <%=dogs[dog].name%> dnia <%=reservations[dog][reservation].date%> o godzinie <%=reservations[dog][reservation].start%>?</p>
                                 <button onclick='proceed("<%=dog%>","<%=reservation%>")'>Tak</button>
-                                <button onclick="goBack()">Nie</button>
+                                <button onclick='goBack("<%=dog + reservations[dog][reservation].date + reservations[dog][reservation].start %>")'>Nie</button>
                             </div>
                         </div>
                         </td>
@@ -119,9 +116,10 @@ function FilterWalk(walk) {
         </div>
 
 		<script>
-			function anulujSpacer() {
-				var modal = document.getElementById("custom-modal");
+			function anulujSpacer(reservationDetails) {
+				var modal = document.getElementById(reservationDetails);
 				modal.style.display = "block";
+                console.log(reservationDetails)
 			}
 
 			function proceed(dog, reservation) {
@@ -134,8 +132,8 @@ function FilterWalk(walk) {
                 .catch(error => console.error('Error:', error));
 			}
 
-			function goBack() {
-                var modal = document.getElementById("custom-modal");
+			function goBack(reservationDetails) {
+                var modal = document.getElementById(reservationDetails);
 				modal.style.display = "none";
 			}
 		</script>

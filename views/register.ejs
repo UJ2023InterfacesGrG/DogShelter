@@ -38,7 +38,10 @@
             <div class="post_container form-sign">
                 <h1>REJESTRACJA</h1>
                 <form method="post" action="/register">
-                    <input class="option" type="email" id="email" name="email" placeholder="E-mail" required>
+                    <input class="option" type="name" id="name" name="name" placeholder="Imię" required pattern="^[a-zA-Z]+$">
+                    <input class="option" type="surname" id="surname" name="surname" placeholder="Nazwisko" required pattern="^[a-zA-Z]+$">
+                    <input class="option" type="email" id="email" name="email" placeholder="E-mail" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{1,}$">
+                    <input class="option" type="phone" id="phone" name="phone" placeholder="Telefon (opcjonalnie)" pattern="^\d{9}$">
                     <input class="option" type="password" id="password" name="password" placeholder="Hasło" required>
                     <% if(message){ %>
                         <span class="message"><%= message %></span>
