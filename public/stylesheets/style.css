@@ -264,7 +264,7 @@ h1 {
 }
 
 .sidebar {
-    background-color: #D88223;
+    background-color: #EFE3DA;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -281,12 +281,13 @@ h1 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: #b2712b;
+    background-color: #EFE3DA;
 }
 
 .sidebar-option:first-of-type {
     height: 150px;
-    background-color: rgb(184, 182, 182);
+    /* background-color: rgb(184, 182, 182); */
+    background-color: #D88223;
     cursor: default;
 }
 
@@ -295,7 +296,7 @@ h1 {
 }
 
 .sidebar-option-current{
-    background-color: #D4D823;
+    background-color: #EFE3DA;
     font-weight: bold;
     border-width: 2px;
 }
@@ -345,7 +346,8 @@ table, td, th {
 }
 
 .logout {
-    background-color: rgb(192, 23, 23);
+    /* background-color: rgb(192, 23, 23); */
+    background-color: gray;
     margin-top: auto;
     margin-bottom: 80px;
     border-bottom: 0px;
@@ -686,5 +688,15 @@ input.checkbox-ourdogs{
 .ourdogs-title{
     width: 50%;
     height: 200px;
+}
+
+.login_text{
+    font-size: 25px;
+}
+
+.login_link{
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
 }
 
