@@ -90,40 +90,74 @@
 		<script>
 			function OnZatwierdzClick() {
 				var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-				if(
-					document.getElementById("imie_input_rezerwacja").value==""||
-					document.getElementById("nazwisko_input_rezerwacja").value==""||
-					(
-						document.getElementById("telefon_input_rezerwacja").value.length != 9 &&
-						!emailRegex.test(document.getElementById("email_input_rezerwacja").value)
-					)
-				)
-				{
-					var Tekst = new String("Brakuje informacji: \n");
-					if(document.getElementById("imie_input_rezerwacja").value=="")
-						Tekst = Tekst.concat("Brak imienia.\n");
-					if(document.getElementById("nazwisko_input_rezerwacja").value=="")
-						Tekst = Tekst.concat("Brak nazwiska.\n");
-					if(document.getElementById("telefon_input_rezerwacja").value==""&&
-						document.getElementById("email_input_rezerwacja").value=="")
-						Tekst = Tekst.concat("Brak numeru telefonu lub e-maila.\n");
-					if(document.getElementById("telefon_input_rezerwacja").value.length > 0 &&
-						document.getElementById("telefon_input_rezerwacja").value.length < 9)
-						Tekst = Tekst.concat("Numer telefonu jest niepoprawny. \n");
-					if(document.getElementById("email_input_rezerwacja").value.length != 0 && 
-						!emailRegex.test(document.getElementById("email_input_rezerwacja").value))
-						Tekst = Tekst.concat("Email jest niepoprawny. \n");
+				
+				let Success = true;
+				let MissingInfoBool = false;
+				let IncorrectInfoBool = false;
+				var IncorrectInfo = new String("Źle formatowanie: \n");
+				var MissingInfo = new String("Brakuje informacji: \n");
+				
+				const isAlpha = str => /^[a-zA-ZłŁąĄćĆęĘńŃóÓżŻźŹ]*$/.test(str);
 
+				if(document.getElementById("imie_input_rezerwacja").value=="") {
+					Success = false;
+					MissingInfoBool = true;
+					MissingInfo = MissingInfo.concat("Brak Imienia.\n");
+				}
+				else if(!isAlpha(document.getElementById("imie_input_rezerwacja").value)) {
+					Success = false;
+					IncorrectInfoBool = true;
+					IncorrectInfo = IncorrectInfo.concat("Imie powinno zawierać tylko litery.\n");
+				}
+				
+				if(document.getElementById("nazwisko_input_rezerwacja").value=="") {
+					Success = false;
+					MissingInfoBool = true;
+					MissingInfo = MissingInfo.concat("Brak Nazwiska.\n");
+				}
+				else if(!isAlpha(document.getElementById("nazwisko_input_rezerwacja").value)) {
+					Success = false;
+					IncorrectInfoBool = true;
+					IncorrectInfo = IncorrectInfo.concat("Nazwisko powinno zawierać tylko litery.\n");
+				}
+				
+				if(document.getElementById("telefon_input_rezerwacja").value==""&&
+					document.getElementById("email_input_rezerwacja").value=="") {
 					
+					Success = false;
+					MissingInfoBool = true;
+					MissingInfo = MissingInfo.concat("Brak numeru telefonu lub e-maila.\n");
+				}
+				
+				if((document.getElementById("telefon_input_rezerwacja").value.length > 0 &&
+					document.getElementById("telefon_input_rezerwacja").value.length < 9) || isNaN(document.getElementById("telefon_input_rezerwacja").value)) {
+					Success = false;
+					IncorrectInfoBool = true;
+					IncorrectInfo = IncorrectInfo.concat("Numer telefonu jest niepoprawny. Powinien być numeryczny i mieć co najmniej 9 cyfer. \n");
+				}
+				
+				if(document.getElementById("email_input_rezerwacja").value.length != 0 && 
+						!emailRegex.test(document.getElementById("email_input_rezerwacja").value)) {
+						
+					Success = false;
+					IncorrectInfoBool = true;
+					IncorrectInfo = IncorrectInfo.concat("E-mail jest niepoprawny. \n");
+				}
+				
+				if(!Success) {
+					let Tekst = "";
+					if(MissingInfoBool)
+						Tekst = Tekst.concat(MissingInfo)
+					if(IncorrectInfoBool)
+						Tekst = Tekst.concat(IncorrectInfo)
 					
 					document.getElementById("rezerwacja_missing_info").innerHTML = Tekst;
 				}
-				else
-				{
+				else {
 					const params = new URLSearchParams(document.location.href);
 					let telparam = "";
 					let emailparam = "";
-					if(!document.getElementById("telefon_input_rezerwacja").value==""  && document.getElementById("telefon_input_rezerwacja").value.length == 9) {
+					if(!document.getElementById("telefon_input_rezerwacja").value==""  && document.getElementById("telefon_input_rezerwacja").value.length >= 9) {
 						telparam = "&tel=" + document.getElementById("telefon_input_rezerwacja").value;
 					}
 					if(!document.getElementById("email_input_rezerwacja").value=="") {
