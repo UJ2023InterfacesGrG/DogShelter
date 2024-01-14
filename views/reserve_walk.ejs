@@ -199,7 +199,7 @@ function reformatDate(date) {
 									DateIn1Day = GetJSDateFromDogDate(params.get("date_start_input"), "00:00");
 								%>
 							<label for="date_start_input">Od daty:</label>
-							<input type="text" id="date_start_input" name="date_start_input" value = "<%=DateIn1Day.getDate()%>.<%=DateIn1Day.getMonth()+1%>.<%=DateIn1Day.getYear()+1900%>">
+							<input type="text" id="date_start_input" name="date_start_input" required pattern = "[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{4}"value = "<%=DateIn1Day.getDate()%>.<%=DateIn1Day.getMonth()+1%>.<%=DateIn1Day.getYear()+1900%>">
 						</div>
 						<div class="godz_box">
 							<% 	DateIn2Weeks = new Date();
@@ -208,7 +208,7 @@ function reformatDate(date) {
 								if(params.get("date_end_input"))
 									DateIn2Weeks = GetJSDateFromDogDate(params.get("date_end_input"), "00:00");		%>
 							<label for="date_end_input">Do daty:</label> 
-							<input type="text" id="date_end_input" name="date_end_input" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
+							<input type="text" id="date_end_input" name="date_end_input" required pattern = "[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{4}" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
 							<label for="godz_start_input">Od godz:</label>
 							<%	let DefaultStart = "00:00";
