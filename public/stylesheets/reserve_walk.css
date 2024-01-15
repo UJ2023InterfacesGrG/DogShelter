@@ -1,4 +1,7 @@
-
+.instructions {
+	text-align: left;
+	padding-left: 100px;
+}
 
 .spacer_filter {
 	position: relative;

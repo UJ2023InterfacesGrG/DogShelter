@@ -298,7 +298,7 @@ h1 {
 .sidebar-option-current{
     background-color: #EFE3DA;
     font-weight: bold;
-    border-width: 2px;
+    border-width: 3px;
 }
 
 .sidebar-option img{
