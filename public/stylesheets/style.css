@@ -33,7 +33,6 @@ h1 {
 
 /* header, footer */
 .header { 
-    height: 100px;
     background-color: #589B3B;
     border-bottom: 1px solid black;
 }
@@ -143,8 +142,11 @@ h1 {
     padding-top: 20px;
     list-style: none;
     margin-block-start: 0;
-    font-size: 18px;
+    font-size: 1.5rem;
 	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 40px;
 }
 
 .nav-bar li{
@@ -154,32 +156,37 @@ h1 {
 .nav-bar li a{
     text-decoration: none;
     color: #000;
+    margin: auto;
 }
 
 .dog-icon{
-    width: 10%;
-    height: auto;
-    float: left;
-    margin-left: 0px;
+    max-width: 25%;
+    min-width: 130px;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-sizing: border-box;
 }
 .nav-title{
-    float: left;
-    margin-left: 5px;
+    margin-left: 5%;
     margin-right: 0px;
+    box-sizing: border-box;
+    font-size: larger;
 }
 
-.nav-dog-title{
-    margin-left: 0;
-    margin-bottom: 0px;
-    padding-right: 0;
-    float: left; 
-    padding-left: 0;
+.nav-dog-flex{
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+.nav-dog{
+    width: 20%;
+    margin-right: 8%;
 }
 
 .nav-button{
-    padding-top: 20px;
     float: left;
-    margin-right: 30px;
 }
 
 .nav-login-button{
@@ -187,7 +194,7 @@ h1 {
 }
 
 .login-button{
-    font-size: 18px;
+    font-size: 1.5rem;
     cursor: pointer;
     background-color: #D88223;
     padding: 5px;
@@ -215,6 +222,106 @@ h1 {
     padding: 0;
     float: right;
 }
+
+.nav-bar-right {
+    margin-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 480px) {
+    .nav-dog{
+        margin-right: 40%;
+    }
+    
+}
+
+@media only screen and (max-width: 640px) and (min-width: 481px) {
+    .nav-dog{
+        margin-right: 20%;
+    }
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 641px) {
+    .nav-dog{
+        margin-right: 15%;
+    }
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .nav-bar-right{
+        margin-left: 0;
+        justify-content: space-evenly;
+        row-gap: 10px;
+        margin-right: 0;
+    }
+
+    .header ul {
+        margin: 0 0 3% 0;
+        padding: 2%;
+    }
+
+    .user-icon{
+        width: 30px;
+        height: auto;
+        margin-left: 3px;
+    }
+
+    .nav-bar{
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .nav-bar{
+        padding-inline-start: 10px;
+        font-size: 1.5vw;
+    }
+
+    .nav-bar-right{
+        gap: 2%;
+        flex-basis: 70%;
+        margin-left:initial;
+        margin-right: 0%;
+    }
+
+    .login-button{
+        font-size: 1.5vw;
+    }
+
+    .user-icon{
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 3800px) {
+    .user-icon{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media only screen and (min-width: 5000px) {
+    .user-icon{
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media only screen and (min-width: 7000px) {
+    .user-icon{
+        width: 120px;
+        height: 120px;
+    }
+}
+
 
 /* Logowanie i Rejestracja */
 .post_container.form-sign {
