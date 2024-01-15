@@ -233,11 +233,20 @@ h1 {
     margin-left: auto;
 }
 
+@media only screen and (max-width: 350px) {
+    .nav-dog-flex{
+        flex-wrap: wrap;
+    } 
+
+    .nav-dog{
+        margin-left: 20%;
+    } 
+}
+
 @media only screen and (max-width: 480px) {
     .nav-dog{
         margin-right: 40%;
-    }
-    
+    } 
 }
 
 @media only screen and (max-width: 640px) and (min-width: 481px) {
@@ -254,7 +263,7 @@ h1 {
 
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1500px) {
     .nav-bar-right{
         margin-left: 0;
         justify-content: space-evenly;
@@ -263,7 +272,6 @@ h1 {
     }
 
     .header ul {
-        margin: 0 0 3% 0;
         padding: 2%;
     }
 
