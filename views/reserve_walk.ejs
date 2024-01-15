@@ -162,7 +162,7 @@ function reformatDate(date) {
             <hr class="site-title-line" style="width: 350px; margin-left: 70px;">
 			<form>
 				<div class="spacer_filter">
-					<form>
+					<form name = "input_form">
 						<img class="filter_icon" src="images/filter.png" alt="Filtr" >
 						<input class="filter_hide" name="filter" id="filter">
 						<div class="imie_box">
@@ -222,7 +222,7 @@ function reformatDate(date) {
 							<label for="godz_end_input">Do godz:</label>
 							<input type="time" id="godz_end_input" name="godz_end_input" value="<%=DefaultEnd%>">
 						<div class="zatwierdz_box">
-							<button class="confirm_reserve_filter">Filtruj</label>
+							<button type = "submit" onclick="return CheckForm()" class="confirm_reserve_filter">Filtruj</button>
 						</div>
 					</form>
 				</div>
@@ -323,6 +323,42 @@ function reformatDate(date) {
 		</div>
 
 		<script>
+			function GetJSDateFromDogDate(data, godzina) {
+				Segmenty = data.split('.');
+				start = godzina.split(':');
+				let hour = "0";
+				if(start.length > 1)
+					hour = start[1];
+				
+				return new Date(Segmenty[2], Segmenty[1] - 1, Segmenty[0], start[0], hour, 0);
+			}
+		
+			function CheckForm() {
+				let start = document.getElementById("date_start_input").value;
+				let end = document.getElementById("date_end_input").value;
+				let starthour = document.getElementById("godz_start_input").value;
+				let endhour = document.getElementById("godz_end_input").value;
+				
+				let DataStartu = GetJSDateFromDogDate(start, starthour);
+				let DataKonca = GetJSDateFromDogDate(end, endhour);
+				let GodzinaStartu = GetJSDateFromDogDate(start, starthour);
+				let GodzinaKonca = GetJSDateFromDogDate(start, endhour);
+				
+				if(DataStartu.getTime()<DataKonca.getTime()) {
+					if(GodzinaStartu.getTime()<GodzinaKonca.getTime()) {
+						return true;
+					}
+					else {
+						alert("Godzina początku jest późniejsza od godziny końca.");
+						return false;
+					}
+				}	
+				else {
+					alert("Data początku jest późniejszy od daty końca.");
+					return false;
+				}
+			}
+			
 			function showConfirmationPopup(id, ReservationId) {
 				var modal = document.getElementById("custom-modal");
 				modal.style.display = "block";
