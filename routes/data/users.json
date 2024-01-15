@@ -26,5 +26,12 @@
     "email": "aaa@aaa.com",
     "password": "$2a$10$sga17duoFryuRlQFjhxlJ.8B3yykyA/JSeBP1iP6qQ2gtdQ36nyZe",
     "phone": null
+  },
+  {
+    "name": "test",
+    "surname": "test",
+    "email": "test@123.pl",
+    "password": "$2a$10$vaKZyklHBLn.GuxGfszCyOA4SdTLJ8SX2byfyg3qShlN36Hh46cNO",
+    "phone": null
   }
 ]
