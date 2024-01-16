@@ -531,6 +531,7 @@ table, td, th {
     }
     
     .logout {
+        margin-top: 0px;
         margin-bottom: 0px;
         border-bottom: 2px solid black;
     }
@@ -558,6 +559,15 @@ table, td, th {
 
     .font {
         font-size: 3vw;
+    }
+
+    .logout {
+        border-bottom: 140px;
+    }
+
+    .footer{
+        font-size: 1.5vw;
+        height: auto;
     }
 }
 
@@ -919,3 +929,38 @@ input.checkbox-ourdogs{
     text-decoration: none;
 }
 
+.mydata .data_container {
+    padding: 1.5rem;
+}
+
+/* my_data responsiveness */
+
+@media only screen and (max-width: 955px){
+    .mydata .data_frame {
+        text-align: center;
+    }
+    
+    .mydata .box_container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 2000px){
+    .mydata h3, .mydata p{
+        font-size: 1.5vw;
+    }
+
+    .mydata {
+        padding-bottom: 10%;
+    }
+
+    .mydata .box_container input[type=text]::placeholder, .mydata .box_container input[type=password]::placeholder{
+        font-size: 1vw;
+        padding: 4%;
+    }
+
+    .mydata .box_container input[type=submit]{
+        font-size: 1vw;
+    }
+}
