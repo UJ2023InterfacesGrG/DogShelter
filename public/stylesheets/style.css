@@ -562,12 +562,12 @@ table, td, th {
     }
 
     .logout {
-        border-bottom: 140px;
+        margin-bottom: 110px;
     }
 
     .footer{
         font-size: 1.5vw;
-        height: auto;
+        height: 80px;
     }
 }
 
@@ -580,6 +580,15 @@ table, td, th {
 @media only screen and (min-width: 4000px){
     .flex-container table img {
         min-width: 230px;
+    }
+
+    .logout {
+        margin-bottom: 180px;
+    }
+
+    .footer{
+        font-size: 1.5vw;
+        height: 150px;
     }
 }
 
@@ -935,6 +944,30 @@ input.checkbox-ourdogs{
 
 /* my_data responsiveness */
 
+.data_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.data_form {
+    height: 100%;
+}
+
+.data_input{
+    font-size: 1rem;
+    padding: 4%;
+}
+
+@media only screen and (max-width: 500px){
+    .mydata .box_container {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
 @media only screen and (max-width: 955px){
     .mydata .data_frame {
         text-align: center;
@@ -955,12 +988,8 @@ input.checkbox-ourdogs{
         padding-bottom: 10%;
     }
 
-    .mydata .box_container input[type=text]::placeholder, .mydata .box_container input[type=password]::placeholder{
+    .data_input{
         font-size: 1vw;
         padding: 4%;
-    }
-
-    .mydata .box_container input[type=submit]{
-        font-size: 1vw;
     }
 }
