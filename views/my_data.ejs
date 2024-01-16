@@ -17,7 +17,7 @@
                 <li class="nav-dog"> 
                     <div class="nav-dog-flex">
                         <img class="dog-icon"src="images/dog-icon.png" alt="Zdjecie pieska">
-                        <a href="/home" class="nav-title">Super </br> schronisko w </br> jakimś mieście</a>
+                        <a href="/home" class="nav-title">Super schronisko w jakimś mieście</a>
                     </div>
                 </li>
                 <div class="nav-bar-right">
@@ -61,8 +61,8 @@
                     <span>Wyloguj się</span>
                 </div>
             </div>
-            <div class="main">
-                <h1 class="site-title">Moje dane</h1>
+            <div class="main mydata">
+                <h1 class="site-title font">Moje dane</h1>
                 <hr class="site-title-line">
                 <div class="box_container">
                     <div class="data_frame">
@@ -76,17 +76,19 @@
                         <p><%= user.email %></p>
                     </div>
                     <div class="data_container">
-                        <form method="post" action="/user/update">
-                            <h3>Zmiana danych:</h3>
-                            <input type="text" id="name" name="name" placeholder="Nowe imię...">
-                            <input type="text" id="surname" name="surname" placeholder="Nowe nazwisko...">      
-                            <input type="text" id="phone" name="phone" placeholder="Nowy nr telefonu..." pattern=".{9}" 
-                            oninvalid="setCustomValidity('Niepoprawny numer telefonu')" oninput="setCustomValidity('')" >
-                            <input type="text" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{1,}$" 
-                                oninvalid="setCustomValidity('Niepoprawny adres e-mail')" oninput="setCustomValidity('')"
-                                placeholder="Nowy adres email..."> 
-                            <input type="password" id="password" name="password" placeholder="Nowe hasło...">                                  
-                            <input type="submit" value="   Zmień dane   ">
+                        <form class="data_form" method="post" action="/user/update">
+                            <div class="data_flex">
+                                <h3>Zmiana danych:</h3>
+                                <input type="text" class="data_input" id="name" name="name" placeholder="Nowe imię...">
+                                <input type="text" class="data_input" id="surname" name="surname" placeholder="Nowe nazwisko...">      
+                                <input type="text" class="data_input" id="phone" name="phone" placeholder="Nowy nr telefonu..." pattern=".{9}" 
+                                oninvalid="setCustomValidity('Niepoprawny numer telefonu')" oninput="setCustomValidity('')" >
+                                <input type="text" class="data_input" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{1,}$" 
+                                    oninvalid="setCustomValidity('Niepoprawny adres e-mail')" oninput="setCustomValidity('')"
+                                    placeholder="Nowy adres email..."> 
+                                <input class="data_input" type="password" id="password" name="password" placeholder="Nowe hasło...">                                  
+                                <button class="support-button" type="submit">Zmień dane</button>
+                            </div>
                         </form>
                     </div>
                 </div>

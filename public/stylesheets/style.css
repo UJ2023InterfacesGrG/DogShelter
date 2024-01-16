@@ -233,11 +233,20 @@ h1 {
     margin-left: auto;
 }
 
+@media only screen and (max-width: 350px) {
+    .nav-dog-flex{
+        flex-wrap: wrap;
+    } 
+
+    .nav-dog{
+        margin-left: 20%;
+    } 
+}
+
 @media only screen and (max-width: 480px) {
     .nav-dog{
         margin-right: 40%;
-    }
-    
+    } 
 }
 
 @media only screen and (max-width: 640px) and (min-width: 481px) {
@@ -254,7 +263,7 @@ h1 {
 
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1500px) {
     .nav-bar-right{
         margin-left: 0;
         justify-content: space-evenly;
@@ -263,7 +272,6 @@ h1 {
     }
 
     .header ul {
-        margin: 0 0 3% 0;
         padding: 2%;
     }
 
@@ -368,6 +376,7 @@ h1 {
     display: flex;
     width: 100%;
     margin: 0;
+    font-size: 1.5rem;
 }
 
 .sidebar {
@@ -375,7 +384,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-width: 10%;
+    /* min-width: 15%; */
     min-height: 100vh;
     border-right: 1px solid black;
 }
@@ -389,6 +398,7 @@ h1 {
     align-items: center;
     cursor: pointer;
     background-color: #EFE3DA;
+    min-height: 10%;
 }
 
 .sidebar-option:first-of-type {
@@ -417,8 +427,8 @@ h1 {
 }
 
 .flex-container table{
-    margin: 0 5% 5% 5%;
-    min-width: 80%;
+    margin: 2% 5% 5% 5%;
+    width: 80%;
  }
 
 .flex-container th {
@@ -430,12 +440,14 @@ h1 {
 }
 
 .flex-container td,th {
-    padding: 30px;
+    padding: 5%;
+    font-size: 1.5rem;
 }
 
-table img {
+.flex-container table img {
     max-width: 100px;
     width: 100%;
+    min-width: 80px;
     height: auto;
 }
 
@@ -459,6 +471,125 @@ table, td, th {
     margin-bottom: 80px;
     border-bottom: 0px;
     border-top-width: 2px;
+}
+
+@media only screen and (max-width: 955px){
+    .flex-container td, th {
+        font-size: 0.5rem;
+        padding: 2%;
+    }
+
+    .main button {
+        font-size: 0.5rem;
+    }
+
+    .sidebar-option {
+        font-size: 1.5rem;
+    }
+
+    .font {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        margin-top: 5%;
+    }
+
+    .flex-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar{
+        min-height: none;
+        min-width: 100vw;
+    }
+
+    .flex-container .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+
+    }
+
+    .flex-container table{
+        margin: auto;
+        min-width: none;
+        width: 95%;
+    }
+    
+    .flex-container hr{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .flex-container hr{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .logout {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-bottom: 2px solid black;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .flex-container td, th {
+        font-size: 0.3rem;
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 2000px){
+    .flex-container td, th {
+        font-size: 1.5vw;
+    }
+
+    .main button {
+        font-size: 1vw;
+    }
+
+    .sidebar-option {
+        font-size: 1.5vw;
+    }
+
+    .font {
+        font-size: 3vw;
+    }
+
+    .logout {
+        margin-bottom: 110px;
+    }
+
+    .footer{
+        font-size: 1.5vw;
+        height: 80px;
+    }
+}
+
+@media only screen and (min-width: 2880px){
+    .flex-container table img {
+        min-width: 180px;
+    }
+}
+
+@media only screen and (min-width: 4000px){
+    .flex-container table img {
+        min-width: 230px;
+    }
+
+    .logout {
+        margin-bottom: 180px;
+    }
+
+    .footer{
+        font-size: 1.5vw;
+        height: 150px;
+    }
 }
 
 /* Nasze pieski */
@@ -807,3 +938,58 @@ input.checkbox-ourdogs{
     text-decoration: none;
 }
 
+.mydata .data_container {
+    padding: 1.5rem;
+}
+
+/* my_data responsiveness */
+
+.data_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.data_form {
+    height: 100%;
+}
+
+.data_input{
+    font-size: 1rem;
+    padding: 4%;
+}
+
+@media only screen and (max-width: 500px){
+    .mydata .box_container {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 955px){
+    .mydata .data_frame {
+        text-align: center;
+    }
+    
+    .mydata .box_container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 2000px){
+    .mydata h3, .mydata p{
+        font-size: 1.5vw;
+    }
+
+    .mydata {
+        padding-bottom: 10%;
+    }
+
+    .data_input{
+        font-size: 1vw;
+        padding: 4%;
+    }
+}
