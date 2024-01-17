@@ -484,7 +484,7 @@ table, td, th {
         padding: 2%;
     }
 
-    .main button {
+    .flex-container .main button {
         font-size: 0.5rem;
     }
 
@@ -554,7 +554,7 @@ table, td, th {
         font-size: 1.5vw;
     }
 
-    .main button {
+    .flex-container .main button {
         font-size: 1vw;
     }
 
