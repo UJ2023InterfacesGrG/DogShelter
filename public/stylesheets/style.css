@@ -178,6 +178,7 @@ h1 {
     box-sizing: border-box;
     flex-wrap: nowrap;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .nav-dog{
