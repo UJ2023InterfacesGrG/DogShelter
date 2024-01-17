@@ -22,7 +22,8 @@
 			"date": "23.1.2024",
 			"start": "9:00",
 			"end": "12:00",
-			"day": "Wtorek"
+			"day": "Wtorek",
+			"takenby": "n@aaa.com"
 		},
 		{
 			"date": "7.1.2024",

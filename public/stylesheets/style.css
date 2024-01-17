@@ -73,6 +73,11 @@ h1 {
     margin: 1.5rem;
 }
 
+.post_text {
+    max-height: 80%;
+    overflow: hidden;
+}
+
 .post_container:first-of-type {
     border: 4px solid gold;
 }
