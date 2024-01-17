@@ -116,7 +116,7 @@ h1 {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items:left;
     width:100%;
     margin: 1rem;
 }
@@ -125,8 +125,20 @@ h1 {
     margin: 0.8rem;
 }
 
-.dog_container img {
-    padding-right: 1rem;
+.container {
+    display: flex;
+    text-align: left;
+}
+
+.dog-icon-post {
+    height: 5rem;
+    width: auto;
+}
+
+.dog_image_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* przycisk czytaj dalej przy aktualnościach */
@@ -975,6 +987,11 @@ input.checkbox-ourdogs{
     .mydata .box_container {
         margin-left: 0px;
         margin-right: 0px;
+    }
+
+    .container {
+        flex-direction: column;
+        margin: 0.3rem;
     }
 }
 
