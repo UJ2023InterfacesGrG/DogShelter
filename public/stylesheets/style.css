@@ -161,7 +161,7 @@ h1 {
 
 .dog-icon{
     max-width: 25%;
-    min-width: 130px;
+    min-width: 8%;
     margin-top: auto;
     margin-bottom: auto;
     box-sizing: border-box;
@@ -283,6 +283,10 @@ h1 {
 
     .nav-bar{
         justify-content: center;
+    }
+
+    .dog-icon{
+        min-width: 130px;
     }
 }
 
