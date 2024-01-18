@@ -354,6 +354,15 @@ h1 {
 
 
 /* Logowanie i Rejestracja */
+
+.login_container_outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 .post_container.form-sign {
     border-color: #000;
     margin: 4% auto;
@@ -372,7 +381,7 @@ h1 {
     font-size: x-large;
     padding: 5%;
     margin: 2%;
-    min-width: 80%;
+    width: 80%;
     border-radius: 20px;
 }
 
@@ -383,7 +392,7 @@ h1 {
 .form-sign button {
     font-weight: bold;
     background-color: #D4D823;
-    width: 90%;
+    width: 100%;
     cursor: pointer;
 }
 

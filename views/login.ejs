@@ -34,18 +34,20 @@
 
         <!-- main site -->
         <div class="main">
-            <div class="post_container form-sign">
-                <h1>LOGOWANIE</h1>
-                <form method="post" action="/login">
-                    <input class="option" type="email" id="email" name="email" placeholder="E-mail" required>
-                    <input class="option" type="password" id="password" name="password" placeholder="Hasło" required>
-                    <% if(message){ %>
-                        <span class="message"><%= message %></span>
-                    <% } %>
-                    <button class="option" type="submit">ZALOGUJ</button>   
-                </form>
-                <a class="login_text">Nie masz konta?</a>
-                <a class="login_link" href="/register"><b>Zarejestruj się</b></a>
+            <div class="login_container_outer">
+                <div class="post_container form-sign">
+                    <h1>LOGOWANIE</h1>
+                    <form method="post" action="/login">
+                        <input class="option" type="email" id="email" name="email" placeholder="E-mail" required>
+                        <input class="option" type="password" id="password" name="password" placeholder="Hasło" required>
+                        <% if(message){ %>
+                            <span class="message"><%= message %></span>
+                        <% } %>
+                        <button class="option" type="submit">ZALOGUJ</button>   
+                    </form>
+                    <a class="login_text">Nie masz konta?</a>
+                    <a class="login_link" href="/register"><b>Zarejestruj się</b></a>
+                </div>
             </div>
         </div>
 
