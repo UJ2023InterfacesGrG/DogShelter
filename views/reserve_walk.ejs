@@ -179,6 +179,7 @@ function reformatDate(date) {
 							<label for="imie_input">Imię Psa:</label>
 							<input type="text" id="imie_input" name="imie_input" value = "<%=DefaultName%>">
 						</div>
+						<div class = "hour_box">
 							<%
 								let DefaultDay = "dzien_any";
 								if(params.get("dzien_input"))
@@ -195,6 +196,7 @@ function reformatDate(date) {
 								<option <%if(DefaultDay==="dzien_saturday"){%>selected<%}%> 	value="dzien_saturday">Sobota</option>
 								<option <%if(DefaultDay==="dzien_sunday"){%>selected<%}%> 		value="dzien_sunday">Niedziela</option>
 							</select>
+						</div>
 						<div class="godz_box">
 							<% 	DateIn1Day = new Date();
 								DateIn1Day.setDate(DateIn1Day.getDate() +1);
@@ -215,6 +217,7 @@ function reformatDate(date) {
 							<label for="date_end_input">Do daty:</label> 
 							<input type="text" id="date_end_input" name="date_end_input" required pattern = "[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{4}" value = "<%=DateIn2Weeks.getDate()%>.<%=DateIn2Weeks.getMonth()+1%>.<%=DateIn2Weeks.getYear()+1900%>">
 						</div>
+						<div class = "hour_box">
 							<label for="godz_start_input">Od godz:</label>
 							<%	let DefaultStart = "00:00";
 								let DefaultEnd = "23:59";
@@ -223,9 +226,12 @@ function reformatDate(date) {
 									DefaultStart = params.get("godz_start_input");
 								if(params.get("godz_end_input"))
 									DefaultEnd = params.get("godz_end_input");   	%>
-							<input type="time" id="godz_start_input" name="godz_start_input" value="<%=DefaultStart%>">
+							<input type="time" id="godz_start_input" class="reservation_hour_input"  name="godz_start_input" value="<%=DefaultStart%>">
+						</div>
+						<div class = "hour_box">
 							<label for="godz_end_input">Do godz:</label>
-							<input type="time" id="godz_end_input" name="godz_end_input" value="<%=DefaultEnd%>">
+							<input type="time" id="godz_end_input" class="reservation_hour_input" name="godz_end_input" value="<%=DefaultEnd%>">
+						</div>
 						<div class="zatwierdz_box">
 							<button type = "submit" onclick="return CheckForm()" class="confirm_reserve_filter">Filtruj</button>
 						</div>

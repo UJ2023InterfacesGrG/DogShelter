@@ -14,11 +14,12 @@
 	border: solid;
 	border-width: 2px;
 	border-color: #000;
-	height: 100px;
+	min-height: 100px;
 	display: flex;
-	justify-content: left;
+	justify-content: space-between;
 	align-items: center;
 	font-size: 18px;
+	flex-wrap: wrap;
 }
 
 .imie_box {
@@ -27,6 +28,12 @@
 	padding-left: 5px;
 	padding-right: 5px;
 	width: auto;
+	flex-basis: 100px;
+	flex-grow: 1;
+}
+
+.reservation_hour_input {
+	min-width: 102px;
 }
 
 .wiek_box {
@@ -50,8 +57,14 @@
 	padding-right: 5px;
 	margin-left: 5px;
 	margin-right: 5px;
+	flex-basis: 100px;
+	flex-grow: 1;
 }
 
+.hour_box {
+	flex-basis: 100px;
+	flex-grow: 1;
+}
 #date_start_input{
 	width: 110px;
 	height: 30px;
@@ -100,7 +113,6 @@
 }
 
 .zatwierdz_box {
-	margin-left: auto;
 	margin-right: 9%;
 }
 
@@ -139,8 +151,8 @@
 .doggo {
 	margin-left: 40px;
 	margin-top: 50px;
-	width: 245px;
-	height: 300px;
+	/*width: 245px;*/
+	height: 245px;
 }
 
 .doggo_icon {
@@ -150,7 +162,7 @@
 }
 
 .doggo_info {
-	width: 245px;
+	/*width: 245px;*/
 	height: 245px;
 	display: block;
 	margin-left: 70px;
@@ -158,7 +170,7 @@
 
 .doggo_name {
 	margin-top: 25px;
-	width: 245px;
+	/*width: 245px;*/
 	height: 60px;
 	position: relative;
 	border: #000;
@@ -415,4 +427,8 @@
 
 .filter_hide {
 	display: none;
+}
+
+.day_label {
+	white-space: nowrap;
 }
