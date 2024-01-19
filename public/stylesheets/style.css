@@ -506,12 +506,12 @@ table, td, th {
 
 @media only screen and (max-width: 955px){
     .flex-container td, th {
-        font-size: 0.5rem;
+        font-size: 1rem;
         padding: 2%;
     }
 
     .flex-container .main button {
-        font-size: 0.5rem;
+        font-size: 1.5rem;
     }
 
     .sidebar-option {
@@ -532,7 +532,7 @@ table, td, th {
     }
 
     .sidebar{
-        min-height: none;
+        min-height: 0px;
         min-width: 100vw;
     }
 
@@ -1001,6 +1001,14 @@ input.checkbox-ourdogs{
     .container {
         flex-direction: column;
         margin: 0.3rem;
+    }
+
+    .mydata .data_container {
+        width: 80%;
+    }
+    
+    .cancelWalk {
+        font-size: 1rem;
     }
 }
 
