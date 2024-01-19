@@ -1,0 +1,99 @@
+{
+    "dog1":{
+        "id": 999,
+        "image": "images/dog-icon.png",
+        "name": "Burek",
+        "desc": "Burek jest super pieskiem. Lubi jesć karmę i bawić się piłką.",
+        "date": "01/05/2017",
+        "readyToAdopt": "True",
+		"age": "7"
+    },
+    "dog2":{
+        "id": 1000,
+        "image": "images/dog-icon.png",
+        "name": "Rex",
+        "desc": "Rex to radosny pies, zawsze gotów do zabawy. Uwielbia biegać na świeżym powietrzu.",
+        "date": "15/05/2019",
+        "readyToAdopt": "False",
+        "age": "8"
+    },
+    
+    "dog3":{
+        "id": 1001,
+        "image": "images/dog-icon.png",
+        "name": "Lola",
+        "desc": "Lola to urocza suczka, kochająca dzieci i długie spacery w parku. Zawsze pełna energii.",
+        "date": "22/08/2017",
+        "readyToAdopt": "True",
+        "age": "6"
+    },
+    
+    "dog4":{
+        "id": 1002,
+        "image": "images/dog-icon.png",
+        "name": "Bella",
+        "desc": "Bella, sympatyczna sunia, uwielbia pieszczoty i leżenie na słońcu. Idealna towarzyszka na relaksujące dni.",
+        "date": "11/10/2022",
+        "readyToAdopt": "True",
+        "age": "4"
+    },
+    
+    "dog5":{
+        "id": 1003,
+        "image": "images/dog-icon.png",
+        "name": "Coco",
+        "desc": "Coco to spokojny pies, który uwielbia długie spacery i obserwowanie otoczenia. Bardzo przyjazny wobec innych zwierząt.",
+        "date": "07/08/2016",
+        "readyToAdopt": "False",
+        "age": "12"
+    },
+    "dog6":{
+        "id": 1004,
+        "image": "images/dog-icon.png",
+        "name": "Max",
+        "desc": "Max to energiczny pies, uwielbiający biegać i łapać frisbee. Zawsze gotów na nowe przygody.",
+        "date": "14/09/2018",
+        "readyToAdopt": "True",
+        "age": "7"
+    },
+    
+    "dog7":{
+        "id": 1005,
+        "image": "images/dog-icon.png",
+        "name": "Daisy",
+        "desc": "Daisy to urocza suczka, która uwielbia być w centrum uwagi. Bardzo przyjazna i łagodna.",
+        "date": "28/01/2014",
+        "readyToAdopt": "True",
+        "age": "11"
+    },
+    
+    "dog8":{
+        "id": 1006,
+        "image": "images/dog-icon.png",
+        "name": "Rocky",
+        "desc": "Rocky to silny i odważny pies, idealny do aktywności na świeżym powietrzu. Zawsze gotów na trening.",
+        "date": "12/03/2023",
+        "readyToAdopt": "False",
+        "age": "2"
+    },
+    
+    "dog9":{
+        "id": 1007,
+        "image": "images/dog-icon.png",
+        "name": "Lucy",
+        "desc": "Lucy to łagodna suczka, która kocha spokojne wieczory i przytulanie. Doskonała towarzyszka do relaksu.",
+        "date": "20/06/2017",
+        "readyToAdopt": "True",
+        "age": "10"
+    },
+    
+    "dog10":{
+        "id": 1008,
+        "image": "images/dog-icon.png",
+        "name": "Teddy",
+        "desc": "Teddy to mały piesek o ogromnym sercu. Kocha być noszony i bawić się zabawkami.",
+        "date": "04/05/2020",
+        "readyToAdopt": "True",
+        "age": "4"
+    }
+}
