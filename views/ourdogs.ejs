@@ -64,17 +64,27 @@
                             <img src="./images/filter-icon.png" alt="Ikonka filtrowania">
                         </td>
                         <td>
+							<% let params = new URLSearchParams(url);
+								let DefaultName = "";
+								if(params.get("name"))
+									DefaultName = params.get("name");
+							%>
                             <span>Imię psa: </span>
-                            <input type="text" name="name" id="our_dogs_name">
+                            <input type="text" name="name" id="our_dogs_name" value ="<%=DefaultName%>">
                         </td>
                         <td >
+							<%
+								let DefaultAge = "";
+								if(params.get("age"))
+									DefaultAge = params.get("age");
+							%>
                             <span>Wiek psa: </span>
-                            <input type="number" name="age" id="our_dogs_age">
+                            <input type="number" name="age" id="our_dogs_age" value ="<%=DefaultAge%>">
                         </td>
                         <td id="our_dogs_adoptable_td">
     
                             <span>Gotowy do adopcji</span>
-                            <input type="checkbox" name="adoptable" class="checkbox-ourdogs" >
+                            <input type="checkbox" name="adoptable" class="checkbox-ourdogs" <% if(params.get("adoptable")=="on") { %> checked <% } %>>
                         </td>
                         <td>
                             <button type="submit">Filtruj</button>
