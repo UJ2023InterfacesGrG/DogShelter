@@ -57,7 +57,7 @@
             </div>
             
             <table class="dogs-table">
-                <tr class="filter">
+                <tr class="filter" id="our-dogs-filter">
                     <form>
 						<input class="filter_hide" name="filter" id="filter">
                         <td>
@@ -111,9 +111,9 @@
 							%>
                             <tr>
                                 <td>
-                                    <img class="dog-icon" src="<%= dogs[id].image %>" alt="Zdjecie pieska" >
+                                    <img class="dog-icon-od" src="<%= dogs[id].image %>" alt="Zdjecie pieska" >
                                 </td>
-                                <td>
+                                <td class="our-dogs-name">
                                     <%= dogs[id].name %>
                                 </td>
                                 <td class="our-dogs-age">
@@ -122,10 +122,10 @@
                                 <td class="our-dogs-desc">
                                     <%= dogs[id].desc %>
                                 </td>
-                                <td>
+                                <td class="our-dogs-time">
                                     Jest z nami od:<%= dogs[id].date %>
                                 </td>
-                                <td>
+                                <td class="our-dogs-ready">
                                     <% if(dogs[id].readyToAdopt == "True"){ %>
                                     Gotowy do adopcji!
                                     <br>
