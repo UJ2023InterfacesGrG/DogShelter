@@ -887,7 +887,7 @@ input.checkbox-ourdogs{
 /* Walk - Rezerwacja */
 .flex-reservation {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
     margin: 2% 12%;
     gap: 10%;
@@ -904,6 +904,8 @@ input.checkbox-ourdogs{
 
 .reservation-right {
     text-align: center;
+	width: 50%;
+	max-width: 1600px;
 }
 
 .reservation-right h2{
@@ -919,31 +921,70 @@ input.checkbox-ourdogs{
     margin: 6% auto;
 }
 
+.walk-reservation-text {
+	font-size: 2vw;
+}
+
+.doggo_icon_walk {
+	width: 100%;
+	height: auto;
+}
+
+.scaling_font_walk {
+	font-size: 1vw;
+	
+}
+
 .distancer {
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	margin-right: 2%;
+	margin-left: 2%;
+	max-width: 10%;
+	
+	font-size: 1.5vw;
+	flex-shrink: 100;
+}
+
+.distancer2 {
+	margin-top: 10px;
+    margin-bottom: 10px;
+	margin-right: 2%;
+	margin-left: 2%;
+	max-width: 10%;
+	font-size: 1.5vw;
+	opacity: 0;
+	flex-shrink: 100;
 }
 
 .flex-reservation-right input{
     text-align: center;
     width: 43%;
+	font-size: 1.5vw;
     border: rgb(105, 105, 105) solid 1px;
     border-radius: 4px;
+	padding: 12px;
+	box-sizing: border-box;
 }
 
 .flex-reservation-right input[type=text]{
-    width: 40.5%;
+    width: 43%;
     border: rgb(105, 105, 105) solid 1px;
-    box-sizing: initial;
+	border-radius: 4px;
+	
 }
 
+.rezerwacja_missing_info {
+	font-size: 1.5vw;
+}
 
 .rezerwacja_potwierdz-button {
-	font-size: 18px;
+	font-size: 2vw;
     cursor: pointer;
     background-color: #D88223;
     padding: 4% 6%;
     margin: 3%;
-    border: black solid 3px;
+    border: black solid 0.25vw;
     border-radius: 25px;
 }
 
