@@ -146,13 +146,15 @@
 .just_doggo {
 	display: flex;
 	height: 245px;
+	justify-content: space-between;
 }
 
 .doggo {
-	margin-left: 40px;
+	/*margin-left: 40px;*/
 	margin-top: 50px;
-	/*width: 245px;*/
-	height: 245px;
+	/*width: 20%;*/
+	max-width: 400px;
+	height: auto;
 }
 
 .doggo_icon {
@@ -163,9 +165,11 @@
 
 .doggo_info {
 	/*width: 245px;*/
+	width: 20%;
+	max-width: 400px;
 	height: 245px;
 	display: block;
-	margin-left: 70px;
+	/*margin-left: 70px;*/
 }
 
 .doggo_name {
@@ -186,6 +190,13 @@
 
 .doggo_info_text {
 	display: block;
+	max-height: 20;
+}
+
+.doggo_info_overflow {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: auto;
 }
 
 .spacer_list_class {
@@ -367,8 +378,8 @@
 	justify-content: center;
 	align-items: center;
 	height: 260px;
-	width: 100%;
-	margin-left: 100px;
+	width: 60%;
+	
 	
 }
 
@@ -382,6 +393,7 @@
 	align-items: center;
 	justify-content: center;
 	background-color:azure;
+	flex-shrink: 1;
 }
 
 .doggo_calendar-copy {
@@ -392,6 +404,9 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .doggo_choose_termin {
@@ -406,16 +421,22 @@
 
 .doggo_termin {
 	height: 15%;
-	width: 260px;
+	width: auto;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
-	justify-content: left;
+	justify-content: center;
+	text-overflow: ellipsis;
 }
 
 .doggo_termin a {
 	text-decoration: none;
+	width: 100%;
 	color: #0c00b9;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 1.25vw;
 }
 
 .doggo_termin_other {
