@@ -52,28 +52,28 @@
 			<hr class="site-title-line">
 			<div class="flex-reservation">
 				<div class="reservation-left">
-					<div>
-						<img class="doggo_icon" src="images/dog-icon.png" alt="doggo" >
+					<div class="doggo_icon_walk">
+						<img class="doggo_icon_walk" src="images/dog-icon.png" alt="doggo" >
 					</div>
 					<div>
-						<p><%= dogs[params.get("dog")].desc%></p>
+						<p class="scaling_font_walk"><%= dogs[params.get("dog")].desc%></p>
 					</div>
 				</div>
 				<div class="reservation-right">
 					<% let res = reservations[params.get("dog")][params.get("id")] %>
-					<label><h2>Wybrany termin spaceru: <b><%- res.date + "</b>, w godzinach <b>" + res.start + "-" + res.end%></b></h2></label>
+					<label><h2 class="walk-reservation-text">Wybrany termin spaceru: <b><%- res.date + "</b>, w godzinach <b>" + res.start + "-" + res.end%></b></h2></label>
 					
 					<div class="flex-reservation-right">
-						<input type="text" id="imie_input_rezerwacja" name="imie_input_rezerwacja"
+						<input type="text" class="walk-reservation-member" id="imie_input_rezerwacja" name="imie_input_rezerwacja"
 						placeholder="Twoje imię" <% if(user) { %> value="<%=user.name%>" <% } %> >	
-						<div class="distancer"></div>
-						<input type="text" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja"
+						<div class="distancer2">lub</div>
+						<input type="text" class="walk-reservation-member" id="nazwisko_input_rezerwacja" name="nazwisko_input_rezerwacja"
 						placeholder="Twoje nazwisko" <% if(user) { %> value="<%=user.surname%>" <% } %> >	
 						
-						<input type="tel" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"    
+						<input type="tel" class="walk-reservation-member" id="telefon_input_rezerwacja" name="telefon_input_rezerwacja" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"    
 						placeholder="Numer telefonu" <% if(user) { %> value="<%=user.phone%>" <% } %> >
 						<div class="distancer">lub</div>
-						<input type="email" id="email_input_rezerwacja" name="email_input_rezerwacja"
+						<input type="email" class="walk-reservation-member" id="email_input_rezerwacja" name="email_input_rezerwacja"
 						placeholder="Adres email" <% if(user) { %> value="<%=user.email%>" <% } %> >
 					</div>
 					<div class="button_message">
