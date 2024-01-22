@@ -1,309 +1,182 @@
 {
-	"dog2": [
+	"dog1": [
 		{
-			"date": "11.1.2024",
-			"start": "12:00",
+			"date": "31.1.2024",
+			"start": "9:00",
+			"end": "12:00",
+			"day": "Sroda"
+		},
+		{
+			"date": "2.2.2024",
+			"start": "15:00",
+			"end": "17:00",
+			"day": "Piatek"
+		},
+		{
+			"date": "22.1.2024",
+			"start": "10:00",
+			"end": "13:00",
+			"day": "Poniedzialek"
+		},
+		{
+			"date": "22.1.2024",
+			"start": "11:00",
 			"end": "14:00",
+			"day": "Poniedzialek"
+		},
+		{
+			"date": "1.2.2024",
+			"start": "8:00",
+			"end": "10:00",
 			"day": "Czwartek"
 		},
 		{
-			"date": "29.1.2024",
+			"date": "23.1.2024",
+			"start": "15:00",
+			"end": "18:00",
+			"day": "Wtorek"
+		},
+		{
+			"date": "31.1.2024",
+			"start": "11:00",
+			"end": "14:00",
+			"day": "Sroda"
+		}
+	],
+	"dog2": [
+		{
+			"date": "23.1.2024",
+			"start": "10:00",
+			"end": "12:00",
+			"day": "Wtorek"
+		},
+		{
+			"date": "3.2.2024",
 			"start": "8:00",
-			"end": "11:00",
-			"day": "Poniedziałek"
+			"end": "10:00",
+			"day": "Sobota"
+		},
+		{
+			"date": "25.1.2024",
+			"start": "15:00",
+			"end": "17:00",
+			"day": "Czwartek"
 		},
 		{
 			"date": "27.1.2024",
 			"start": "13:00",
 			"end": "15:00",
 			"day": "Sobota"
-		},
-		{
-			"date": "23.1.2024",
-			"start": "9:00",
-			"end": "12:00",
-			"day": "Wtorek",
-			"takenby": "n@aaa.com"
-		},
-		{
-			"date": "7.1.2024",
-			"start": "11:00",
-			"end": "13:00",
-			"day": "Niedziela",
-			"takenby": "123456789"
-		},
-		{
-			"date": "11.1.2024",
-			"start": "7:00",
-			"end": "10:00",
-			"day": "Czwartek",
-			"takenby": "123456789"
 		}
 	],
 	"dog3": [
 		{
-			"date": "15.1.2024",
-			"start": "9:00",
-			"end": "12:00",
-			"day": "Poniedziałek"
-		},
-		{
-			"date": "12.1.2024",
-			"start": "10:00",
-			"end": "13:00",
-			"day": "Piątek"
-		},
+			"date": "22.1.2024",
+			"start": "12:00",
+			"end": "15:00",
+			"day": "Poniedzialek"
+		}
+	],
+	"dog4": [
 		{
 			"date": "23.1.2024",
-			"start": "8:00",
-			"end": "10:00",
+			"start": "16:00",
+			"end": "19:00",
 			"day": "Wtorek"
-		},
-		{
-			"date": "14.1.2024",
-			"start": "12:00",
-			"end": "14:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "17.1.2024",
-			"start": "12:00",
-			"end": "15:00",
-			"day": "Środa"
-		},
-		{
-			"date": "10.1.2024",
-			"start": "7:00",
-			"end": "9:00",
-			"day": "Środa"
-		},
-		{
-			"date": "30.1.2024",
-			"start": "9:00",
-			"end": "11:00",
-			"day": "Wtorek",
-			"takenby": "123456789"
-		},
-		{
-			"date": "12.1.2024",
-			"start": "10:00",
-			"end": "12:00",
-			"day": "Piątek"
-		},
-		{
-			"date": "11.1.2024",
-			"start": "15:00",
-			"end": "18:00",
-			"day": "Czwartek"
-		},
-		{
-			"date": "21.1.2024",
-			"start": "9:00",
-			"end": "11:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "24.1.2024",
-			"start": "9:00",
-			"end": "12:00",
-			"day": "Środa"
-		},
-		{
-			"date": "24.1.2024",
-			"start": "10:00",
-			"end": "12:00",
-			"day": "Środa",
-			"takenby": "123456789"
-		},
-		{
-			"date": "9.1.2024",
-			"start": "12:00",
-			"end": "15:00",
-			"day": "Wtorek"
-		},
-		{
-			"date": "21.1.2024",
-			"start": "15:00",
-			"end": "17:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "17.1.2024",
-			"start": "14:00",
-			"end": "17:00",
-			"day": "Środa"
-		},
-		{
-			"date": "27.1.2024",
-			"start": "8:00",
-			"end": "11:00",
-			"day": "Sobota"
 		}
 	],
 	"dog5": [
 		{
-			"date": "14.1.2024",
+			"date": "30.1.2024",
 			"start": "15:00",
 			"end": "17:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "29.1.2024",
-			"start": "10:00",
-			"end": "12:00",
-			"day": "Poniedziałek"
-		},
-		{
-			"date": "7.1.2024",
-			"start": "12:00",
-			"end": "15:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "18.1.2024",
-			"start": "14:00",
-			"end": "17:00",
-			"day": "Czwartek"
-		},
-		{
-			"date": "25.1.2024",
-			"start": "7:00",
-			"end": "10:00",
-			"day": "Czwartek"
-		},
-		{
-			"date": "30.1.2024",
-			"start": "9:00",
-			"end": "12:00",
-			"day": "Wtorek",
-			"takenby": "piotr@mail.com"
+			"day": "Wtorek"
 		}
 	],
 	"dog6": [
 		{
 			"date": "27.1.2024",
-			"start": "9:00",
-			"end": "12:00",
+			"start": "11:00",
+			"end": "14:00",
 			"day": "Sobota"
 		},
 		{
-			"date": "23.1.2024",
-			"start": "11:00",
-			"end": "13:00",
-			"day": "Wtorek"
-		},
-		{
-			"date": "18.1.2024",
-			"start": "9:00",
-			"end": "12:00",
-			"day": "Czwartek"
-		},
-		{
-			"date": "21.1.2024",
-			"start": "7:00",
-			"end": "10:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "15.1.2024",
-			"start": "7:00",
-			"end": "9:00",
-			"day": "Poniedziałek"
-		},
-		{
-			"date": "18.1.2024",
-			"start": "15:00",
-			"end": "17:00",
-			"day": "Czwartek"
-		},
-		{
-			"date": "24.1.2024",
-			"start": "12:00",
-			"end": "14:00",
-			"day": "Środa"
-		},
-		{
-			"date": "17.1.2024",
+			"date": "4.2.2024",
 			"start": "15:00",
 			"end": "18:00",
-			"day": "Środa"
+			"day": "Niedziela"
 		},
 		{
-			"date": "8.1.2024",
-			"start": "10:00",
-			"end": "12:00",
-			"day": "Poniedziałek"
+			"date": "22.1.2024",
+			"start": "7:00",
+			"end": "9:00",
+			"day": "Poniedzialek"
+		},
+		{
+			"date": "30.1.2024",
+			"start": "15:00",
+			"end": "18:00",
+			"day": "Wtorek"
 		}
 	],
-	"dog7": [
+	"dog8": [
 		{
-			"date": "19.1.2024",
-			"start": "13:00",
-			"end": "15:00",
-			"day": "Piątek"
-		},
-		{
-			"date": "19.1.2024",
-			"start": "13:00",
-			"end": "16:00",
-			"day": "Piątek"
-		},
-		{
-			"date": "14.1.2024",
-			"start": "8:00",
-			"end": "10:00",
-			"day": "Niedziela"
-		},
-		{
-			"date": "16.1.2024",
-			"start": "7:00",
-			"end": "10:00",
-			"day": "Wtorek"
-		},
-		{
-			"date": "24.1.2024",
+			"date": "2.2.2024",
 			"start": "10:00",
 			"end": "12:00",
-			"day": "Środa"
+			"day": "Piatek"
 		},
 		{
-			"date": "25.1.2024",
-			"start": "15:00",
-			"end": "17:00",
-			"day": "Czwartek",
-			"takenby": "piotr@mail.com"
-		},
-		{
-			"date": "14.1.2024",
-			"start": "16:00",
-			"end": "19:00",
+			"date": "4.2.2024",
+			"start": "10:00",
+			"end": "13:00",
 			"day": "Niedziela"
+		},
+		{
+			"date": "31.1.2024",
+			"start": "9:00",
+			"end": "12:00",
+			"day": "Sroda"
+		},
+		{
+			"date": "1.2.2024",
+			"start": "12:00",
+			"end": "14:00",
+			"day": "Czwartek"
+		},
+		{
+			"date": "3.2.2024",
+			"start": "8:00",
+			"end": "10:00",
+			"day": "Sobota"
 		}
 	],
 	"dog9": [
 		{
-			"date": "24.1.2024",
+			"date": "30.1.2024",
+			"start": "16:00",
+			"end": "19:00",
+			"day": "Wtorek"
+		},
+		{
+			"date": "28.1.2024",
+			"start": "14:00",
+			"end": "16:00",
+			"day": "Niedziela"
+		},
+		{
+			"date": "2.2.2024",
 			"start": "15:00",
-			"end": "17:00",
-			"day": "Środa"
-		},
+			"end": "18:00",
+			"day": "Piatek"
+		}
+	],
+	"dog10": [
 		{
-			"date": "27.1.2024",
-			"start": "15:00",
-			"end": "17:00",
-			"day": "Sobota"
-		},
-		{
-			"date": "29.1.2024",
-			"start": "8:00",
-			"end": "11:00",
-			"day": "Poniedziałek"
-		},
-		{
-			"date": "10.1.2024",
+			"date": "25.1.2024",
 			"start": "13:00",
-			"end": "15:00",
-			"day": "Środa"
+			"end": "16:00",
+			"day": "Czwartek"
 		}
 	]
 }
