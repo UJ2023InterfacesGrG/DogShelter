@@ -1,7 +1,7 @@
 [
   {
-    "name": null,
-    "surname": null,
+    "name": "John",
+    "surname": "Przykładowy",
     "email": "john@example.com",
     "password": "$2a$10$Vt0jTUNHj2bBJlRkaQt3o.WZfkXEP6iy.LMSchoml2pTJ0JZPL2Nu",
     "phone": null
