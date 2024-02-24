@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 from datetime import date
 
-jsonfile = open("data/dogs.json")
+jsonfile = open("dogs.json")
 
 existingdogdict = json.load(jsonfile)
 

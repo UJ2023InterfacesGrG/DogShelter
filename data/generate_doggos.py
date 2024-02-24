@@ -7,7 +7,7 @@ DogNames = [ "Luna", "Lola", "Daisy", "Bella", "Max", "Charlie", "Rocky" , "Toff
 
 amount = 25
 
-jsonfile = open("data/dogs.json")
+jsonfile = open("dogs.json")
 
 print(jsonfile)
 
