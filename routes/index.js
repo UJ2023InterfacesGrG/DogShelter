@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 const path = require('path');
-const users = fs.readFileSync(__dirname + "/data/users.json", 'utf8');
+const users = fs.readFileSync(__dirname + "/../data/users.json", 'utf8');
 const usersData = JSON.parse(users);
 const bcrypt = require('bcryptjs');
 
@@ -13,11 +13,11 @@ router.get('/:var(home)?', function(req, res, next) {
 
 /* GET walk page. */
 router.get('/walk', function(req, res, next) {
-  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+  fs.readFile(__dirname + "/../" + "data/dogs.json", 'utf8', function(err, dogdata)
   {
     try {
       const jsonDogData = JSON.parse(dogdata);
-      fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
+      fs.readFile(__dirname + "/../" + "data/reservations.json", 'utf8', function(err, reservationdata)
 	  {
 		try {
 		  const jsonReservationData = JSON.parse(reservationdata);
@@ -116,7 +116,7 @@ router.post('/register', function(req, res, next) {
 
     // Saving new user to file
     const jsonString = JSON.stringify(usersData, null, 2);
-    fs.writeFile(__dirname + '/data/users.json', jsonString, 'utf8', (err) => {
+    fs.writeFile(__dirname + '/../data/users.json', jsonString, 'utf8', (err) => {
       if (err) {
         console.error('Error writing JSON file:', err);
       } else {
@@ -139,11 +139,11 @@ router.get('/user/myWalks', function(req, res, next) {
   const user = req.session.user || null;
   // Check if user is defined before accessing properties
   if (user) {
-	fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+	fs.readFile(__dirname + "/../" + "data/dogs.json", 'utf8', function(err, dogdata)
 	  {
 		try {
 		  const jsonDogData = JSON.parse(dogdata);
-		  fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
+		  fs.readFile(__dirname + "/../" + "data/reservations.json", 'utf8', function(err, reservationdata)
 		  {
 			try {
 			  const jsonReservationData = JSON.parse(reservationdata);
@@ -201,7 +201,7 @@ router.get('/success', async (req, res) => {
   const { dog, id, email, tel } = req.query;
 
   try {
-    const filePath = path.join(__dirname, 'data', 'reservations.json');
+    const filePath = path.join(__dirname, '..', 'data', 'reservations.json');
     const reservationsData = await fs.promises.readFile(filePath, 'utf8');
     const reservations = JSON.parse(reservationsData);
 
@@ -234,11 +234,11 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.get('/reserveWalk', function(req, res){
-  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, dogdata)
+  fs.readFile(__dirname + "/../" + "data/dogs.json", 'utf8', function(err, dogdata)
   {
     try {
       const jsonDogData = JSON.parse(dogdata);
-      fs.readFile(__dirname + "/" + "data/reservations.json", 'utf8', function(err, reservationdata)
+      fs.readFile(__dirname + "/../" + "data/reservations.json", 'utf8', function(err, reservationdata)
 	  {
 		try {
 		  const jsonReservationData = JSON.parse(reservationdata);
@@ -259,7 +259,7 @@ router.get('/reserveWalk', function(req, res){
 
 // Endpoint to Get a list of dogs
 router.get('/ourDogs', function(req, res){
-  fs.readFile(__dirname + "/" + "data/dogs.json", 'utf8', function(err, data){
+  fs.readFile(__dirname + "/../" + "data/dogs.json", 'utf8', function(err, data){
     try {
       // Parse the JSON data
       const jsonData = JSON.parse(data);
@@ -321,7 +321,7 @@ router.post('/user/update', function(req, res, next) {
 
   // Saving changes
   const jsonString = JSON.stringify(usersData, null, 2);
-  fs.writeFile(__dirname + '/data/users.json', jsonString, 'utf8', (err) => {
+  fs.writeFile(__dirname + '/../data/users.json', jsonString, 'utf8', (err) => {
     if (err) {
       console.error('Error writing JSON file:', err);
     } else {
@@ -338,12 +338,12 @@ router.post('/user/myWalks/cancel',(req,res) => {
   const reservation = req.query.reservation;
 
   try {
-    let reservationdata = fs.readFileSync(__dirname + '/data/reservations.json', 'utf8');
+    let reservationdata = fs.readFileSync(__dirname + '/../data/reservations.json', 'utf8');
     const reservations = JSON.parse(reservationdata);
     
     delete reservations[dog][reservation].takenby;
 
-    fs.writeFileSync(__dirname + '/data/reservations.json', JSON.stringify(reservations, null, 2), 'utf8');
+    fs.writeFileSync(__dirname + '/../data/reservations.json', JSON.stringify(reservations, null, 2), 'utf8');
 
     res.send('Success');
   } catch (error) {
